@@ -59,7 +59,6 @@ class sqldb_connection
 
     /*
      * Функция для внесения в базу минимальных данных о пользователе
-     
      */
     public static function Registration_min($name, $phone, $password, $email, $code)
     {
