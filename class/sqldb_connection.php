@@ -80,5 +80,7 @@ class sqldb_connection
             ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':country' => $country,
             ':city' => $city, ':email' => $email,));
     }
+    // последняя ебаная проверка БИТБАКЕТА ЕБАНАВРОТ!
+
 }
 
