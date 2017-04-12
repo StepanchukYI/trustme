@@ -57,6 +57,9 @@ class sqldb_connection
         return $sth->fetchAll();
     }
 
+    /*
+     * Функция для внесения в базу минимальных данных о пользователе
+     */
     public static function Registration_min($name, $phone, $password, $email, $code)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -64,7 +67,9 @@ class sqldb_connection
                           VALUES(:login, :password, :email, :phone, :code)");
         $sth->execute(array(':name' => $name, ':password' => $password, ':email' => $email, ':phone' => $phone, ':code' => $code));
     }
-
+    /*
+     * Функция для внесения в базу почти всех данных о пользователе
+     */
     public static function Registration_full($email, $email_2, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city)
     {
         $dbh = sqldb_connection::DB_connect();
