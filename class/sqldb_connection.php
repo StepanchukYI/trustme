@@ -75,14 +75,14 @@ class sqldb_connection
      * Функция для внесения в базу почти всех данных о пользователя
      *
      */
-    public static function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $last_visit, $country, $city)
+    public static function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $last_visit, $online_status, $country, $city)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE user SET email_2 = :email_2, name = :name,  surname = :surname, birth_day = :birth_day, birth_month =
-        :birth_month, birth_year = :birth_year, sex = :sex, last_visit = :last_visit, country = :country, city = :city WHERE user_id= :id");
+        :birth_month, birth_year = :birth_year, sex = :sex, last_visit = :last_visit, online_status = :online_status, country = :country, city = :city WHERE user_id= :id");
         $sth->execute(array(':email_2' => $email_2,':name' => $name, ':surname' => $surname, ':birth_day' => $birth_day,
-            ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':last_visit' => $last_visit, ':country' => $country,
-            ':city' => $city, ':id' => $id));
+            ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':last_visit' => $last_visit,
+            ':online_status' => $online_status, ':country' => $country, ':city' => $city, ':id' => $id));
     }
     // последняя ебаная проверка БИТБАКЕТА ЕБАНАВРОТ!
 

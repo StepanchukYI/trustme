@@ -40,12 +40,20 @@ switch ($command) {
 
         if ($id != "" && $email_2 != "" && $name != "" && $surname != "" && $birth_day != ""
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
-            //&id=1&email_2=fsdfsd@mads.ru&name=dasdasd&surname=fsdfsdfsdf&birth_day=14&birth_month=3&birth_year=1996&sex=1&country=Ukraine&city=Dnepro
             echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
         } else {
             echo "failed feild";
         }
         break;
+    case "quit":
+        $id = $_GET['id'];
+        if($id != ""){
+            echo Quit($id);
+        }else{
+            echo "failed feild";
+        }
+        break;
+
     default:
         echo "failed command";
         break;
