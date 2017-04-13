@@ -52,7 +52,7 @@ class sqldb_connection
     public static function Registration($phone, $email)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT login,email FROM clients WHERE phone=:phone OR email =:email ");
+        $sth = $dbh->prepare("SELECT email,phone,password FROM user WHERE phone=:phone OR email =:email ");
         $sth->execute(array(':phone' => $phone, ':email' => $email));
         return $sth->fetchAll();
     }
@@ -61,25 +61,28 @@ class sqldb_connection
      * Функция для внесения в базу минимальных данных о пользователе
      *
      */
-    public static function Registration_min($name, $phone, $password, $email, $code)
+    public static function Registration_min($phone, $password, $email, $reg_date, $code)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("INSERT INTO user(name,password,email,phone,temp_code ) 
-                          VALUES(:login, :password, :email, :phone, :code)");
-        $sth->execute(array(':name' => $name, ':password' => $password, ':email' => $email, ':phone' => $phone, ':code' => $code));
+        $sth = $dbh->prepare("INSERT INTO user(name,password,email,phone,reg_date, temp_code ) 
+                          VALUES(:name, :password, :email, :phone, :reg_date,:code)");
+        $sth->execute(array(':name' => "someone", ':password' => $password, ':email' => $email, ':phone' => $phone,
+            ':code' => $code, ':reg_date' => $reg_date));
     }
+
+
     /*
      * Функция для внесения в базу почти всех данных о пользователя
      *
      */
-    public static function Registration_full($email, $email_2, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city)
+    public static function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $last_visit, $country, $city)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("UPDATE user SET email_2=:email_2, surname =: surname, birth_day = :birth_day, birth_month =:
-        :birth_month, birth_year =:birth_year, sex = :sex, country = :country, city = :city WHERE email=:email");
-        $sth->execute(array(':email_2' => $email_2, ':surname' => $surname, ':birth_day' => $birth_day,
-            ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':country' => $country,
-            ':city' => $city, ':email' => $email,));
+        $sth = $dbh->prepare("UPDATE user SET email_2 = :email_2, name = :name,  surname = :surname, birth_day = :birth_day, birth_month =
+        :birth_month, birth_year = :birth_year, sex = :sex, last_visit = :last_visit, country = :country, city = :city WHERE user_id= :id");
+        $sth->execute(array(':email_2' => $email_2,':name' => $name, ':surname' => $surname, ':birth_day' => $birth_day,
+            ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':last_visit' => $last_visit, ':country' => $country,
+            ':city' => $city, ':id' => $id));
     }
     // последняя ебаная проверка БИТБАКЕТА ЕБАНАВРОТ!
 

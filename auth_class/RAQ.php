@@ -35,7 +35,7 @@ function Auth($mailornumber, $password)
 /*
  * Функция для первичной регистрации пользователя.
  */
-function Registration_min($name, $email, $phone, $password1, $password2)
+function Registration_min($email, $phone, $password1, $password2)
 {
 
     $errorArr = array();//создание массива ошибок.
@@ -56,13 +56,15 @@ function Registration_min($name, $email, $phone, $password1, $password2)
     $tmp_db_row = sqldb_connection::Registration($phone, $email);
 
     if (count($tmp_db_row) != 0) {
-        if ($tmp_db_row[0]['phone'] == $phone) array_push($errorArr, "Login already using");
-        if ($tmp_db_row[0]['email'] == $email) array_push($errorArr, "Email already using");
+        if ($tmp_db_row[0]['phone'] == $phone) array_push($errorArr, "phone already using");
+        if ($tmp_db_row[0]['email'] == $email) array_push($errorArr, "email already using");
     }
 
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Registration_min($name, $phone, $password1, $email, Temp_code());
+
+        sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"), Temp_code());
+
         return "User created";
     } else {
         return json_encode($errorArr);
@@ -76,7 +78,7 @@ function Registration_min($name, $email, $phone, $password1, $password2)
 function Temp_code()
 {
     $tempcode = "";
-    for ($i = 0; $i <= 6; $i++) {
+    for ($i = 1; $i <= 6; $i++) {
         $tempcode .= rand(0, 9);
     }
     return $tempcode;
@@ -86,11 +88,11 @@ function Temp_code()
 /*
  * Функция для полной регистрации пользователя
  */
-function Registration_full($id,$email_2, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city)
+function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city)
 {
     $errorArr = array();//создание массива ошибок.
 
-    if ((strlen($email_2) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email_2) != true)) {
+        if ((strlen($email_2) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email_2) != true)) {
         array_push($errorArr, "Incorrect email");
     }
     if ($birth_day == "" && strlen($birth_day) < 1 && strlen($birth_day) > 31) {
@@ -104,13 +106,12 @@ function Registration_full($id,$email_2, $surname, $birth_day, $birth_month, $bi
     }
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Registration_full($id,$email_2, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
-        return "User created";
+        sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
+            $sex, date("Y-m-d h:m:s"), $country, $city);
+        return "User updated";
     } else {
         return json_encode($errorArr);
     }
-
-
 
 
 }
