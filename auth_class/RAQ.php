@@ -9,14 +9,14 @@ require "../class/sqldb_connection.php";
 /*
  * Функция для обновления статуса ЗАРЕГЕСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ на онлайн
  */
-function Auth($mailornumber, $password)
+function Auth($login, $password)
 {
     $errorArr = array();    //создание массива ошибок.
 
-    if ($mailornumber == "") array_push($errorArr, "Failed email or phone number");  // проверка на пустые поля.
+    if ($login == "") array_push($errorArr, "Failed email or phone number");  // проверка на пустые поля.
     if ($password == "") array_push($errorArr, "Failed password");  //
 
-    $tmp_db_row = sqldb_connection::Auth_Select($mailornumber);   // достаем строку из БД
+    $tmp_db_row = sqldb_connection::Auth_Select($login);   // достаем строку из БД
 
     if (count($tmp_db_row) == 0) {
         array_push($errorArr, "Failed email or phone number");
