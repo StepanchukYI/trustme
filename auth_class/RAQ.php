@@ -24,7 +24,7 @@ function Auth($mailornumber, $password)
         if ($password != $tmp_db_row[0]['password']) array_push($errorArr, "Failed password");
     }
     if (count($errorArr) == 0) {
-        sqldb_connection::Update_online_status($tmp_db_row[0]['user_id'], "true");   // обновляем статус на онлайн
+        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], "true");   // обновляем статус на онлайн
         return "User online";
     } else {
         return $errorArr[0];

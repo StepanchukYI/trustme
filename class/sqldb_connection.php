@@ -12,7 +12,7 @@ class sqldb_connection
      */
     private function DB_connect()
     {
-        $dsn = 'mysql:dbname=Team_4;host=127.0.0.1';
+        $dsn = 'mysql:dbname=trustme_db;host=127.0.0.1';
         $user = 'root';
         $password = '';
 
@@ -30,7 +30,7 @@ class sqldb_connection
     public static function Auth_Select($login)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, login, password,xo_online FROM clients WHERE email= :login OR phone= :login");
+        $sth = $dbh->prepare("SELECT user_ID,email,phone,password FROM user WHERE email= :login OR phone= :login");
         $sth->execute(array(':login' => $login));
         return $sth->fetchAll();
     }
@@ -42,7 +42,7 @@ class sqldb_connection
     public static function Update_online_status($id, $value)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("UPDATE user SET online_status =:online_status  WHERE user_ID =:id");
+        $sth = $dbh->prepare("UPDATE user SET online_status =:online_status WHERE user_ID =:id");
         $sth->execute(array(':online_status' => $value, ':id' => $id));
     }
 
@@ -59,6 +59,7 @@ class sqldb_connection
 
     /*
      * Функция для внесения в базу минимальных данных о пользователе
+     *
      */
     public static function Registration_min($name, $phone, $password, $email, $code)
     {
