@@ -24,7 +24,7 @@ function Auth($login, $password)
         if ($password != $tmp_db_row[0]['password']) array_push($errorArr, "Failed password");
     }
     if (count($errorArr) == 0) {
-        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1);   // обновляем статус на онлайн
+        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1, date("Y-m-d h:m:s"));   // обновляем статус на онлайн
         return "User online";
     } else {
         return $errorArr[0];
@@ -122,6 +122,6 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
  */
 function Quit($id)
 {
-    sqldb_connection::Update_online_status($id, 0);   // обновляем статус на офлайн
+    sqldb_connection::Update_online_status($id, 0, date("Y-m-d h:m:s"));   // обновляем статус на офлайн
     return "User ofline";
 }
