@@ -423,5 +423,112 @@ class sqldb_connection
             ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;
 
     }
+    /*
+     * Функция для создания лота на аукционе и в базе
+     */
+
+    public static function bid_create($product_id, $user_id, $user_bid, $bid_date)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("INSERT INTO auction(product_id, iser_id, user_bid, bid_date)
+                              VALUES(:product_id, :user_id, :user_bid, :bid_date)");
+        $sth->execute(array(':product_id' => $product_id, ':user_id' => $user_id, ':user_bid' => $user_bid, ':bid_date' => $bid_date));
+    }
+
+    /*
+     * Функция для удаления лота с аукциона и из базы
+     */
+
+    public static function bid_remove($product_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("DELETE FROM auction WHERE product_id = :product_id");
+        $sth->execute(array(':product_id' => $product_id));
+    }
+
+    /*
+    * Функция добавления Buyer'a в случае успешной продажи + время окончания торгов
+    * Уже сделал Влад
+    */
+
+    public static function lot_send()
+    {
+
+
+
+    }
+
+    /*
+    * Выбрать все ставки по id пользователя Multi view
+    */
+
+    public static function select_multi_view_bids_by_user($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, p.small_photo, p.product_name, p.price
+                                      p.max_bid, p.auction_end
+                                FROM auction a 
+                                INNER JOIN product p 
+                                ON a.product_id = p.product_id
+                                WHERE user_id= :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll();
+    }
+
+    /*
+   * Отображение ставки по id пользователя и id auction Single view
+   */
+
+    public static function select_single_view_bids_by_user($user_id, $bid)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, p.large_photo, p.product_name, p.category,
+                                      p.price, p.made_in, p.desription, p.add_date, p.auction_qouta,
+                                      p.max_bid, p.min_bid, p.auction_end, p.product_country, p.product_city
+                                FROM auction a 
+                                INNER JOIN product p 
+                                ON a.product_id = p.product_id
+                                WHERE user_id= :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll();
+    }
+
+
+    /*
+     * Выбрать все ставки по id лота Multi view
+     */
+
+    public static function select_multi_view_bids_by_lot($product_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, p.small_photo, p.product_name, p.price
+                                      p.max_bid, p.auction_end
+                                FROM auction a 
+                                INNER JOIN product p 
+                                ON a.product_id = p.product_id
+                                WHERE product_id= :product_id");
+        $sth->execute(array(':product_id' => $product_id));
+        return $sth->fetchAll();
+    }
+
+
+    /*
+     * Выбрать все ставки по id лота Single view
+     */
+
+    public static function select_single_view_bids_by_lot($product_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, p.large_photo, p.product_name, p.category,
+                                      p.price, p.made_in, p.desription, p.add_date, p.auction_qouta,
+                                      p.max_bid, p.min_bid, p.auction_end, p.product_country, p.product_city
+                                FROM auction a 
+                                INNER JOIN product p 
+                                ON a.product_id = p.product_id
+                                WHERE product_id= :product_id");
+        $sth->execute(array(':product_id' => $product_id));
+        return $sth->fetchAll();
+    }
+
 }
 
