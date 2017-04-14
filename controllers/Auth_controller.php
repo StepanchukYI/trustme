@@ -4,7 +4,7 @@ require "../auth_class/RAQ.php";
 $command = $_GET['command'];
 
 switch ($command) {
-    case "auth":
+    case "auth": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=auth&login=bodunjo855@gmail.com&password=rootttt
         $login = $_GET['login'];
         $password = $_GET['password'];
 
@@ -14,7 +14,7 @@ switch ($command) {
             echo "failed feild";
         }
         break;
-    case "reg_min":
+    case "reg_min": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_min&email=&phone=809503856636616&password1=rootttt&password2=rootttt
         $email = $_GET['email'];
         $phone = $_GET['phone'];
         $password1 = $_GET['password1'];
@@ -26,7 +26,7 @@ switch ($command) {
             echo "failed feild";
         }
         break;
-    case "reg_full":
+    case "reg_full": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_full&id=1&email_2=fsdfsd@mads.ru&name=dasdasd&surname=fsdfsdfsdf&birth_day=14&birth_month=3&birth_year=1996&sex=1&country=Ucraine&city=Dnepro
         $id = $_GET['id'];
         $email_2 = $_GET['email_2'];
         $name = $_GET['name'];
@@ -45,7 +45,7 @@ switch ($command) {
             echo "failed feild";
         }
         break;
-    case "quit":
+    case "quit": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=quit&id=1
         $id = $_GET['id'];
         if($id != ""){
             echo Quit($id);
