@@ -6,38 +6,77 @@ $user_id = $_GET['user_id'];
 
 $User = new User();
 
-switch ($command)
-{
+switch ($command) {
     case "Multi_View_Users"://Полный список пользователей
-        echo $User->Multi_View_users($user_id);//ok
+        if ($user_id != "") {
+            echo $User->Multi_View_users($user_id);//ok
+        } else {
+            Log_wrire($user_id, "null field");
+            echo "null field";
+        }
         break;
     case "Multi_View_Friends"://Полный список друзей
-        echo $User->Multi_View_friends($user_id);//ok
+        if ($user_id != "") {
+            echo $User->Multi_View_friends($user_id);//ok
+        } else {
+            Log_wrire($user_id, "null field");
+            echo "null field";
+        }
         break;
     case "Multi_View_Friends_Online"://Полный список друзей онлайн
-        echo $User->Multi_View_friends_online($user_id);//ok
+        if ($user_id != "") {
+            echo $User->Multi_View_friends_online($user_id);//ok
+        } else {
+            Log_wrire($user_id, "null field");
+            echo "null field";
+        }
         break;
     case "Multi_View_Requests"://Полный список заявок в друзья
-        echo $User->Multi_View_Requests($user_id);//ok
+        if ($user_id != "") {
+            echo $User->Multi_View_Requests($user_id);//ok
+        } else {
+            Log_wrire($user_id, "null field");
+            echo "null field";
+        }
         break;
     case "Search"://Поиск
         $query = $_GET['query'];
-        echo $User->Search($user_id, $query);//ok
+        if ($user_id != "" && $query != "") {
+            echo $User->Search($user_id, $query);//ok
+        } else {
+            Log_wrire($user_id . " " . $query, "null field");
+            echo "null field";
+        }
         break;
     case "Single_View_User"://Посмотреть полную информацию о пользователе
         $user_id_select = $_GET['user_id_select'];
-        echo $User->Single_View_user($user_id, $user_id_select);//ok
+        if ($user_id != "" && $user_id_select != "") {
+            echo $User->Single_View_user($user_id, $user_id_select);//ok
+        } else {
+            Log_wrire($user_id . " " . $user_id_select, "null field");
+            echo "null field";
+        }
         break;
     case "Friendship"://Добавление в друзья, либо удаление из друзей(перенос в список заявок)(В обоих случаях указать только свой айди и айди друга)
         $user_id_friend = $_GET['user_id_friend'];
-        echo $User->Friendship($user_id, $user_id_friend);
+        if ($user_id != "" && $user_id_friend != "") {
+            echo $User->Friendship($user_id, $user_id_friend);
+        } else {
+            Log_wrire($user_id . " " . $user_id_friend, "null field");
+            echo "null field";
+        }
         break;
     case "Friendship_Cancel"://Удаление из списка заявок
         $user_id_friend = $_GET['user_id_friend'];
-        echo $User->Friendship_Cancel($user_id, $user_id_friend);
+        if ($user_id != "" && $user_id_friend != "") {
+            echo $User->Friendship_Cancel($user_id, $user_id_friend);
+        } else {
+            Log_wrire($user_id . " " . $user_id_friend, "null field");
+            echo "null field";
+        }
         break;
-
     default:
+        Log_wrire($command . " ", "failed command");
         echo "failed command";
         break;
 }

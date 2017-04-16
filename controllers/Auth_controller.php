@@ -1,5 +1,6 @@
 <?php
 require "../auth_class/RAQ.php";
+require "../log.php";
 
 $command = $_GET['command'];
 
@@ -11,18 +12,20 @@ switch ($command) {
         if ($login != "" && $password != "") {
             echo Auth($login, $password);
         } else {
+            Log_wrire($login . $password,"null field");
             echo "null field";
         }
         break;
     case "reg_min": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_min&email=&phone=809503856636616&password1=rootttt&password2=rootttt
-        $email = $_REQUEST['email'];
-        $phone = $_REQUEST['phone'];
+        $email     = $_REQUEST['email'];
+        $phone     = $_REQUEST['phone'];
         $password1 = $_REQUEST['password1'];
         $password2 = $_REQUEST['password2'];
 
         if ($email != "" && $phone != "" && $password1 != "" && $password1 != "") {
             echo Registration_min($email, $phone, $password1, $password2);
         } else {
+            Log_wrire($email." ".$phone." ".$password1." ".$password2,"null field");
             echo "null field";
         }
         break;
@@ -42,6 +45,8 @@ switch ($command) {
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
             echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
         } else {
+            Log_wrire($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
+                .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field");
             echo "null field";
         }
         break;
@@ -49,12 +54,14 @@ switch ($command) {
         $id = $_REQUEST['id'];
         if($id != ""){
             echo Quit($id);
-        }else{
+        } else {
+            Log_wrire($id . " ", "null field");
             echo "null field";
         }
         break;
 
     default:
+        Log_wrire($command." ","failed command");
         echo "failed command";
         break;
 }
