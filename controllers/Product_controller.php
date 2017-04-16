@@ -19,7 +19,7 @@ switch ($command) {
             && $product_city != "" && $product_photo != "" ) {
             echo Add_product($user_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city, $product_photo);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "product_to_lot": //http://localhost/trustme/controllers/product_controller.php?command=product_to_lot&product_id=1
@@ -28,7 +28,7 @@ switch ($command) {
         if ($product_id != "") {
             echo Product_to_lot($product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "product_delete": //http://localhost/trustme/controllers/product_controller.php?command=product_delete&product_id=1
@@ -37,7 +37,7 @@ switch ($command) {
         if ($product_id != "") {
             echo Product_delete($product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "edit_product": //http://localhost/trustme/controllers/product_controller.php?command=edit_product&user_id=1&product_id=1&product_name=Kettle&category=home&price=500&made_id=china&description=here_must_be_description&product_country=ukraine&product_city=dnipro&product_photo=here_must_be_photo
@@ -56,7 +56,7 @@ switch ($command) {
             && $product_city != "" && $product_photo != "" ) {
             echo Edit_product($user_id, $product_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city, $product_photo);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "product_search": //http://localhost/trustme/controllers/product_controller.php?command=product_search&product_id=1&query=kettle
@@ -66,7 +66,7 @@ switch ($command) {
         if ($product_id != "" && $query != "") {
             echo Product_search($product_id,$query);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "owner_buyer_status": //http://localhost/trustme/controllers/product_controller.php?command=owner_buyer_status&user_id=1
@@ -75,7 +75,7 @@ switch ($command) {
         if ($user_id != "" ) {
             echo Owner_buyer_status($user_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "product_singleview": //http://localhost/trustme/controllers/product_controller.php?command=product_singleview&user_id=1&product_id=1
@@ -85,7 +85,7 @@ switch ($command) {
         if ($user_id != "" && $product_id != "") {
             echo Product_singleview($user_id,$product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "product_multiview": //http://localhost/trustme/controllers/product_controller.php?command=product_multiview&user_id=1&product_id=1
@@ -95,7 +95,7 @@ switch ($command) {
         if ($user_id != "" && $product_id != "") {
             echo Product_multiview($user_id,$product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
 

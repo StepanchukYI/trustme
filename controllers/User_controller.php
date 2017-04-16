@@ -38,7 +38,7 @@ switch ($command)
         break;
 
     default:
-        echo "Incorrect command";
+        echo "failed command";
         break;
 }
 /*

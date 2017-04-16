@@ -12,7 +12,7 @@ switch ($command) {
         if ($product_id != "" && $user_id != "" && $user_bid != "") {
             echo makeBid($product_id, $user_id, $user_bid);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "showBidsByUser": //http://37.57.92.40/trustme/controllers/auction_controller.php?command=showBidsByUser&user_id=2
@@ -21,7 +21,7 @@ switch ($command) {
         if ($user_id != "") {
             echo showBidsByUser($user_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "showBidsByProduct": //http://37.57.92.40/trustme/controllers/auction_controller.php?command=showBidsByProduct&product_id=1
@@ -30,7 +30,7 @@ switch ($command) {
         if ($product_id != "") {
             echo showBidsByProduct($product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
     case "removeBid": //http://37.57.92.40/trustme/controllers/auction_controller.php?command=removeBid&product_id=2
@@ -39,7 +39,7 @@ switch ($command) {
         if ($product_id != "") {
             echo removeBid($product_id);
         } else {
-            echo "failed field";
+            echo "null field";
         }
         break;
 
