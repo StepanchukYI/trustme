@@ -1,5 +1,6 @@
 <?php
 require "../class/sqldb_connection.php";
+include_once ("../class/Samfuu.php");
 
 /*
  * User модель( как ее создавать я шарю, а что внутри пока загадка)

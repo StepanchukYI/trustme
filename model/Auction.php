@@ -1,5 +1,6 @@
 <?php
 require "../class/sqldb_connection.php";
+include_once ("../class/Samfuu.php");
 
 /*
  * Данные для групировки списков Аукционных товаров, для всех видов пользователей

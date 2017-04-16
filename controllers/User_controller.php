@@ -11,7 +11,7 @@ switch ($command) {
         if ($user_id != "") {
             echo $User->Multi_View_users($user_id);//ok
         } else {
-            Log_wrire($user_id, "null field");
+            Logtofile($user_id, "null field");
             echo "null field";
         }
         break;
@@ -19,7 +19,7 @@ switch ($command) {
         if ($user_id != "") {
             echo $User->Multi_View_friends($user_id);//ok
         } else {
-            Log_wrire($user_id, "null field");
+            Logtofile($user_id, "null field");
             echo "null field";
         }
         break;
@@ -27,7 +27,7 @@ switch ($command) {
         if ($user_id != "") {
             echo $User->Multi_View_friends_online($user_id);//ok
         } else {
-            Log_wrire($user_id, "null field");
+            Logtofile($user_id, "null field");
             echo "null field";
         }
         break;
@@ -35,7 +35,7 @@ switch ($command) {
         if ($user_id != "") {
             echo $User->Multi_View_Requests($user_id);//ok
         } else {
-            Log_wrire($user_id, "null field");
+            Logtofile($user_id, "null field");
             echo "null field";
         }
         break;
@@ -44,7 +44,7 @@ switch ($command) {
         if ($user_id != "" && $query != "") {
             echo $User->Search($user_id, $query);//ok
         } else {
-            Log_wrire($user_id . " " . $query, "null field");
+            Logtofile($user_id . " " . $query, "null field");
             echo "null field";
         }
         break;
@@ -53,7 +53,7 @@ switch ($command) {
         if ($user_id != "" && $user_id_select != "") {
             echo $User->Single_View_user($user_id, $user_id_select);//ok
         } else {
-            Log_wrire($user_id . " " . $user_id_select, "null field");
+            Logtofile($user_id . " " . $user_id_select, "null field");
             echo "null field";
         }
         break;
@@ -62,7 +62,7 @@ switch ($command) {
         if ($user_id != "" && $user_id_friend != "") {
             echo $User->Friendship($user_id, $user_id_friend);
         } else {
-            Log_wrire($user_id . " " . $user_id_friend, "null field");
+            Logtofile($user_id . " " . $user_id_friend, "null field");
             echo "null field";
         }
         break;
@@ -71,12 +71,12 @@ switch ($command) {
         if ($user_id != "" && $user_id_friend != "") {
             echo $User->Friendship_Cancel($user_id, $user_id_friend);
         } else {
-            Log_wrire($user_id . " " . $user_id_friend, "null field");
+            Logtofile($user_id . " " . $user_id_friend, "null field");
             echo "null field";
         }
         break;
     default:
-        Log_wrire($command . " ", "failed command");
+        Logtofile($command . " ", "failed command");
         echo "failed command";
         break;
 }

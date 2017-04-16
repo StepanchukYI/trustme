@@ -32,7 +32,14 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_ID,email,phone,password FROM user WHERE email= :login OR phone= :login");
         $sth->execute(array(':login' => $login));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function Auth_Select_All($login,$password)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT * FROM user WHERE email= :login OR phone= :login  AND password = :password");
+        $sth->execute(array(':login' => $login, ':password'=> $password));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
@@ -54,7 +61,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT email,phone,password FROM user WHERE phone=:phone OR email =:email ");
         $sth->execute(array(':phone' => $phone, ':email' => $email));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -237,7 +244,7 @@ class sqldb_connection
         FROM user INNER JOIN friends 
         ON friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id  AND friends.friend_request = true LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     /*
      * Функция для выбора следующих 50-ти друзей онлайн
@@ -250,7 +257,7 @@ class sqldb_connection
         FROM user INNER JOIN friends 
         ON (friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id) AND user.online_status = true AND friends.friend_request = true LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     /*
  * Функция для выбора по поисковому запросу еще 50-ти строк
@@ -262,7 +269,7 @@ class sqldb_connection
         $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
         FROM user WHERE user_id != :user_id AND (name LIKE :query OR surname LIKE :query) LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id, ':query' => $query));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     /*
      * Функция для просмотра еще заявок
@@ -275,7 +282,7 @@ class sqldb_connection
         FROM user INNER JOIN friends 
         ON friends.user_id_2 = :user_id  AND friends.friend_request = false LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -287,7 +294,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT last_user_id FROM user WHERE user_id =: user_id");
         $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     /*
      * Функция для обновление последнего id user-a, которого просмотрел user
@@ -349,7 +356,7 @@ class sqldb_connection
                                     WHERE $user_id == :owner_id
                                     OR $user_id == :buyer_id");
         $sth->execute(array(':user_id' => $user_id));;
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -381,7 +388,7 @@ class sqldb_connection
         //FROM product p INNER JOIN productgallery pg
         // у тебя в запросе WHERE product_id - конфликт имен // окей, понял - принял
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -397,7 +404,7 @@ class sqldb_connection
                                     INNER JOIN productgallery pg
                                     WHERE p.product_id =: product_id LIMIT 50  "); // показать первые 50 товаров
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -411,7 +418,7 @@ class sqldb_connection
                                     VALUES (:product_id, :user_id, :user_bid, :bid_date)");
         // тут был джоин который непонятно зачем тут был
         $sth->execute(array(':product_id' => $product_id, ':user_id' => $user_id, ':user_bid' => $price, ':bid_date' => $bid_date));
-        return $sth->fetchAll(); // возврат для проверки статуса
+        return $sth->fetchAll(PDO::FETCH_ASSOC); // возврат для проверки статуса
     }
 
     /*
@@ -424,7 +431,7 @@ class sqldb_connection
                                     FROM product
                                     WHERE product_id =: product_id  ");
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -440,7 +447,7 @@ class sqldb_connection
                                    WHERE p.product_id != :product_id
                                    AND (product_name LIKE :query OR category LIKE :query) LIMIT 50");
         $sth->execute(array(':product_id' => $product_id, ':query' => "%$query%"));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     /*
      * Редактирование товара
@@ -511,7 +518,7 @@ class sqldb_connection
                                 ON a.product_id = p.product_id
                                 WHERE a.user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -530,7 +537,7 @@ class sqldb_connection
                                 ON a.product_id = p.product_id
                                 WHERE a.user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
@@ -549,7 +556,7 @@ class sqldb_connection
                                 ON a.product_id = p.product_id
                                 WHERE p.product_id = :product_id");
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
@@ -569,7 +576,7 @@ class sqldb_connection
                                 ON a.product_id = p.product_id
                                 WHERE p.product_id = :product_id");
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

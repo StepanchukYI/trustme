@@ -1,6 +1,6 @@
 <?php
 require "../auth_class/RAQ.php";
-require "../log.php";
+
 
 $command = $_GET['command'];
 
@@ -12,7 +12,7 @@ switch ($command) {
         if ($login != "" && $password != "") {
             echo Auth($login, $password);
         } else {
-            Log_wrire($login . $password,"null field");
+            loging($login . " ". $password,"null field");
             echo "null field";
         }
         break;
@@ -25,7 +25,7 @@ switch ($command) {
         if ($email != "" && $phone != "" && $password1 != "" && $password1 != "") {
             echo Registration_min($email, $phone, $password1, $password2);
         } else {
-            Log_wrire($email." ".$phone." ".$password1." ".$password2,"null field");
+            loging($email." ".$phone." ".$password1." ".$password2,"null field");
             echo "null field";
         }
         break;
@@ -45,8 +45,7 @@ switch ($command) {
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
             echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
         } else {
-            Log_wrire($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
-                .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field");
+            loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field");
             echo "null field";
         }
         break;
@@ -55,13 +54,13 @@ switch ($command) {
         if($id != ""){
             echo Quit($id);
         } else {
-            Log_wrire($id . " ", "null field");
+            loging($id . " ", "null field");
             echo "null field";
         }
         break;
 
     default:
-        Log_wrire($command." ","failed command");
+        loging($command." ","failed command");
         echo "failed command";
         break;
 }
