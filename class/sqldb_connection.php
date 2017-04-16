@@ -43,7 +43,7 @@ class sqldb_connection
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE user SET online_status =:online_status, last_visit = :last_visit WHERE user_ID =:id");
-        $sth->execute(array(':online_status' => $value, ':id' => $id, ':last_visit' => $last_visit ));
+        $sth->execute(array(':online_status' => $value, ':id' => $id, ':last_visit' => $last_visit));
     }
 
     /*
@@ -80,107 +80,155 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE user SET email_2 = :email_2, name = :name,  surname = :surname, birth_day = :birth_day, birth_month =
         :birth_month, birth_year = :birth_year, sex = :sex, last_visit = :last_visit, online_status = :online_status, country = :country, city = :city WHERE user_id= :id");
-        $sth->execute(array(':email_2' => $email_2,':name' => $name, ':surname' => $surname, ':birth_day' => $birth_day,
+        $sth->execute(array(':email_2' => $email_2, ':name' => $name, ':surname' => $surname, ':birth_day' => $birth_day,
             ':birth_month' => $birth_month, ':birth_year' => $birth_year, ':sex' => $sex, ':last_visit' => $last_visit,
             ':online_status' => $online_status, ':country' => $country, ':city' => $city, ':id' => $id));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*
-     * Функция для выборки последнего id user-a, которого просмотрел user
-     */
-    public static function Select_Last_user_id($user_id)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT last_user_id FROM user WHERE user_id =: user_id");
-        $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
-    }
-    /*
-     * Функция для обновление последнего id user-a, которого просмотрел user
-     */
-    public static function Update_Last_user_id($user_id, $last_user_id)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("UPDATE user SET last_user_id = :last_user_id WHERE user_id =: user_id");
-        $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
-    }
-    /*
-     * Функция для выбора первых 50-ти пользователей
-     */
+     * Илья
+     *
+     * */
+
+    //Функция для выбора первых 50-ти пользователей
     public static function Select_Multi_View_users($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
-        FROM user WHERE user_id != :user_id LIMIT 50");
+        FROM user 
+        WHERE user_id != :user_id 
+        ORDER BY name
+        LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+//Функция для выбора одиночного просмотра
+    public static function Select_Single_View_user($user_id_select)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, large_photo, balance, 
+        online_status, rate, last_visit, country, city, reg_date
+        FROM user 
+        WHERE user_id = :user_id_select");
+        $sth->execute(array(':user_id_select' => $user_id_select));
+        return $sth->fetch(PDO::FETCH_ASSOC);
+    }
+
+//Функция для выборки списка друзей
+    public static function Select_Multi_View_friends($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname, u.sex, u.small_photo, u.balance, u.online_status, u.rate
+        FROM user u 
+        INNER JOIN friends f 
+        ON (f.user_id_1 = u.user_id OR f.user_id_2 = u.user_id) 
+        AND u.user_id != :user_id AND f.friend_request = TRUE 
+        AND (f.user_id_1 = :user_id OR f.user_id_2 = :user_id)
+        ORDER BY u.name 
+        LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+//Функция для выборки списка друзей онлайн
+    public static function Select_Multi_View_friends_online($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname, u.sex, u.small_photo, u.balance, u.online_status, u.rate
+        FROM user u 
+        INNER JOIN friends f 
+        ON (f.user_id_1 = u.user_id OR f.user_id_2 = u.user_id) 
+        AND u.user_id != :user_id AND f.friend_request = TRUE 
+        AND (f.user_id_1 = :user_id OR f.user_id_2 = :user_id)
+        AND u.online_status = TRUE 
+        ORDER BY u.name 
+        LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+//Функция для выбора по поисковому запросу
+    public static function Select_Search($user_id, $query)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
+        FROM user 
+        WHERE user_id != :user_id 
+        AND (name LIKE :query OR surname LIKE :query) 
+        LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id, ':query' => "%$query%"));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+//Функция проверки дружбы между клиентами
+    public static function Select_Check_Friendship($user_id, $user_id_friend)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT friend_request 
+        FROM friends 
+        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
+        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
+        return (boolean)$sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function Insert_Friendship($user_id, $user_id_friend, $flag)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("INSERT INTO friends (user_id_1, user_id_2, friend_request, friendship_date) 
+        VALUES (:user_id, :user_id_friend, :flag, NOW())");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
+        return $flag;
+    }
+//Функция для отмены дружбы или принятия заявки
+    public static function Update_Friendship($user_id, $user_id_friend, $flag)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("UPDATE friends SET friend_request = :flag, friendship_date = NOW()
+        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
+        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
+        return $flag;
+    }
+
+//Функция для отмены заявки
+    public static function Delete_Friendship($user_id, $user_id_friend)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("DELETE FROM friends
+        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
+        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
+    }
+
+//Функция для выборки списка заявок
+    public static function Select_Multi_View_Requests($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
+        FROM user INNER JOIN friends 
+        ON friends.user_id_2 = :user_id  AND friends.friend_request = false LIMIT 50");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll();
     }
+
+//---------------------------------------------------------------------------------------
     /*
-     * Функция для выбора следующих 50-ти пользователей
-     *
-     */
+      * Функция для выбора следующих 50-ти пользователей
+      *
+      */
     public static function Select_See_More($user_id, $last_user_id)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
         FROM user WHERE user_id != :user_id LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
-        return $sth->fetchAll();
-    }
-    /*
-     * Функция для выбора одиночного просмотра
-     */
-    public static function Select_Single_View_user($user_id_select)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, large_photo, balance, online_status, rate, last_visit, country, city, reg_date
-        FROM user WHERE user_id = :user_id_select");
-        $sth->execute(array(':user_id' => $user_id_select));
-        return $sth->fetchAll();
-    }
-    /*
-     * Функция для выборки списка друзей
-     */
-    public static function Select_Multi_View_friends($user_id)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
-        FROM user INNER JOIN friends 
-        ON friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id  AND friends.friend_request = true LIMIT 50");
-        $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
     /*
      * Функция для выбора следующих 50-ти друзей
+     *
      */
     public static function Select_See_More_friends($user_id, $last_user_id)
     {
@@ -192,44 +240,22 @@ class sqldb_connection
         return $sth->fetchAll();
     }
     /*
-     * Функция для выборки списка друзей онлайн
-     */
-    public static function Select_Multi_View_friends_online($user_id)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
-        FROM user INNER JOIN friends 
-        ON (friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id) AND user.online_status = true AND friends.friend_request = true LIMIT 50");
-        $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
-    }
-    /*
      * Функция для выбора следующих 50-ти друзей онлайн
+     *
      */
     public static function Select_See_More_friends_online($user_id, $last_user_id)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
         FROM user INNER JOIN friends 
-        ON (friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id) 
-        AND user.online_status = true AND friends.friend_request = true LIMIT :last_user_id, 50");
+        ON (friends.user_id_1 = :user_id OR friends.user_id_2 = :user_id) AND user.online_status = true AND friends.friend_request = true LIMIT :last_user_id, 50");
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
         return $sth->fetchAll();
     }
     /*
-     * Функция для выбора по поисковому запросу
-     */
-    public static function Select_Search($user_id, $query)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
-        FROM user WHERE user_id != :user_id AND (name LIKE :query OR surname LIKE :query) LIMIT 50");
-        $sth->execute(array(':user_id' => $user_id, ':query' => "%$query%"));
-        return $sth->fetchAll();
-    }
-    /*
-     * Функция для выбора по поисковому запросу еще 50-ти строк
-     */
+ * Функция для выбора по поисковому запросу еще 50-ти строк
+ *
+ */
     public static function Select_See_More_Search($user_id, $last_user_id, $query)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -239,54 +265,8 @@ class sqldb_connection
         return $sth->fetchAll();
     }
     /*
-     * Функция проверки дружбы между клиентами
-     */
-    public static function Select_Check_Friendship($user_id, $user_id_friend)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT friend_request FROM friends
-        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
-        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
-        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
-        return $sth->fetchAll();
-    }
-    /*
-     * Функция для отмены дружбы или принятия заявки
-     */
-    public static function Update_Friendship($user_id, $user_id_friend, $flag)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("UPDATE friends SET friend_request = :flag 
-        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
-        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
-        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
-        return $flag;
-    }
-    /*
-     * Функция для отмены заявки
-     */
-    public static function Delete_Friendship($user_id, $user_id_friend)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("DELETE FROM friends
-        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
-        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
-        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
-    }
-    /*
-     * Функция для выборки списка заявок
-     */
-    public static function Select_Multi_View_Requests($user_id)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
-        FROM user INNER JOIN friends 
-        ON friends.user_id_2 = :user_id  AND friends.friend_request = false LIMIT 50");
-        $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
-    }
-    /*
      * Функция для просмотра еще заявок
+     *
      */
     public static function Select_See_More_Requests($user_id, $last_user_id)
     {
@@ -298,27 +278,48 @@ class sqldb_connection
         return $sth->fetchAll();
     }
 
-
-
-
-
-
-
-
-
+    /*
+     * Функция для выборки последнего id user-a, которого просмотрел user
+     *
+     */
+    public static function Select_Last_user_id($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT last_user_id FROM user WHERE user_id =: user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll();
+    }
+    /*
+     * Функция для обновление последнего id user-a, которого просмотрел user
+     *
+     */
+    public static function Update_Last_user_id($user_id, $last_user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("UPDATE user SET last_user_id = :last_user_id WHERE user_id =: user_id");
+        $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
+    }
 
 
 
 
     /*
+     *
+     * Vlad
+     *
+     * */
+    /*
     * Добавить продукт
     * */
+    /*
+   * Добавить продукт
+   * */
     public static function Add_product( $product_name, $category, $price, $user_id, $buyer_id, $status, $made_in, $description, $add_date, $product_country, $product_city, $product_photo )
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,status,made_in,
-                                description,add_date,product_country,product_city)
-                             VALUES(:product_name, :category, :price, :made_in, :description, :add_date, 
+        $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,owner_id,buyer_id,status,made_in,
+                                description,add_date,product_country,product_city,product_photo)
+                             VALUES(:product_name, :category, :price, :user_id, :buyer_id, :status, :made_in, :description, :add_date,
                               :product_country, :product_city, :product_photo)");
         $sth->execute(array(':product_name' => $product_name, ':category' => $category, ':price' => $price,
             ':owner_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
@@ -378,7 +379,7 @@ class sqldb_connection
                                     WHERE p.product_id = :product_id  ");
         //Влад, смотри, указывай и имя первой таблицы, и второй.
         //FROM product p INNER JOIN productgallery pg
-        // у тебя в запросе WHERE product_id - конфликт имен
+        // у тебя в запросе WHERE product_id - конфликт имен // окей, понял - принял
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll();
     }
@@ -406,9 +407,9 @@ class sqldb_connection
     public static function Product_to_auction($product_id, $user_id, $price, $bid_date)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("INSERT INTO auction(product_id, user_id, p.price, bid_date)
-                                    VALUES (:product_id, :user_id, :user_bid, :bid_date)
-                                    INNER JOIN product p");
+        $sth = $dbh->prepare("INSERT INTO auction(product_id, user_id, price, bid_date)
+                                    VALUES (:product_id, :user_id, :user_bid, :bid_date)");
+        // тут был джоин который непонятно зачем тут был
         $sth->execute(array(':product_id' => $product_id, ':user_id' => $user_id, ':user_bid' => $price, ':bid_date' => $bid_date));
         return $sth->fetchAll(); // возврат для проверки статуса
     }
@@ -456,35 +457,11 @@ class sqldb_connection
             ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;
 
     }
+
+
     /*
-     * Функция для создания лота на аукционе и в базе
-     *
-     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+     * Dima
+     * */
     /*
      * Функция для создания лота на аукционе и в базе
      */
@@ -515,7 +492,6 @@ class sqldb_connection
 
     public static function lot_sold()
     {
-
 
 
     }
