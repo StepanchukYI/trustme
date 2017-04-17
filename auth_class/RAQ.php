@@ -39,7 +39,7 @@ function Auth($login, $password)
 /*
  * Функция для первичной регистрации пользователя.
  */
-function Registration_min($email, $phone, $password1, $password2)
+function Registration_min($email, $phone, $password1)
 {
 
     $errorArr = array();//создание массива ошибок.
@@ -53,9 +53,10 @@ function Registration_min($email, $phone, $password1, $password2)
         array_push($errorArr, "Incorrect password");
     }
     //сравнение паролей пароля
-    if ($password1 != $password2) {
+    /*if ($password1 != $password2) {
         array_push($errorArr, "Passwords are different");
-    }
+    }*/
+
 
     $tmp_db_row = sqldb_connection::Registration($phone, $email);
 
@@ -66,12 +67,12 @@ function Registration_min($email, $phone, $password1, $password2)
 
 
     if (count($errorArr) == 0) {
-        $ans = json_encode(sqldb_connection::Auth_Select_All($email,$password1));
         sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"), Temp_code());
-        logging($email." ".$phone." ".$password1." ".$password2,$ans,"Registration_min");
+        $ans = json_encode(sqldb_connection::Auth_Select_All($email,$password1));
+        logging($email." ".$phone." ".$password1,$ans,"Registration_min");
         return $ans;
     } else {
-        logging($email." ".$phone." ".$password1." ".$password2,json_encode($errorArr),"Registration_min");
+        logging($email." ".$phone." ".$password1,json_encode($errorArr),"Registration_min");
         return json_encode($errorArr);
     }
 }
@@ -112,9 +113,10 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
             $online = 1;
             sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
             $sex, date("Y-m-d h:m:s"), 1, $country, $city);
+            $ans =  json_encode(sqldb_connection::Auth_Select_All_id($id));
         logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
-            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"User updated","Registration_full");
-        return "User updated";
+            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$ans,"Registration_full");
+        return $ans;
     } else {
         logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
             .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,json_encode($errorArr),"Registration_full");

@@ -47,6 +47,18 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /*
+    * Выбока из баззы всего юзера
+    */
+    public static function Auth_Select_All_id($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT * FROM user WHERE user_id = :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 
     /*
      * Функция для обновления статуса ЗАРЕГЕСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ на онлайл или офлайн

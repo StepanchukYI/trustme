@@ -1,8 +1,8 @@
 <?php
 require "../model/User.php";
 
-$command = $_GET['command'];
-$user_id = $_GET['user_id'];
+$command = $_REQUEST['command'];
+$user_id = $_REQUEST['user_id'];
 
 $User = new User();
 
@@ -40,7 +40,7 @@ switch ($command) {
         }
         break;
     case "Search"://Поиск
-        $query = $_GET['query'];
+        $query = $_REQUEST['query'];
         if ($user_id != "" && $query != "") {
             echo $User->Search($user_id, $query);//ok
         } else {
@@ -58,7 +58,7 @@ switch ($command) {
         }
         break;
     case "Friendship"://Добавление в друзья, либо удаление из друзей(перенос в список заявок)(В обоих случаях указать только свой айди и айди друга)
-        $user_id_friend = $_GET['user_id_friend'];
+        $user_id_friend = $_REQUEST['user_id_friend'];
         if ($user_id != "" && $user_id_friend != "") {
             echo $User->Friendship($user_id, $user_id_friend);
         } else {
@@ -67,7 +67,7 @@ switch ($command) {
         }
         break;
     case "Friendship_Cancel"://Удаление из списка заявок
-        $user_id_friend = $_GET['user_id_friend'];
+        $user_id_friend = $_REQUEST['user_id_friend'];
         if ($user_id != "" && $user_id_friend != "") {
             echo $User->Friendship_Cancel($user_id, $user_id_friend);
         } else {

@@ -7,7 +7,7 @@ function logging($login, $report, $foo_name)
 
     $test = fwrite($fp, "Parameters: " . $login .
         "\nFunction name: " .$foo_name.
-        "\nReturn to user: " . $report.
+        "\nResponse text: " . $report.
         "\nDate: " . date(DATE_RSS) .
         "\n----------------------------------------------------------\n");
 

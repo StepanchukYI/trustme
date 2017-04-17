@@ -1,19 +1,19 @@
 <?php
 require "../model/Product.php";
 
-$command = $_GET['command'];
+$command = $_REQUEST['command'];
 
 switch ($command) {
     case "add_product": //http://localhost/trustme/controllers/product_controller.php?command=add_product&user_id=1&product_name=Kettle&category=home&price=500&made_in=china&description=here_must_be_description&product_country=ukraine&product_city=dnipro&product_photo=photo_link
-        $user_id = $_GET['user_id'];
-        $product_name = $_GET['product_name'];
-        $category = $_GET['category'];
-        $price = $_GET['price'];
-        $made_in = $_GET['made_in'];
-        $description = $_GET['description'];
-        $product_country = $_GET['product_country'];
-        $product_city = $_GET['product_city'];
-        $product_photo = $_GET['product_photo'];
+        $user_id = $_REQUEST['user_id'];
+        $product_name = $_REQUEST['product_name'];
+        $category = $_REQUEST['category'];
+        $price = $_REQUEST['price'];
+        $made_in = $_REQUEST['made_in'];
+        $description = $_REQUEST['description'];
+        $product_country = $_REQUEST['product_country'];
+        $product_city = $_REQUEST['product_city'];
+        $product_photo = $_REQUEST['product_photo'];
 
         if ($user_id != "" && $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
             && $product_city != "" && $product_photo != ""
@@ -26,7 +26,7 @@ switch ($command) {
         }
         break;
     case "product_to_lot": //http://localhost/trustme/controllers/product_controller.php?command=product_to_lot&product_id=1
-        $product_id = $_GET['product_id'];
+        $product_id = $_REQUEST['product_id'];
 
         if ($product_id != "") {
             echo Product_to_lot($product_id);
@@ -36,7 +36,7 @@ switch ($command) {
         }
         break;
     case "product_delete": //http://localhost/trustme/controllers/product_controller.php?command=product_delete&product_id=1
-        $product_id = $_GET['product_id'];
+        $product_id = $_REQUEST['product_id'];
 
         if ($product_id != "") {
             echo Product_delete($product_id);
@@ -46,16 +46,16 @@ switch ($command) {
         }
         break;
     case "edit_product": //http://localhost/trustme/controllers/product_controller.php?command=edit_product&user_id=1&product_id=1&product_name=Kettle&category=home&price=500&made_id=china&description=here_must_be_description&product_country=ukraine&product_city=dnipro&product_photo=here_must_be_photo
-        $user_id = $_GET['user_id'];
-        $product_id = $_GET['product_id'];
-        $product_name = $_GET['product_name'];
-        $category = $_GET['category'];
-        $price = $_GET['price'];
-        $made_in = $_GET['made_in'];
-        $description = $_GET['description'];
-        $product_country = $_GET['product_country'];
-        $product_city = $_GET['product_city'];
-        $product_photo = $_GET['product_photo'];
+        $user_id = $_REQUEST['user_id'];
+        $product_id = $_REQUEST['product_id'];
+        $product_name = $_REQUEST['product_name'];
+        $category = $_REQUEST['category'];
+        $price = $_REQUEST['price'];
+        $made_in = $_REQUEST['made_in'];
+        $description = $_REQUEST['description'];
+        $product_country = $_REQUEST['product_country'];
+        $product_city = $_REQUEST['product_city'];
+        $product_photo = $_REQUEST['product_photo'];
 
         if ($user_id != "" && $product_id != "" && $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
             && $product_city != "" && $product_photo != ""
@@ -66,8 +66,8 @@ switch ($command) {
         }
         break;
     case "product_search": //http://localhost/trustme/controllers/product_controller.php?command=product_search&product_id=1&query=kettle
-        $product_id = $_GET['product_id'];
-        $query = $_GET['query'];
+        $product_id = $_REQUEST['product_id'];
+        $query = $_REQUEST['query'];
 
         if ($product_id != "" && $query != "") {
             echo Product_search($product_id, $query);
@@ -77,7 +77,7 @@ switch ($command) {
         }
         break;
     case "owner_buyer_status": //http://localhost/trustme/controllers/product_controller.php?command=owner_buyer_status&user_id=1
-        $user_id = $_GET['user_id'];
+        $user_id = $_REQUEST['user_id'];
 
         if ($user_id != "") {
             echo Owner_buyer_status($user_id);
@@ -87,8 +87,8 @@ switch ($command) {
         }
         break;
     case "product_singleview": //http://localhost/trustme/controllers/product_controller.php?command=product_singleview&user_id=1&product_id=1
-        $user_id = $_GET['user_id'];
-        $product_id = $_GET['product_id'];
+        $user_id = $_REQUEST['user_id'];
+        $product_id = $_REQUEST['product_id'];
 
         if ($user_id != "" && $product_id != "") {
             echo Product_singleview($user_id, $product_id);
@@ -98,8 +98,8 @@ switch ($command) {
         }
         break;
     case "product_multiview": //http://localhost/trustme/controllers/product_controller.php?command=product_multiview&user_id=1&product_id=1
-        $user_id = $_GET['user_id'];
-        $product_id = $_GET['product_id'];
+        $user_id = $_REQUEST['user_id'];
+        $product_id = $_REQUEST['product_id'];
 
         if ($user_id != "" && $product_id != "") {
             echo Product_multiview($user_id, $product_id);
