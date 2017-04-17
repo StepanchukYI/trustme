@@ -12,7 +12,7 @@ switch ($command) {
         if ($login != "" && $password != "") {
             echo Auth($login, $password);
         } else {
-            loging($login . " ". $password,"null field",$command);
+            logging($login . " ". $password,"null field",$command);
             echo "null field";
         }
         break;
@@ -25,7 +25,7 @@ switch ($command) {
         if ($email != "" && $phone != "" && $password1 != "" && $password1 != "") {
             echo Registration_min($email, $phone, $password1, $password2);
         } else {
-            loging($email." ".$phone." ".$password1." ".$password2,"null field");
+            logging($email." ".$phone." ".$password1." ".$password2,"null field");
             echo "null field";
         }
         break;
@@ -45,7 +45,7 @@ switch ($command) {
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
             echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
         } else {
-            loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field",$command);
+            logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field",$command);
             echo "null field";
         }
         break;
@@ -54,13 +54,13 @@ switch ($command) {
         if($id != ""){
             echo Quit($id);
         } else {
-            loging($id . " ", "null field",$command);
+            logging($id . " ", "null field",$command);
             echo "null field";
         }
         break;
 
     default:
-        loging($command." ","failed command",$command);
+        logging($command." ","failed command",$command);
         echo "failed command";
         break;
 }

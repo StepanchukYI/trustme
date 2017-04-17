@@ -20,7 +20,7 @@ switch ($command) {
         ) {
             echo Add_product($user_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city, $product_photo);
         } else {
-            loging($user_id . " " . $product_name . " " . $category . " " . $price . " " . $price . " " . $made_in . " " . $description
+            logging($user_id . " " . $product_name . " " . $category . " " . $price . " " . $price . " " . $made_in . " " . $description
                 . " " . $product_country . " " . $product_city . " " . $product_photo, "null field",$command);
             echo "null field";
         }
@@ -31,7 +31,7 @@ switch ($command) {
         if ($product_id != "") {
             echo Product_to_lot($product_id);
         } else {
-            loging($product_id . " ", "null field",$command);
+            logging($product_id . " ", "null field",$command);
             echo "null field";
         }
         break;
@@ -41,7 +41,7 @@ switch ($command) {
         if ($product_id != "") {
             echo Product_delete($product_id);
         } else {
-            loging($product_id . " ", "null field",$command);
+            logging($product_id . " ", "null field",$command);
             echo "null field";
         }
         break;
@@ -72,7 +72,7 @@ switch ($command) {
         if ($product_id != "" && $query != "") {
             echo Product_search($product_id, $query);
         } else {
-            loging($product_id . " " . $query, "null field",$command);
+            logging($product_id . " " . $query, "null field",$command);
             echo "null field";
         }
         break;
@@ -82,7 +82,7 @@ switch ($command) {
         if ($user_id != "") {
             echo Owner_buyer_status($user_id);
         } else {
-            loging($user_id, "null field",$command);
+            logging($user_id, "null field",$command);
             echo "null field";
         }
         break;
@@ -93,7 +93,7 @@ switch ($command) {
         if ($user_id != "" && $product_id != "") {
             echo Product_singleview($user_id, $product_id);
         } else {
-            loging($product_id . " " . $product_id, "null field",$command);
+            logging($product_id . " " . $product_id, "null field",$command);
             echo "null field";
         }
         break;
@@ -104,13 +104,13 @@ switch ($command) {
         if ($user_id != "" && $product_id != "") {
             echo Product_multiview($user_id, $product_id);
         } else {
-            loging($product_id . " " . $product_id, "null field",$command);
+            logging($product_id . " " . $product_id, "null field",$command);
             echo "null field";
         }
         break;
 
     default:
-        loging($command . " ", "failed command",$command);
+        logging($command . " ", "failed command",$command);
         echo "failed command";
         break;
 }

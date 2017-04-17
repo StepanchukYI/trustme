@@ -39,11 +39,11 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
         sqldb_connection::Add_product( $product_name, $category, $price, $user_id,
             0,"disable", $made_in, $description, date('Y-m-d H:i:s'),
             $product_country, $product_city, $product_photo);
-        loging($user_id." ".$product_name." ".$category." ".$price." ".$made_in." ".$description." ".
+        logging($user_id." ".$product_name." ".$category." ".$price." ".$made_in." ".$description." ".
             $product_country." ".$product_city." ".$product_photo,"Product created","Add_product");
         return "Product created";
     } else {
-        loging($user_id." ".$product_name." ".$category." ".$price." ".$made_in." ".$description." ".
+        logging($user_id." ".$product_name." ".$category." ".$price." ".$made_in." ".$description." ".
             $product_country." ".$product_city." ".$product_photo,json_encode($errorArr),"Add_product");
         return json_encode($errorArr);
     }
@@ -62,12 +62,12 @@ function Product_to_lot($product_id)
 
     if($tempArr != null ){
         sqldb_connection::Update_product_status($product_id, "active");   // обновляем статус на active, если мы успешно выставили товар на аукцион
-        loging($product_id." ","Product status is Active","Product_to_lot");
+        logging($product_id." ","Product status is Active","Product_to_lot");
         return "Product status is Active";
     }
     else{
         array_push($errorArr, "Failed to up product in auction");
-        loging($product_id." ",json_encode($errorArr),"Product_to_lot");
+        logging($product_id." ",json_encode($errorArr),"Product_to_lot");
         return json_encode($errorArr);
     }
 
@@ -81,12 +81,12 @@ function Product_delete($product_id)
     $errorArr = array();
     if($product_id != null){
         sqldb_connection::Delete_product($product_id); // удаляем продукт из базы данных
-        loging($product_id." ","Product successfully deleted","Product_delete");
+        logging($product_id." ","Product successfully deleted","Product_delete");
         return "Product successfully deleted";
     }
     else{
         array_push($errorArr, "Failed product delete");
-        loging($product_id." ",json_encode($errorArr),"Product_delete");
+        logging($product_id." ",json_encode($errorArr),"Product_delete");
         return json_encode($errorArr);
     }
 }
@@ -124,14 +124,14 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
     if (count($errorArr) == 0) {
         sqldb_connection::Update_product($product_id, $product_name, $category, $price, $user_id, "","disable",
             $made_in, $description, date('Y-m-d H:i:s'), $product_country, $product_city, $product_photo);
-        loging($user_id." ".$product_id." ".$product_name." ".
+        logging($user_id." ".$product_id." ".$product_name." ".
             $category." ".$price." ".$made_in." ".$description." ".
             $product_country." ".$product_city,
             "Product update",
             "Product_edit");
         return "Product update";
     } else {
-        loging($user_id." ".$product_id." ".$product_name." ".
+        logging($user_id." ".$product_id." ".$product_name." ".
             $category." ".$price." ".$made_in." ".$description." ".
             $product_country." ".$product_city, json_encode($errorArr),
             "Product_edit");
@@ -153,19 +153,19 @@ function Product_search($product_id, $query)
         $tmp_db_row = sqldb_connection::Product_Search($product_id,$query);
     }
     if(count($tmp_db_row) == 0){
-        loging($product_id." ".$query." ",
+        logging($product_id." ".$query." ",
             "NOTHING",
             "Product_search");
         return "NOTHING";
     }
     if(count($tmp_db_row)>0){
-        loging($product_id." ".$query." ",
+        logging($product_id." ".$query." ",
             json_encode($tmp_db_row),
             "Product_search");
         return json_encode($tmp_db_row);
     }
     else{
-        loging($product_id." ".$query." ",
+        logging($product_id." ".$query." ",
             json_encode($errorArr),
             "Product_search");
         return json_encode($errorArr);
@@ -189,14 +189,14 @@ function Owner_buyer_status($user_id)
         if($tmp_db_row[0]['buyer_id'] == $user_id){
             $status = "buyer";
         }
-        loging($user_id." ",
+        logging($user_id." ",
              $status,
             "Owner_buyer_status");
         return $status;
     }
     else{
         array_push($errorArr, "Failed to get owner/buyer status");
-        loging($user_id." ",
+        logging($user_id." ",
             json_encode($errorArr),
             "Owner_buyer_status");
         return json_encode($errorArr);
@@ -213,14 +213,14 @@ function Product_singleview($user_id, $product_id)
     if($product_id != null){
         $tmp_db_row = sqldb_connection::Show_product_singleview($product_id);
         array_push($tmp_db_row,Owner_buyer_status($user_id));
-        loging($user_id." ".$product_id,
+        logging($user_id." ".$product_id,
             json_decode($tmp_db_row),
             "Product_singleview");
         return json_decode($tmp_db_row);
     }
     else{
         array_push($errorArr, "Failed to singleview product");
-        loging($user_id." ".$product_id,
+        logging($user_id." ".$product_id,
             json_encode($errorArr),
             "Product_singleview");
         return json_encode($errorArr);
@@ -236,14 +236,14 @@ function Product_multiview($user_id, $product_id)
     if($product_id != null){
         $tmp_db_row = sqldb_connection::Show_product_multiview($product_id);
         array_push($tmp_db_row,Owner_buyer_status($user_id));
-        loging($user_id." ".$product_id,
+        logging($user_id." ".$product_id,
             json_decode($tmp_db_row),
             "Product_multiview");
         return json_decode($tmp_db_row);
     }
     else{
         array_push($errorArr,"Failed to multiview product");
-        loging($user_id." ".$product_id,
+        logging($user_id." ".$product_id,
             json_encode($errorArr),
             "Product_multiview");
         return json_encode($errorArr);

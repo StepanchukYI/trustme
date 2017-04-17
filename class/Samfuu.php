@@ -1,6 +1,6 @@
 <?php
 
-function loging($login, $report, $foo_name)
+function logging($login, $report, $foo_name)
 {
     $name = "../log/" . date("Y-m-d").".log";
     $fp = fopen($name, "a");

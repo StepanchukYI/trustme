@@ -31,10 +31,10 @@ class User
         }
         if (count($tmp_db_row) > 0) {
             //sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']);// обновляем наш последний id
-            loging($user_id, json_encode($tmp_db_row), "Multi_View_users");
+            logging($user_id, json_encode($tmp_db_row), "Multi_View_users");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Multi_View_users");
+            logging($user_id, json_encode($errorArr), "Multi_View_users");
             return json_encode($errorArr);
         }
     }
@@ -51,14 +51,14 @@ class User
 
 
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "Single_View_user");
+            logging($user_id, "NOTHING", "Single_View_user");
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "Single_View_user");
+            logging($user_id, json_encode($tmp_db_row), "Single_View_user");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Single_View_user");
+            logging($user_id, json_encode($errorArr), "Single_View_user");
             return json_encode($errorArr);
         }
     }
@@ -74,14 +74,14 @@ class User
 
 
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "Multi_View_friends");
+            logging($user_id, "NOTHING", "Multi_View_friends");
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "Multi_View_friends");
+            logging($user_id, json_encode($tmp_db_row), "Multi_View_friends");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Multi_View_friends");
+            logging($user_id, json_encode($errorArr), "Multi_View_friends");
             return json_encode($errorArr);
         }
     }
@@ -99,14 +99,14 @@ class User
 
 
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "Multi_View_friends_online");
+            logging($user_id, "NOTHING", "Multi_View_friends_online");
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "Multi_View_friends_online");
+            logging($user_id, json_encode($tmp_db_row), "Multi_View_friends_online");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Multi_View_friends_online");
+            logging($user_id, json_encode($errorArr), "Multi_View_friends_online");
             return json_encode($errorArr);
         }
     }
@@ -128,15 +128,15 @@ class User
           Если в этом массиве есть ошибки, мы ничего не делаем. Передлай
         */
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "Search");
+            logging($user_id, "NOTHING", "Search");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "Search");
+            logging($user_id, json_encode($tmp_db_row), "Search");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Search");
+            logging($user_id, json_encode($errorArr), "Search");
             return json_encode($errorArr);
         }
     }
@@ -165,10 +165,10 @@ class User
             */
         }
         if ($tmp_db_row == true || $tmp_db_row == false) {
-            loging($user_id." ".$user_id_friend, json_encode($tmp_db_row), "Friendship");
+            logging($user_id." ".$user_id_friend, json_encode($tmp_db_row), "Friendship");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id." ".$user_id_friend, json_encode($errorArr), "Friendship");
+            logging($user_id." ".$user_id_friend, json_encode($errorArr), "Friendship");
             return json_encode($errorArr);
         }
     }
@@ -182,9 +182,9 @@ class User
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
         sqldb_connection::Delete_Friendship($user_id, $user_id_friend);
-        loging($user_id." ".$user_id_friend, "true", "Friendship_Cancel");
+        logging($user_id." ".$user_id_friend, "true", "Friendship_Cancel");
         if (count($errorArr) > 0) {
-            loging($user_id." ".$user_id_friend, json_encode($errorArr), "Friendship_Cancel");
+            logging($user_id." ".$user_id_friend, json_encode($errorArr), "Friendship_Cancel");
             return json_encode($errorArr);
         }
     }
@@ -203,14 +203,14 @@ class User
 
 
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "Multi_View_Requests");
+            logging($user_id, "NOTHING", "Multi_View_Requests");
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "Multi_View_Requests");
+            logging($user_id, json_encode($tmp_db_row), "Multi_View_Requests");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "Multi_View_Requests");
+            logging($user_id, json_encode($errorArr), "Multi_View_Requests");
             return json_encode($errorArr);
         }
     }
@@ -228,15 +228,15 @@ class User
             sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
         }
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "See_More_Requests");
+            logging($user_id, "NOTHING", "See_More_Requests");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "See_More_Requests");
+            logging($user_id, json_encode($tmp_db_row), "See_More_Requests");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "See_More_Requests");
+            logging($user_id, json_encode($errorArr), "See_More_Requests");
             return json_encode($errorArr);
         }
     }
@@ -253,15 +253,15 @@ class User
             sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
         }
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "See_More");
+            logging($user_id, "NOTHING", "See_More");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "See_More");
+            logging($user_id, json_encode($tmp_db_row), "See_More");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "See_More");
+            logging($user_id, json_encode($errorArr), "See_More");
             return json_encode($errorArr);
         }
     }
@@ -278,15 +278,15 @@ class User
             sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
         }
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "See_More_Search");
+            logging($user_id, "NOTHING", "See_More_Search");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "See_More_Search");
+            logging($user_id, json_encode($tmp_db_row), "See_More_Search");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "See_More_Search");
+            logging($user_id, json_encode($errorArr), "See_More_Search");
             return json_encode($errorArr);
         }
     }
@@ -303,15 +303,15 @@ class User
             sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
         }
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "See_More_Friends_online");
+            logging($user_id, "NOTHING", "See_More_Friends_online");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "See_More_Friends_online");
+            logging($user_id, json_encode($tmp_db_row), "See_More_Friends_online");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "See_More_Friends_online");
+            logging($user_id, json_encode($errorArr), "See_More_Friends_online");
             return json_encode($errorArr);
         }
     }
@@ -328,15 +328,15 @@ class User
             sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
         }
         if (count($tmp_db_row) == 0) {
-            loging($user_id, "NOTHING", "See_More_Friends");
+            logging($user_id, "NOTHING", "See_More_Friends");
             return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            loging($user_id, json_encode($tmp_db_row), "See_More_Friends");
+            logging($user_id, json_encode($tmp_db_row), "See_More_Friends");
             return json_encode($tmp_db_row);
         } else {
-            loging($user_id, json_encode($errorArr), "See_More_Friends");
+            logging($user_id, json_encode($errorArr), "See_More_Friends");
             return json_encode($errorArr);
         }
     }
