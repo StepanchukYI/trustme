@@ -122,8 +122,7 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
 
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Update_product($product_id, $product_name, $category, $price, $user_id, "","disable",
-            $made_in, $description, date('Y-m-d H:i:s'), $product_country, $product_city, $product_photo);
+        sqldb_connection::Product_Edit($product_id, $product_name, $category, $price, $made_in, $description, date("Y-m-d h:m:s"), $product_country, $product_city, $product_photo);
         logging($user_id." ".$product_id." ".$product_name." ".
             $category." ".$price." ".$made_in." ".$description." ".
             $product_country." ".$product_city,

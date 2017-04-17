@@ -93,7 +93,6 @@ class sqldb_connection
             ':code' => $code, ':reg_date' => $reg_date));
     }
 
-
     /*
      * Функция для внесения в базу почти всех данных о пользователя
      */
@@ -333,9 +332,9 @@ class sqldb_connection
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,owner_id,buyer_id,status,made_in,
-                                description,add_date,product_country,product_city,product_photo)
+                                description,add_date,product_country,product_city)
                              VALUES(:product_name, :category, :price, :user_id, :buyer_id, :status, :made_in, :description, :add_date,
-                              :product_country, :product_city, :product_photo)");
+                              :product_country, :product_city)");
         $sth->execute(array(':product_name' => $product_name, ':category' => $category, ':price' => $price,
             ':owner_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
             ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
@@ -420,7 +419,7 @@ class sqldb_connection
     public static function Product_to_auction($product_id, $user_id, $price, $bid_date)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("INSERT INTO auction(product_id, user_id, price, bid_date)
+        $sth = $dbh->prepare("INSERT INTO auction(product_id, user_id, user_bid, bid_date)
                                     VALUES (:product_id, :user_id, :user_bid, :bid_date)");
         // тут был джоин который непонятно зачем тут был
         $sth->execute(array(':product_id' => $product_id, ':user_id' => $user_id, ':user_bid' => $price, ':bid_date' => $bid_date));
@@ -465,7 +464,7 @@ class sqldb_connection
         $sth = $dbh->prepare("UPDATE product
                                     SET status =:status, product_name =: product_name, category =: category, price =: price,
                                     made_in =: made_in, description =: description, add_date =: add_date, product_country =: product_country,
-                                    product_city = :product_city, product_photo =: product_photo
+                                    product_city = :product_city
                                     WHERE product_id =:product_id");
         $sth->execute(array(':product_id' => $product_id, ':product_name' => $product_name, ':category' => $category, ':price' => $price, ':made_in' => $made_in, ':description' => $description,
             ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;

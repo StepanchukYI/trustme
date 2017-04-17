@@ -112,7 +112,7 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
     if (count($errorArr) == 0) {
             $online = 1;
             sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
-            $sex, date("Y-m-d h:m:s"), 1, $country, $city);
+            $sex, date("Y-m-d h:m:s"), $online, $country, $city);
             $ans =  json_encode(sqldb_connection::Auth_Select_All_id($id));
         logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
             .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$ans,"Registration_full");

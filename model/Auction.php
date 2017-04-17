@@ -80,6 +80,7 @@ function showBidsByProduct($product_id)
 {
     //return $product_id;
     $errorArr = array();//создание массива ошибок.
+
     if ($product_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
 
     $tmp_db_row = sqldb_connection::select_multi_view_bids_by_lot($product_id);   // достаем строки из БД
