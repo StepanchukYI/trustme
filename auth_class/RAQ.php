@@ -31,8 +31,8 @@ function Auth($login, $password)
         loging($login ." ". $password,$ans,"Auth");
         return $ans;
     } else {
-        loging($login . $password,$errorArr[0],"Auth");
-        return $errorArr[0];
+        loging($login . $password,json_encode($errorArr),"Auth");
+        return json_encode($errorArr);
     }
 }
 
@@ -71,7 +71,7 @@ function Registration_min($email, $phone, $password1, $password2)
         loging($email." ".$phone." ".$password1." ".$password2,$ans,"Registration_min");
         return $ans;
     } else {
-        loging($email." ".$phone." ".$password1." ".$password2,$errorArr,"Registration_min");
+        loging($email." ".$phone." ".$password1." ".$password2,json_encode($errorArr),"Registration_min");
         return json_encode($errorArr);
     }
 }
@@ -117,7 +117,7 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
         return "User updated";
     } else {
         loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
-            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$errorArr,"Registration_full");
+            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,json_encode($errorArr),"Registration_full");
         return json_encode($errorArr);
     }
 
