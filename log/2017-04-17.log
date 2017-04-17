@@ -1,0 +1,205 @@
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Auth
+Return to user: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-17 01:04:00","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Mon, 17 Apr 2017 14:03:53 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 0993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:34:16 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 0993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:42:35 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 0993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:45:06 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 0993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:45:10 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fmpassword
+Function name: Auth
+Response text: ["Failed email or phone number"]
+Date: Mon, 17 Apr 2017 16:46:14 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fmpassword
+Function name: Auth
+Response text: ["Failed email or phone number"]
+Date: Mon, 17 Apr 2017 16:46:42 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-17 01:04:53","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Mon, 17 Apr 2017 16:47:39 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:49:02 +0200
+----------------------------------------------------------
+Parameters:  809503856636616 rootttt rootttt
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:50:41 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:51:02 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:51:03 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 16:51:04 +0200
+----------------------------------------------------------
+Parameters: somemail@gmail.com 809944877951 rootttt rootttt
+Function name: Registration_min
+Response text: [{"user_id":"7","email":"somemail@gmail.com","email_2":"","phone":"809944877951","password":"rootttt","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-17 05:04:33","last_visit":"0000-00-00 00:00:00","balance":"0","rate":"0","country":"","city":"","temp_code":"826191"}]
+Date: Mon, 17 Apr 2017 17:16:33 +0200
+----------------------------------------------------------
+Parameters: 7 fsdfsd@mads.ru dasdasd fsdfsdfsdf 14 3 1996 1 Ucraine Dnepro
+Function name: Registration_full
+Response text: User updated
+Date: Mon, 17 Apr 2017 17:18:01 +0200
+----------------------------------------------------------
+Parameters: 7 fsdfsd@mads.ru dasdasd fsdfsdfsdf 14 3 1996 1 Ucraine Dnepro
+Function name: Registration_full
+Response text: Array
+Date: Mon, 17 Apr 2017 17:22:25 +0200
+----------------------------------------------------------
+Parameters: 7 fsdfsd@mads.ru dasdasd fsdfsdfsdf 14 3 1996 1 Ucraine Dnepro
+Function name: Registration_full
+Response text: Array
+Date: Mon, 17 Apr 2017 17:22:46 +0200
+----------------------------------------------------------
+Parameters: 7 fsdfsd@mads.ru dasdasd fsdfsdfsdf 14 3 1996 1 Ucraine Dnepro
+Function name: Registration_full
+Response text: [{"user_id":"7","email":"somemail@gmail.com","email_2":"fsdfsd@mads.ru","phone":"809944877951","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-17 05:04:33","last_visit":"2017-04-17 05:04:47","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"826191"}]
+Date: Mon, 17 Apr 2017 17:22:47 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 17:43:07 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 17:43:21 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800
+Function name:
+Response text: null field
+Date: Mon, 17 Apr 2017 17:43:26 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800 password1
+Function name: Registration_min
+Response text: [{"user_id":"8","email":"dn97@ua.fm","email_2":"","phone":"380993414800","password":"password1","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-17 05:04:40","last_visit":"0000-00-00 00:00:00","balance":"0","rate":"0","country":"","city":"","temp_code":"798499"}]
+Date: Mon, 17 Apr 2017 17:52:40 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800 password1
+Function name: Registration_min
+Response text: ["phone already using","email already using"]
+Date: Mon, 17 Apr 2017 17:52:51 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm 380993414800 password1
+Function name: Registration_min
+Response text: [{"user_id":"9","email":"dn97@ua.fm","email_2":"","phone":"380993414800","password":"password1","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-17 05:04:49","last_visit":"0000-00-00 00:00:00","balance":"0","rate":"0","country":"","city":"","temp_code":"373905"}]
+Date: Mon, 17 Apr 2017 17:57:49 +0200
+----------------------------------------------------------
+Parameters:
+Function name:
+Response text: failed command
+Date: Mon, 17 Apr 2017 18:01:45 +0200
+----------------------------------------------------------
+Parameters:
+Function name:
+Response text: failed command
+Date: Mon, 17 Apr 2017 18:01:45 +0200
+----------------------------------------------------------
+Parameters:
+Function name:
+Response text: failed command
+Date: Mon, 17 Apr 2017 18:01:45 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByUser
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 20:47:39 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByUser
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:34:18 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByProduct
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:34:51 +0200
+----------------------------------------------------------
+Parameters: 0
+Function name: showBidsByProduct
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:35:00 +0200
+----------------------------------------------------------
+Parameters:
+Function name: showBidsByProduct
+Response text: null field
+Date: Mon, 17 Apr 2017 21:35:04 +0200
+----------------------------------------------------------
+Parameters: null
+Function name: showBidsByProduct
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:35:11 +0200
+----------------------------------------------------------
+Parameters: 1 1 50
+Function name: makeBid
+Response text: Lot created
+Date: Mon, 17 Apr 2017 21:35:53 +0200
+----------------------------------------------------------
+Parameters: 1 1 70
+Function name: makeBid
+Response text: Lot created
+Date: Mon, 17 Apr 2017 21:35:59 +0200
+----------------------------------------------------------
+Parameters: 1 1 90
+Function name: makeBid
+Response text: Lot created
+Date: Mon, 17 Apr 2017 21:36:02 +0200
+----------------------------------------------------------
+Parameters:
+Function name: showBidsByProduct
+Response text: null field
+Date: Mon, 17 Apr 2017 21:36:13 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByProduct
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:36:17 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByUser
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:36:31 +0200
+----------------------------------------------------------
+Parameters: 2
+Function name: showBidsByUser
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:37:24 +0200
+----------------------------------------------------------
+Parameters: 1
+Function name: showBidsByProduct
+Response text: NOTHING
+Date: Mon, 17 Apr 2017 21:37:33 +0200
+----------------------------------------------------------
