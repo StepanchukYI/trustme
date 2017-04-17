@@ -58,7 +58,6 @@ switch ($command) {
             echo "null field";
         }
         break;
-
     default:
         logging($command." ","failed command",$command);
         echo "failed command";

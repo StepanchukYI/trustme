@@ -34,6 +34,11 @@ class sqldb_connection
         $sth->execute(array(':login' => $login));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
+    /*
+    * Выбока из баззы всего юзера
+    */
     public static function Auth_Select_All($login,$password)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -66,7 +71,6 @@ class sqldb_connection
 
     /*
      * Функция для внесения в базу минимальных данных о пользователе
-     *
      */
     public static function Registration_min($phone, $password, $email, $reg_date, $code)
     {
@@ -80,7 +84,6 @@ class sqldb_connection
 
     /*
      * Функция для внесения в базу почти всех данных о пользователя
-     *
      */
     public static function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $last_visit, $online_status, $country, $city)
     {
@@ -95,7 +98,7 @@ class sqldb_connection
     /*
      * Илья
      *
-     * */
+     */
 
     //Функция для выбора первых 50-ти пользователей
     public static function Select_Multi_View_users($user_id)
@@ -110,7 +113,7 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//Функция для выбора одиночного просмотра
+    //Функция для выбора одиночного просмотра
     public static function Select_Single_View_user($user_id_select)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -122,7 +125,7 @@ class sqldb_connection
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
-//Функция для выборки списка друзей
+    //Функция для выборки списка друзей
     public static function Select_Multi_View_friends($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -138,7 +141,7 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//Функция для выборки списка друзей онлайн
+    //Функция для выборки списка друзей онлайн
     public static function Select_Multi_View_friends_online($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -155,7 +158,7 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//Функция для выбора по поисковому запросу
+    //Функция для выбора по поисковому запросу
     public static function Select_Search($user_id, $query)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -168,7 +171,7 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-//Функция проверки дружбы между клиентами
+    //Функция проверки дружбы между клиентами
     public static function Select_Check_Friendship($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -188,7 +191,7 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
         return $flag;
     }
-//Функция для отмены дружбы или принятия заявки
+    //Функция для отмены дружбы или принятия заявки
     public static function Update_Friendship($user_id, $user_id_friend, $flag)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -199,7 +202,7 @@ class sqldb_connection
         return $flag;
     }
 
-//Функция для отмены заявки
+    //Функция для отмены заявки
     public static function Delete_Friendship($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -209,7 +212,7 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
     }
 
-//Функция для выборки списка заявок
+    //Функция для выборки списка заявок
     public static function Select_Multi_View_Requests($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -222,9 +225,8 @@ class sqldb_connection
 
 //---------------------------------------------------------------------------------------
     /*
-      * Функция для выбора следующих 50-ти пользователей
-      *
-      */
+     * Функция для выбора следующих 50-ти пользователей
+     */
     public static function Select_See_More($user_id, $last_user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -233,9 +235,9 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
+
     /*
      * Функция для выбора следующих 50-ти друзей
-     *
      */
     public static function Select_See_More_friends($user_id, $last_user_id)
     {
@@ -246,9 +248,9 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /*
      * Функция для выбора следующих 50-ти друзей онлайн
-     *
      */
     public static function Select_See_More_friends_online($user_id, $last_user_id)
     {
@@ -259,10 +261,10 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /*
- * Функция для выбора по поисковому запросу еще 50-ти строк
- *
- */
+     * Функция для выбора по поисковому запросу еще 50-ти строк
+     */
     public static function Select_See_More_Search($user_id, $last_user_id, $query)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -271,9 +273,9 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':last_user_id' => $last_user_id, ':query' => $query));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /*
      * Функция для просмотра еще заявок
-     *
      */
     public static function Select_See_More_Requests($user_id, $last_user_id)
     {
@@ -287,7 +289,6 @@ class sqldb_connection
 
     /*
      * Функция для выборки последнего id user-a, которого просмотрел user
-     *
      */
     public static function Select_Last_user_id($user_id)
     {
@@ -296,9 +297,9 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /*
      * Функция для обновление последнего id user-a, которого просмотрел user
-     *
      */
     public static function Update_Last_user_id($user_id, $last_user_id)
     {
@@ -308,19 +309,14 @@ class sqldb_connection
     }
 
 
-
-
     /*
      *
      * Vlad
-     *
-     * */
+     */
+
     /*
-    * Добавить продукт
-    * */
-    /*
-   * Добавить продукт
-   * */
+     * Добавить продукт
+     */
     public static function Add_product( $product_name, $category, $price, $user_id, $buyer_id, $status, $made_in, $description, $add_date, $product_country, $product_city, $product_photo )
     {
         $dbh = sqldb_connection::DB_connect();
@@ -333,6 +329,7 @@ class sqldb_connection
             ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
             ':product_city' => $product_city, ':product_photo' => $product_photo));
     }
+
     /*
      * Функция для обновления СТАТУСА ТОВАРА на active, sold, disable
      */
@@ -373,7 +370,6 @@ class sqldb_connection
     /*
     * Функция для выборки данных О ТОВАРЕ для пользователя
     * */
-
     public static function Show_product_singleview($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -394,7 +390,6 @@ class sqldb_connection
     /*
    * Функция для выборки данных О ТОВАРЕ для пользователя
    * */
-
     public static function Show_product_multiview($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -410,7 +405,6 @@ class sqldb_connection
     /*
      * Закидываем товар на аукцион
      * */
-
     public static function Product_to_auction($product_id, $user_id, $price, $bid_date)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -449,6 +443,7 @@ class sqldb_connection
         $sth->execute(array(':product_id' => $product_id, ':query' => "%$query%"));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /*
      * Редактирование товара
      * */
@@ -472,7 +467,6 @@ class sqldb_connection
     /*
      * Функция для создания лота на аукционе и в базе
      */
-
     public static function bid_create($product_id, $user_id, $user_bid, $bid_date)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -484,7 +478,6 @@ class sqldb_connection
     /*
      * Функция для удаления лота с аукциона и из базы
      */
-
     public static function bid_remove($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -496,7 +489,6 @@ class sqldb_connection
     * Функция добавления Buyer'a в случае успешной продажи + время окончания торгов
     * Уже сделал Влад
     */
-
     public static function lot_sold()
     {
 
@@ -506,7 +498,6 @@ class sqldb_connection
     /*
     * Выбрать все ставки по id пользователя Multi view
     */
-
     public static function select_multi_view_bids_by_user($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -524,7 +515,6 @@ class sqldb_connection
     /*
    * Отображение ставки по id пользователя и id auction Single view
    */
-
     public static function select_single_view_bids_by_user($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -544,7 +534,6 @@ class sqldb_connection
     /*
      * Выбрать все ставки по id лота Multi view
      */
-
     public static function select_multi_view_bids_by_lot($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -563,7 +552,6 @@ class sqldb_connection
     /*
      * Выбрать все ставки по id лота Single view
      */
-
     public static function select_single_view_bids_by_lot($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
