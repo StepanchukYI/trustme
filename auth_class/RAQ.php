@@ -7,7 +7,6 @@ include_once ("../class/Samfuu.php");
  * функции и методы для авторизаии(изменения данных в БД)
  */
 
-
 /*
  * Функция для обновления статуса ЗАРЕГЕСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ на онлайн
  */
@@ -29,14 +28,13 @@ function Auth($login, $password)
     if (count($errorArr) == 0) {
         $ans = json_encode(sqldb_connection::Auth_Select_All($login,$password));
         sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1, date("Y-m-d h:m:s"));// обновляем статус на онлайн
-        loging($login ." ". $password,$ans);
+        loging($login ." ". $password,$ans,"Auth");
         return $ans;
     } else {
-        loging($login . $password,$errorArr[0]);
+        loging($login . $password,$errorArr[0],"Auth");
         return $errorArr[0];
     }
 }
-
 
 /*
  * Функция для первичной регистрации пользователя.
@@ -70,14 +68,13 @@ function Registration_min($email, $phone, $password1, $password2)
     if (count($errorArr) == 0) {
         $ans = json_encode(sqldb_connection::Auth_Select_All($email,$password1));
         sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"), Temp_code());
-        loging($email." ".$phone." ".$password1." ".$password2,$ans);
+        loging($email." ".$phone." ".$password1." ".$password2,$ans,"Registration_min");
         return $ans;
     } else {
-        loging($email." ".$phone." ".$password1." ".$password2,$errorArr);
+        loging($email." ".$phone." ".$password1." ".$password2,$errorArr,"Registration_min");
         return json_encode($errorArr);
     }
 }
-
 
 /*
  * Функция для получения временного пароля для продолжения регистрации
@@ -90,7 +87,6 @@ function Temp_code()
     }
     return $tempcode;
 }
-
 
 /*
  * Функция для полной регистрации пользователя
@@ -117,11 +113,11 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
             sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
             $sex, date("Y-m-d h:m:s"), 1, $country, $city);
         loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
-            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"User updated");
+            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"User updated","Registration_full");
         return "User updated";
     } else {
         loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
-            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$errorArr);
+            .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$errorArr,"Registration_full");
         return json_encode($errorArr);
     }
 
@@ -134,6 +130,6 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 function Quit($id)
 {
     sqldb_connection::Update_online_status($id, 0, date("Y-m-d h:m:s"));   // обновляем статус на офлайн
-    loging($id . " ", "User ofline");
+    loging($id . " ", "User ofline","Quit");
     return "User ofline";
 }

@@ -12,7 +12,7 @@ switch ($command) {
         if ($product_id != "" && $user_id != "" && $user_bid != "") {
             echo makeBid($product_id, $user_id, $user_bid);
         } else {
-            //Logtofile($product_id . " " . $user_id . " " . $user_bid, "null field");
+            loging($product_id . " " . $user_id . " " . $user_bid, "null field", $command);
             echo "null field";
         }
         break;
@@ -22,7 +22,7 @@ switch ($command) {
         if ($user_id != "") {
             echo showBidsByUser($user_id);
         } else {
-            //Logtofile($user_id, "null field");
+            loging($user_id, "null field" , $command);
             echo "null field";
         }
         break;
@@ -32,7 +32,7 @@ switch ($command) {
         if ($product_id != "") {
             echo showBidsByProduct($product_id);
         } else {
-            //Logtofile($product_id, "null field");
+            loging($product_id, "null field" , $command);
             echo "null field";
         }
         break;
@@ -42,13 +42,13 @@ switch ($command) {
         if ($product_id != "") {
             echo removeBid($product_id);
         } else {
-            //Logtofile($product_id, "null field");
+            loging($product_id, "null field" , $command);
             echo "null field";
         }
         break;
 
     default:
-        //Logtofile($command . " ", "failed command");
+        loging($command . " ", "failed command" , $command);
         echo "failed command";
         break;
 }

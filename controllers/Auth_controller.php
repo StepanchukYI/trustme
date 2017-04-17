@@ -2,17 +2,17 @@
 require "../auth_class/RAQ.php";
 
 
-$command = $_GET['command'];
+$command = $_REQUEST['command'];
 
 switch ($command) {
     case "auth": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=auth&login=bodunjo855@gmail.com&password=rootttt
-        $login = $_REQUEST['login'];
+        $login = $_REQUEST['email'];
         $password = $_REQUEST['password'];
 
         if ($login != "" && $password != "") {
             echo Auth($login, $password);
         } else {
-            loging($login . " ". $password,"null field");
+            loging($login . " ". $password,"null field",$command);
             echo "null field";
         }
         break;
@@ -45,7 +45,7 @@ switch ($command) {
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
             echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
         } else {
-            loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field");
+            loging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field",$command);
             echo "null field";
         }
         break;
@@ -54,13 +54,13 @@ switch ($command) {
         if($id != ""){
             echo Quit($id);
         } else {
-            loging($id . " ", "null field");
+            loging($id . " ", "null field",$command);
             echo "null field";
         }
         break;
 
     default:
-        loging($command." ","failed command");
+        loging($command." ","failed command",$command);
         echo "failed command";
         break;
 }
