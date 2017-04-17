@@ -10,6 +10,7 @@ switch ($command) {
         $user_bid = $_REQUEST['user_bid'];
 
         if ($product_id != "" && $user_id != "" && $user_bid != "") {
+
             echo makeBid($product_id, $user_id, $user_bid);
         } else {
             logging($product_id . " " . $user_id . " " . $user_bid, "null field", $command);
@@ -30,7 +31,9 @@ switch ($command) {
         $product_id = $_REQUEST['product_id'];
 
         if ($product_id != "") {
-            echo showBidsByProduct($product_id);
+            $ans = showBidsByProduct($product_id);
+
+            echo $ans;
         } else {
             logging($product_id, "null field" , $command);
             echo "null field";

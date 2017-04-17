@@ -10,10 +10,12 @@ switch ($command) {
         $password = $_REQUEST['password'];
 
         if ($login != "" && $password != "") {
-            echo Auth($login, $password);
+            $ans = Auth($login, $password);
+            logging($login . " ".$password, "User ofline","Quit");
+            echo $ans;
         } else {
             logging($login . " ". $password,"null field",$command);
-            echo "null field";
+                        echo "null field";
         }
         break;
     case "registration_min": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_min&email=&phone=809503856636616&password1=rootttt&password2=rootttt
@@ -23,9 +25,11 @@ switch ($command) {
         //$password2 = $_REQUEST['password2'];
 
         if ($email != "" && $phone != "" && $password1 != "") {
-            echo Registration_min($email, $phone, $password1);
+            $ans = Registration_min($email, $phone, $password1);
+            logging($email." ".$phone." ".$password1,$ans,"Registration_min");
+            echo  $ans;
         } else {
-            logging($email." ".$phone,"null field");
+            logging($email." ".$phone,"null field", $command);
             echo "null field";
         }
         break;
@@ -43,15 +47,19 @@ switch ($command) {
 
         if ($id != "" && $email_2 != "" && $name != "" && $surname != "" && $birth_day != ""
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != "") {
-            echo Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
+            $ans = Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
+            logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." "
+                .$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,$ans,"Registration_full");
+            echo $ans;
         } else {
             logging($id." ".$email_2." ".$name." ".$surname." ".$birth_day." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city,"null field",$command);
             echo "null field";
         }
         break;
-    case "quit": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=quit&id=1
+    case "quit":  //http://37.57.92.40/trustme/controllers/auth_controller.php?command=quit&id=1
         $id = $_REQUEST['id'];
         if($id != ""){
+            logging($id . " ", "User ofline","Quit");
             echo Quit($id);
         } else {
             logging($id . " ", "null field",$command);

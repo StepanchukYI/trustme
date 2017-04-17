@@ -203,3 +203,23 @@ Function name: showBidsByProduct
 Response text: NOTHING
 Date: Mon, 17 Apr 2017 21:37:33 +0200
 ----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-17 09:04:19","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Mon, 17 Apr 2017 23:00:43 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-17 11:04:43","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Mon, 17 Apr 2017 23:01:59 +0200
+----------------------------------------------------------
+Parameters: dn97@ua.fm password1
+Function name: Auth
+Response text: [{"user_id":"9","email":"dn97@ua.fm","email_2":"","phone":"380993414800","password":"password1","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-17 05:04:49","last_visit":"0000-00-00 00:00:00","balance":"0","rate":"0","country":"","city":"","temp_code":"373905"}]
+Date: Mon, 17 Apr 2017 23:58:28 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-17 04:04:39","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Mon, 17 Apr 2017 23:59:40 +0200
+----------------------------------------------------------
