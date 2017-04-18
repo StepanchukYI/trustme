@@ -21,11 +21,9 @@ function makeBid($product_id, $user_id, $user_bid)
 
     if (count($errorArr) == 0) {
         sqldb_connection::bid_create($product_id, $user_id, $user_bid, date("Y-m-d h:m:s"));
-        logging($product_id." ".$user_id." ".$user_bid, "Lot created", "makeBid");
         return "Lot created";
     } else {
-        logging($product_id." ".$user_id." ".$user_bid,$errorArr[0], "makeBid");
-        return json_encode($errorArr);
+        return $errorArr;
     }
 }
 
@@ -37,11 +35,9 @@ function removeBid($product_id)
 {
     if($product_id != null){
         sqldb_connection::bid_remove($product_id); // удаляем лот из базы данных
-        logging($product_id." ", "Lot successfully deleted", "removeBid");
         return "Lot successfully deleted";
     }
     else{
-        logging($product_id." ", "Wrong lot id", "removeBid");
         return "Wrong lot id";
     }
 }
@@ -55,18 +51,14 @@ function showBidsByUser($user_id)
     $errorArr = array();//создание массива ошибок.
     if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
 
-
     $tmp_db_row = sqldb_connection::select_multi_view_bids_by_user($user_id);   // достаем строки из БД
 
     if (count($tmp_db_row) == 0) {
-        logging($user_id." ", "NOTHING", "showBidsByUser");
         return "NOTHING";
     }
     if (count($tmp_db_row) > 0) {
-        logging($user_id." ", json_encode($tmp_db_row), "showBidsByUser");
-        return json_encode($tmp_db_row);
+        return $tmp_db_row;
     } else {
-        logging($user_id." ", $errorArr[0], "showBidsByUser");
         return $errorArr[0];
     }
 }
@@ -87,14 +79,11 @@ function showBidsByProduct($product_id)
 
 
     if (count($tmp_db_row) == 0) {
-        logging($product_id." ", "NOTHING", "showBidsByProduct");
         return "NOTHING";
     }
     if (count($tmp_db_row) > 0) {
-        logging($product_id." ", json_encode($tmp_db_row), "showBidsByProduct");
-        return json_encode($tmp_db_row);
+        return $tmp_db_row;
     } else {
-        logging($product_id." ", $errorArr[0], "showBidsByProduct");
         return $errorArr[0];
     }
 }

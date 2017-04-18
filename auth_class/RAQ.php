@@ -27,10 +27,10 @@ function Auth($login, $password)
     }
     if (count($errorArr) == 0) {
         sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1, date("Y-m-d h:m:s"));// обновляем статус на онлайн
-        return json_encode(sqldb_connection::Auth_Select_All($login,$password));
+        return sqldb_connection::Auth_Select_All($login,$password);
     } else {
 
-        return json_encode($errorArr);
+        return $errorArr;
     }
 }
 
@@ -66,9 +66,9 @@ function Registration_min($email, $phone, $password1)
 
     if (count($errorArr) == 0) {
         sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"), Temp_code());
-        return json_encode(sqldb_connection::Auth_Select_All($email,$password1));
+        return sqldb_connection::Auth_Select_All($email,$password1);
     } else {
-        return json_encode($errorArr);
+        return $errorArr;
     }
 }
 
@@ -108,9 +108,9 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
             $online = 1;
             sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
             $sex, date("Y-m-d h:m:s"), $online, $country, $city);
-        return json_encode(sqldb_connection::Auth_Select_All_id($id));
+        return sqldb_connection::Auth_Select_All_id($id);
     } else {
-        return json_encode($errorArr);
+        return $errorArr;
     }
 
 
@@ -122,5 +122,5 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 function Quit($id)
 {
     sqldb_connection::Update_online_status($id, 0, date("Y-m-d h:m:s"));   // обновляем статус на офлайн
-    return "User ofline";
+    return "User_ofline";
 }

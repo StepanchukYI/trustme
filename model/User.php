@@ -12,16 +12,16 @@ class User
 //Принимаем id user-a, для которого нужно вывести список всех user-ов
     function Multi_View_users($user_id)
     {
-        if ($user_id == null) return json_encode("Failed id");  // проверка на пустой id
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
         else {
             $tmp_db_row = sqldb_connection::Select_Multi_View_users($user_id);   // достаем строки из БД
         }
 
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }
     }
 
@@ -37,66 +37,66 @@ class User
         }
 
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         } else {
-            return json_encode($errorArr);
+            return $errorArr;
         }
     }
 
 //Принимаем id user-a, для которого нужно вывести список всех его friends
     function Multi_View_friends($user_id)
     {
-        if ($user_id == null) return json_encode("Failed id");  // проверка на пустой id
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
         else {
             $tmp_db_row = sqldb_connection::Select_Multi_View_friends($user_id);   // достаем строки из БД
         }
 
 
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }
     }
 
 //Принимаем id user-a, для которого нужно вывести список всех его друзей которые онлайн
     function Multi_View_friends_online($user_id)
     {
-        if ($user_id == null) return json_encode("Failed id");  // проверка на пустой id
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
 
         else {
             $tmp_db_row = sqldb_connection::Select_Multi_View_friends_online($user_id);   // достаем строки из БД
         }
 
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }
     }
 
 //Принимаем id user-a и его поисковый запрос, возвращаем все возможные варианты совпадений
     function Search($user_id, $query)
     {
-        if ($user_id == null) return json_encode("Failed id");  // проверка на пустой id
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
         if ($query == "") $tmp_db_row = sqldb_connection::Select_Multi_View_users($user_id);
 
         if (strlen($query) > 0) {
-            $query = trim($query);
 
+            $query = trim($query);
             $tmp_db_row = sqldb_connection::Select_Search($user_id, $query);   // достаем строки из БД
         }
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
 
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }
     }
 
@@ -108,7 +108,6 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
         else{
-
             $flag = sqldb_connection::Select_Check_Friendship($user_id, $user_id_friend);
             if($flag == true || $flag == false) {
                 $tmp_db_row = sqldb_connection::Update_Friendship($user_id, $user_id_friend, !$flag);   // достаем строки из БД
@@ -119,9 +118,9 @@ class User
 
         }
         if ($tmp_db_row == true || $tmp_db_row == false) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }else {
-            return json_encode($errorArr);
+            return $errorArr;
         }
     }
 
@@ -133,31 +132,29 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
-        else{
+        if(count($errorArr) == 0){
             sqldb_connection::Delete_Friendship($user_id, $user_id_friend);
-        }
-        if (count($errorArr) > 0) {
-            return json_encode($errorArr);
+        } else {
+            return $errorArr;
         }
     }
 
 //Принимаем id user-a, для которого нужно вывести список всех его заявок в друзья
     function Multi_View_Requests($user_id)
     {
-        if ($user_id == null) return json_encode("Failed id");  // проверка на пустой id
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
         else {
             $tmp_db_row = sqldb_connection::Select_Multi_View_Requests($user_id);   // достаем строки из БД
         }
 
 
         if (count($tmp_db_row) == 0) {
-            return json_encode("NOTHING");
+            return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return json_encode($tmp_db_row);
+            return $tmp_db_row;
         }
     }
-
 
     /*
 
@@ -268,6 +265,5 @@ class User
         }
 
     */
-
 
 }
