@@ -119,10 +119,10 @@ switch ($command) {
         }
         break;
     case "list_my_product":
-        $user_id = $_REQUEST['owner_id'];
+        $user_id = $_REQUEST['user_id'];
         //$category = $_REQUEST['category'];
 
-        if ($user_id != "" && $category != ""){
+        if ($user_id != ""){
             $response = List_my_product($user_id);
         } else{
             $response = "null field";
@@ -132,7 +132,7 @@ switch ($command) {
         $user_id = $_REQUEST['owner_id'];
         //$category = $_REQUEST['category'];
 
-        if ($user_id != "" && $category != ""){
+        if ($user_id != ""){
             $response = List_orders($user_id);
         } else{
             $response = "null field";

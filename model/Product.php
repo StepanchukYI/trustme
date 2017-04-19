@@ -235,7 +235,7 @@ function List_my_product($user_id)
 {
     $errorArr = array();
 
-    if($category != null){
+    if($user_id != null){
         $tmp_db_row = sqldb_connection::Get_list_my_product($user_id);
         return $tmp_db_row;
     }
