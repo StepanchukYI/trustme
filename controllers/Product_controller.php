@@ -95,6 +95,7 @@ switch ($command) {
 
         if ($user_id != "" && $product_id != "") {
             $response = Product_singleview($user_id, $product_id);
+
         } else {
             $response = "null field";
         }
@@ -131,7 +132,6 @@ switch ($command) {
     case "list_orders":
         $user_id = $_REQUEST['owner_id'];
         //$category = $_REQUEST['category'];
-
         if ($user_id != ""){
             $response = List_orders($user_id);
         } else{

@@ -45,7 +45,6 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
     }
 }
 
-
 /*
  * Выставляем товар на лот
  * */
@@ -68,7 +67,6 @@ function Product_to_lot($product_id)
 
 }
 
-
 /*
  * Удаление продукта
  * */
@@ -84,7 +82,6 @@ function Product_delete($product_id)
         return $errorArr;
     }
 }
-
 
 /*
  * Редактирование продукта
@@ -124,7 +121,6 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
     }
 }
 
-
 /*
  * Поиск продукта по критериям , см выборку, возвращает первые 50
  * */
@@ -149,7 +145,6 @@ function Product_search($product_id, $query)
     }
 }
 
-
 /*
  * Функция на проверку является ли юзер овнером или байером
  * */
@@ -161,10 +156,10 @@ function Owner_buyer_status($user_id)
     {
         $tmp_db_row = sqldb_connection::Get_owner_buyer($user_id); // чтобы получить ид овнера и байера
 
-        if($tmp_db_row[0]['owner_id'] == $user_id ){
+        if($tmp_db_row['owner_id'] == $user_id ){
             $status = "owner";
         }
-        if($tmp_db_row[0]['buyer_id'] == $user_id){
+        if($tmp_db_row['buyer_id'] == $user_id){
             $status = "buyer";
         }
         return $status;
@@ -174,7 +169,6 @@ function Owner_buyer_status($user_id)
         return $errorArr;
     }
 }
-
 
 /*
  *Синглвью продукта
@@ -186,7 +180,7 @@ function Product_singleview($user_id, $product_id)
     if($product_id != null){
         $tmp_db_row = sqldb_connection::Show_product_singleview($product_id);
         array_push($tmp_db_row,Owner_buyer_status($user_id));
-        return json_decode($tmp_db_row);
+        return $tmp_db_row;
     }
     else{
         array_push($errorArr, "Failed to singleview product");
