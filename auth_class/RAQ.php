@@ -29,7 +29,6 @@ function Auth($login, $password)
         sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1, date("Y-m-d h:m:s"));// обновляем статус на онлайн
         return sqldb_connection::Auth_Select_All($login,$password);
     } else {
-
         return $errorArr;
     }
 }
@@ -122,5 +121,5 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 function Quit($id)
 {
     sqldb_connection::Update_online_status($id, 0, date("Y-m-d h:m:s"));   // обновляем статус на офлайн
-    return "User_ofline";
+    return sqldb_connection::Auth_Select_All_id($id);
 }

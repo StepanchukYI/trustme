@@ -109,6 +109,35 @@ switch ($command) {
             $response = "null field";
         }
         break;
+    case "list_product":
+        $category = $_REQUEST['category'];
+
+        if($category != ""){
+            $response = List_product($category);
+        } else {
+            $response = "null field";
+        }
+        break;
+    case "list_my_product":
+        $user_id = $_REQUEST['owner_id'];
+        //$category = $_REQUEST['category'];
+
+        if ($user_id != "" && $category != ""){
+            $response = List_my_product($user_id);
+        } else{
+            $response = "null field";
+        }
+        break;
+    case "list_orders":
+        $user_id = $_REQUEST['owner_id'];
+        //$category = $_REQUEST['category'];
+
+        if ($user_id != "" && $category != ""){
+            $response = List_orders($user_id);
+        } else{
+            $response = "null field";
+        }
+        break;
     default:
         $response = "failed command";
         break;

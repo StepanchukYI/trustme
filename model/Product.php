@@ -6,6 +6,7 @@ include_once ("../class/Samfuu.php");
  * Содержит все нужные для пользователя методы( для подачи запросов в БД и приема и групировки данных)
  */
 
+
 /*
  * Функция для ДОБАВЛЕНИЯ ТОВАРА пользователем
  * */
@@ -36,14 +37,14 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
     }
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Add_product( $product_name, $category, $price, $user_id,
+        return sqldb_connection::Add_product( $product_name, $category, $price, $user_id,
             0,"disable", $made_in, $description, date('Y-m-d H:i:s'),
-            $product_country, $product_city, $product_photo);
-        return "Product created";
+            $product_country, $product_city);
     } else {
         return $errorArr;
     }
 }
+
 
 /*
  * Выставляем товар на лот
@@ -67,6 +68,7 @@ function Product_to_lot($product_id)
 
 }
 
+
 /*
  * Удаление продукта
  * */
@@ -82,6 +84,7 @@ function Product_delete($product_id)
         return $errorArr;
     }
 }
+
 
 /*
  * Редактирование продукта
@@ -121,6 +124,7 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
     }
 }
 
+
 /*
  * Поиск продукта по критериям , см выборку, возвращает первые 50
  * */
@@ -144,6 +148,7 @@ function Product_search($product_id, $query)
         return $errorArr;
     }
 }
+
 
 /*
  * Функция на проверку является ли юзер овнером или байером
@@ -170,6 +175,7 @@ function Owner_buyer_status($user_id)
     }
 }
 
+
 /*
  *Синглвью продукта
  * */
@@ -187,6 +193,8 @@ function Product_singleview($user_id, $product_id)
         return $errorArr;
     }
 }
+
+
 /*
  * Мультивью продукта
  * */
@@ -208,5 +216,45 @@ function Product_multiview($user_id, $product_id)
 /*
  * что тут ещё должно быть?
  * */
+function List_product($category)
+{
+    $errorArr = array();
 
+    if($category != null){
+        $tmp_db_row = sqldb_connection::Get_list_product($category);
+        return $tmp_db_row;
+    }
+    else{
+        array_push($errorArr,"Failed to show list product");
+        return $errorArr;
+    }
 
+}
+
+function List_my_product($user_id)
+{
+    $errorArr = array();
+
+    if($category != null){
+        $tmp_db_row = sqldb_connection::Get_list_my_product($user_id);
+        return $tmp_db_row;
+    }
+    else{
+        array_push($errorArr,"Failed to show list product");
+        return $errorArr;
+    }
+}
+
+function List_orders($user_id)
+{
+    $errorArr = array();
+
+    if($user_id != null){
+        $tmp_db_row = sqldb_connection::Get_list_orders($user_id);
+        return $tmp_db_row;
+    }
+    else{
+        array_push($errorArr,"Failed to show list product");
+        return $errorArr;
+    }
+}

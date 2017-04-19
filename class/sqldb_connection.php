@@ -244,7 +244,7 @@ class sqldb_connection
     /*
      * Добавить продукт
      */
-    public static function Add_product( $product_name, $category, $price, $user_id, $buyer_id, $status, $made_in, $description, $add_date, $product_country, $product_city, $product_photo )
+    public static function Add_product( $product_name, $category, $price, $user_id, $buyer_id, $status, $made_in, $description, $add_date, $product_country, $product_city )
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,owner_id,buyer_id,status,made_in,
@@ -252,9 +252,19 @@ class sqldb_connection
                              VALUES(:product_name, :category, :price, :user_id, :buyer_id, :status, :made_in, :description, :add_date,
                               :product_country, :product_city)");
         $sth->execute(array(':product_name' => $product_name, ':category' => $category, ':price' => $price,
-            ':owner_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
+            ':user_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
             ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
-            ':product_city' => $product_city, ':product_photo' => $product_photo));
+            ':product_city' => $product_city));
+        $sth = $dbh->prepare("SELECT * FROM product WHERE product_name = :product_name AND category = :category AND
+                        price = :price AND owner_id = :user_id AND buyer_id = :buyer_id AND status = :status AND
+                        made_in = :made_in AND description = :description AND add_date = :add_date AND
+                        product_country = :product_country AND product_city = :product_city");
+        $sth->execute(array(':product_name' => $product_name, ':category' => $category, ':price' => $price,
+            ':user_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
+            ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
+            ':product_city' => $product_city));
+        return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+
     }
 
     /*
@@ -386,7 +396,44 @@ class sqldb_connection
             ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;
 
     }
+    /*
+     * List product by category выборка
+     * */
+    public static function Get_list_product($category)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT product_name, price, owner_id, buyer_id, status, made_in, description, add_date, max_bid, min_bid, auction_end, product_country, product_city
+                                    FROM product
+                                    WHERE category = :category");
+        $sth->execute(array(':category' => $category));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    /*
+       * Get MY list product by category
+       * */
+    public static function Get_list_my_product($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT product_name, price, owner_id, buyer_id, status, made_in, description, add_date, max_bid, min_bid, auction_end, product_country, product_city
+                                    FROM product
+                                    WHERE owner_id = :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /*
+        * Get MY list product by category
+        * */
+    public static function Get_list_orders($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT product_name, price, owner_id, buyer_id, status, made_in, description, add_date, max_bid, min_bid, auction_end, product_country, product_city
+                                    FROM product
+                                    WHERE buyer_id = :user_id OR owner_id = :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
     /*
      * Dima
      */
