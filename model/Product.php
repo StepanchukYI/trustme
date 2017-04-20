@@ -54,17 +54,16 @@ function Product_to_lot($product_id)
     $bid_date = date('Y-m-d H:i:s');
     $tmp_db_row = sqldb_connection::Lot_Helper($product_id); // чтобы получить ид юзера и прайс
 
-    $tempArr = sqldb_connection::Product_to_auction($product_id, $tmp_db_row[0]['user_id'], $tmp_db_row[0]['price'], $bid_date);
+    sqldb_connection::Product_to_auction($product_id, $tmp_db_row['owner_id'], $tmp_db_row['price'], $bid_date);
 
-    if($tempArr != null ){
+    if($tmp_db_row != null){
         sqldb_connection::Update_product_status($product_id, "active");   // обновляем статус на active, если мы успешно выставили товар на аукцион
-        return "Product status is Active";
+        return sqldb_connection::Show_product_singleview($product_id);
     }
     else{
         array_push($errorArr, "Failed to up product in auction");
         return $errorArr;
     }
-
 }
 
 /*

@@ -358,9 +358,9 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT owner_id, price
                                     FROM product
-                                    WHERE product_id =: product_id  ");
+                                    WHERE product_id = :product_id  ");
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
     }
 
     /*
