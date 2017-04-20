@@ -10,7 +10,7 @@ class photo_parser
     /*
      * принимаем закодированную строку и юзер ID, под которым записываем фото на сервер
      */
-    public function Getpicture_from_User($decoded_string, $user_id)
+    public static function Getpicture_from_User($decoded_string, $user_id)
     {
 
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
@@ -31,7 +31,7 @@ class photo_parser
 
     }
 
-    public function Getpicture_from_product($decoded_string, $product_id)
+    public static function Getpicture_from_product($decoded_string, $product_id)
     {
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
         $image_name = $product_id . '_large.jpeg';

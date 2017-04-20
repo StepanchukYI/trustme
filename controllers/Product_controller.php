@@ -138,6 +138,15 @@ switch ($command) {
             $response = "null field";
         }
         break;
+    case "add_to_favourite_product":
+        $user_id = $_REQUEST['user_id'];
+        $product_id = $_REQUEST['product_id'];
+        if ($user_id != "" && $product_id != ""){
+            $response = Add_to_favourite_product($user_id, $product_id);
+        } else{
+            $response = "null field";
+        }
+        break;
     default:
         $response = "failed command";
         break;

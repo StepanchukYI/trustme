@@ -99,32 +99,22 @@ class User
             return $tmp_db_row;
         }
     }
-
-//Принимаем id user-a и id user-a с которым хочет дружить или разорвать дружбу
-    function Friendship($user_id, $user_id_friend)
+//Принимаем id user-a и id user-a которому хочет отправить заявку
+    function Friendship_Request($user_id, $user_id_friend)
     {
         $errorArr = array();    //создание массива ошибок.
 
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
-        else{
-            $flag = sqldb_connection::Select_Check_Friendship($user_id, $user_id_friend);
-            if($flag == true || $flag == false) {
-                $tmp_db_row = sqldb_connection::Update_Friendship($user_id, $user_id_friend, !$flag);   // достаем строки из БД
-            }
-            else{
-                $tmp_db_row = sqldb_connection::Insert_Friendship($user_id, $user_id_friend, 0);
-            }
 
-        }
-        if ($tmp_db_row == true || $tmp_db_row == false) {
-            return $tmp_db_row;
-        }else {
+        if(count($errorArr) == 0){
+            sqldb_connection::Insert_Friendship_Request($user_id, $user_id_friend);
+            return sqldb_connection::Auth_Select_All_id($user_id_friend);
+        } else {
             return $errorArr;
         }
     }
-
-//Принимаем id user-a и id user-a заявку котрого он не хочет принимать
+//Принимаем id user-a и id user-a которого удаляешь из списка друзей
     function Friendship_Cancel($user_id, $user_id_friend)
     {
         $errorArr = array();    //создание массива ошибок.
@@ -133,18 +123,48 @@ class User
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
         if(count($errorArr) == 0){
-            sqldb_connection::Delete_Friendship($user_id, $user_id_friend);
+            sqldb_connection::Update_Friendship($user_id, $user_id_friend);
+            return sqldb_connection::Auth_Select_All_id($user_id_friend);
         } else {
             return $errorArr;
         }
     }
+//Принимаем id user-a и id user-a с которым подтверждаешь заявку в друзья
+    function Friendship_Request_Agree($user_id, $user_id_friend)
+    {
+        $errorArr = array();    //создание массива ошибок.
 
+        if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
+        if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
+
+        if(count($errorArr) == 0){
+            sqldb_connection::Update_Friendship_Request_Agree($user_id, $user_id_friend);
+            return sqldb_connection::Auth_Select_All_id($user_id_friend);
+        } else {
+            return $errorArr;
+        }
+    }
+//Принимаем id user-a и id user-a заявку которого отменяешь
+    function Friendship_Request_Cancel($user_id, $user_id_friend)
+    {
+        $errorArr = array();    //создание массива ошибок.
+
+        if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
+        if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
+
+        if(count($errorArr) == 0){
+            sqldb_connection::Delete_Friendship_Request_Cancel($user_id, $user_id_friend);
+            return sqldb_connection::Auth_Select_All_id($user_id_friend);
+        } else {
+            return $errorArr;
+        }
+    }
 //Принимаем id user-a, для которого нужно вывести список всех его заявок в друзья
-    function Multi_View_Requests($user_id)
+    function Multi_View_Requests_Input($user_id)
     {
         if ($user_id == null) return "Failed id";  // проверка на пустой id
         else {
-            $tmp_db_row = sqldb_connection::Select_Multi_View_Requests($user_id);   // достаем строки из БД
+            $tmp_db_row = sqldb_connection::Select_Multi_View_Requests_Input($user_id);   // достаем строки из БД
         }
 
 
@@ -155,115 +175,20 @@ class User
             return $tmp_db_row;
         }
     }
-
-    /*
-
-    //Принимаем id user-a и возвращаем ему список следующих 50-ти заявок
-        function See_More_Requests($user_id, $last_user_id)
-        {
-            $errorArr = array();    //создание массива ошибок.
-
-            if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
-            else{
-                $last_user_id = sqldb_connection::Select_Last_user_id($user_id); // забираем последний id, который просмотрели
-                $tmp_db_row = sqldb_connection::Select_See_More_Requests($user_id, $last_user_id);   // достаем строки из БД
-                sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
-            }
-            if (count($tmp_db_row) == 0) {
-                return "NOTHING";
-            }
-
-            if (count($tmp_db_row) > 0) {
-                return json_encode($tmp_db_row);
-            } else {
-                return $errorArr[0];
-            }
-        }
-    //Принимаем id user-a и возвращаем ему список следующих 50-ти user-ов
-        function See_More($user_id)
-        {
-            $errorArr = array();    //создание массива ошибок.
-
-            if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
-            else{
-                $last_user_id = sqldb_connection::Select_Last_user_id($user_id); // забираем последний id, который просмотрели
-                $tmp_db_row = sqldb_connection::Select_See_More($user_id, $last_user_id);   // достаем строки из БД
-                sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
-            }
-            if (count($tmp_db_row) == 0) {
-                return "NOTHING";
-            }
-
-            if (count($tmp_db_row) > 0) {
-                return json_encode($tmp_db_row);
-            } else {
-                return $errorArr[0];
-            }
-        }
-    //Принимаем id user-a, поисковый запрос и возвращаем ему список следующих 50-ти ответов
-        function See_More_Search($user_id, $query)
-        {
-            $errorArr = array();    //создание массива ошибок.
-
-            if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
-            else{
-                $last_user_id = sqldb_connection::Select_Last_user_id($user_id); // забираем последний id, который просмотрели
-                $tmp_db_row = sqldb_connection::Select_See_More_Search($user_id, $last_user_id, $query);   // достаем строки из БД
-                sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
-            }
-            if (count($tmp_db_row) == 0) {
-                return "NOTHING";
-            }
-
-            if (count($tmp_db_row) > 0) {
-                return json_encode($tmp_db_row);
-            } else {
-                return $errorArr[0];
-            }
-        }
-    //Принимаем id user-a и возвращаем ему список следующих 50-ти friends online
-        function See_More_Friends_online($user_id)
-        {
-            $errorArr = array();    //создание массива ошибок.
-
-            if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
-            else{
-                $last_user_id = sqldb_connection::Select_Last_user_id($user_id); // забираем последний id, который просмотрели
-                $tmp_db_row = sqldb_connection::Select_See_More_friends_online($user_id, $last_user_id);   // достаем строки из БД
-                sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
-            }
-            if (count($tmp_db_row) == 0) {
-                return "NOTHING";
-            }
-
-            if (count($tmp_db_row) > 0) {
-                return json_encode($tmp_db_row);
-            } else {
-                return $errorArr[0];
-            }
-        }
-    //Принимаем id user-a и возвращаем ему список следующих 50-ти friends
-        function See_More_Friends($user_id)
-        {
-            $errorArr = array();    //создание массива ошибок.
-
-            if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
-            else{
-                $last_user_id = sqldb_connection::Select_Last_user_id($user_id); // забираем последний id, который просмотрели
-                $tmp_db_row = sqldb_connection::Select_See_More_friends($user_id, $last_user_id);   // достаем строки из БД
-                sqldb_connection::Update_Last_user_id($user_id, $tmp_db_row[49]['user_id']); // обновляем наш последний id
-            }
-            if (count($tmp_db_row) == 0) {
-                return "NOTHING";
-            }
-
-            if (count($tmp_db_row) > 0) {
-                return json_encode($tmp_db_row);
-            } else {
-                return $errorArr[0];
-            }
+//Принимаем id user-a, для которого нужно вывести список всех его исходящих заявок в друзья
+    function Multi_View_Requests_Output($user_id)
+    {
+        if ($user_id == null) return "Failed id";  // проверка на пустой id
+        else {
+            $tmp_db_row = sqldb_connection::Select_Multi_View_Requests_Output($user_id);   // достаем строки из БД
         }
 
-    */
 
+        if (count($tmp_db_row) == 0) {
+            return "NOTHING";
+        }
+        if (count($tmp_db_row) > 0) {
+            return $tmp_db_row;
+        }
+    }
 }

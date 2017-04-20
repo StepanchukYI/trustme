@@ -51,11 +51,13 @@ switch ($command) {
         $sex = $_REQUEST['sex'];
         $country = $_REQUEST['country'];
         $city = $_REQUEST['city'];
+        $photo = $_REQUEST['photo'];
 
         if ($id != "" && $email_2 != "" && $name != "" && $surname != "" && $birth_day != ""
             && $birth_month != "" && $birth_year != "" && $sex != "" && $country != "" && $city != ""
         ) {
-            $response = Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city);
+            $response = Registration_full($id, $email_2, $name, $surname, $birth_day,
+                $birth_month, $birth_year, $sex, $country, $city, $photo);
         } else {
             $response = "null field";
         }

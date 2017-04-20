@@ -1,6 +1,7 @@
 <?php
 require "../class/sqldb_connection.php";
-include_once ("../class/Samfuu.php");
+require "../class/photo_parser.php";
+include_once("../class/Samfuu.php");
 
 /*
  * Файл для модуля авторизации на сервере
@@ -26,8 +27,10 @@ function Auth($login, $password)
         if ($password != $tmp_db_row[0]['password']) array_push($errorArr, "Failed password");
     }
     if (count($errorArr) == 0) {
-        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1, date("Y-m-d h:m:s"));// обновляем статус на онлайн
-        return sqldb_connection::Auth_Select_All($login,$password);
+        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1,
+            date("Y-m-d h:m:s"));// обновляем статус на онлайн
+        return sqldb_connection::Auth_Select_All($login, $password);
+
     } else {
         return $errorArr;
     }
@@ -42,7 +45,8 @@ function Registration_min($email, $phone, $password1)
     $errorArr = array();//создание массива ошибок.
 
     //Валидация мыла
-    if ((strlen($email) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email) != true)) {
+    if ((strlen($email) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@
+    ([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email) != true)) {
         array_push($errorArr, "Incorrect email");
     }
     //валидация пароля
@@ -64,8 +68,9 @@ function Registration_min($email, $phone, $password1)
 
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"), Temp_code());
-        return sqldb_connection::Auth_Select_All($email,$password1);
+        sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"),
+            Temp_code());
+        return sqldb_connection::Auth_Select_All($email, $password1);
     } else {
         return $errorArr;
     }
@@ -86,27 +91,35 @@ function Temp_code()
 /*
  * Функция для полной регистрации пользователя
  */
-function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year, $sex, $country, $city)
+function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month,
+                           $birth_year, $sex, $country, $city, $photo)
 {
     $errorArr = array();//создание массива ошибок.
 
-        if ((strlen($email_2) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email_2) != true)) {
-        array_push($errorArr, "Incorrect email");
-    }
-    if ($birth_day == "" && strlen($birth_day) < 1 && strlen($birth_day) > 31) {
-        array_push($errorArr, "Incorrect birthday");
-    }
-    if ($birth_month == "" && strlen($birth_month) < 1 && strlen($birth_month) > 12) {
-        array_push($errorArr, "Incorrect birthday month");
-    }
-    if ($birth_year == "" && strlen($birth_year) < 1930 && strlen($birth_year) > 2017) {
-        array_push($errorArr, "Incorrect birthday year");
-    }
+    /*
+        if ((strlen($email_2) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])
+    +\.([a-z0-9])+$~i", $email_2) != true)) {
+            array_push($errorArr, "Incorrect email");
+        }
+            * */
+        if ($birth_day == "" && strlen($birth_day) < 1 && strlen($birth_day) > 31) {
+            array_push($errorArr, "Incorrect birthday");
+        }
+        if ($birth_month == "" && strlen($birth_month) < 1 && strlen($birth_month) > 12) {
+            array_push($errorArr, "Incorrect birthday month");
+        }
+        if ($birth_year == "" && strlen($birth_year) < 1930 && strlen($birth_year) > date('Y')) {
+            array_push($errorArr, "Incorrect birthday year");
+        }
+
 
     if (count($errorArr) == 0) {
-            $online = 1;
-            sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_month, $birth_year,
-            $sex, date("Y-m-d h:m:s"), $online, $country, $city);
+        sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day,
+            $birth_month, $birth_year, $sex, date("Y-m-d h:m:s"),
+            1, $country, $city);
+        photo_parser::Getpicture_from_User($photo,$id);
+        sqldb_connection::User_photo_update($id);
+
         return sqldb_connection::Auth_Select_All_id($id);
     } else {
         return $errorArr;

@@ -35,7 +35,6 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
     /*
     * Выбока из баззы всего юзера
     */
@@ -57,8 +56,6 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 
     /*
      * Функция для обновления статуса ЗАРЕГЕСТРИРОВАННОГО ПОЛЬЗОВАТЕЛЯ на онлайл или офлайн
@@ -106,11 +103,21 @@ class sqldb_connection
             ':online_status' => $online_status, ':country' => $country, ':city' => $city, ':id' => $id));
     }
 
-    /*
-     * Илья
-     *
-     */
+    public static function User_photo_update($user_id){
+        $dbh = sqldb_connection::DB_connect();
+        $photo_path = "37.57.92.40/trustme/picture/user_photo/";
+        $sth = $dbh->prepare("UPDATE user SET large_photo= :large, 
+                              medium_photo = :medium, small_photo = :small 
+                              WHERE user_ID =:id");
+        $sth->execute(array(':id' => $user_id, ':large' => $photo_path.$user_id."_large.jpeg",
+            ':medium_photo' => $photo_path.$user_id."_medium.jpeg",
+            ':small_photo' => $photo_path.$user_id."_small.jpeg"));
+    }
 
+    /*
+       * Илья
+       *
+       */
     //Функция для выбора первых 50-ти пользователей
     public static function Select_Multi_View_users($user_id)
     {
@@ -123,7 +130,6 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
 //Функция для выбора одиночного просмотра
     public static function Select_Single_View_user($user_id_select)
     {
@@ -135,7 +141,6 @@ class sqldb_connection
         $sth->execute(array(':user_id_select' => $user_id_select));
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
-
 //Функция для выборки списка друзей
     public static function Select_Multi_View_friends($user_id)
     {
@@ -151,7 +156,6 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
 //Функция для выборки списка друзей онлайн
     public static function Select_Multi_View_friends_online($user_id)
     {
@@ -168,7 +172,6 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
 //Функция для выбора по поисковому запросу
     public static function Select_Search($user_id, $query)
     {
@@ -181,40 +184,24 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':query' => "%$query%"));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
-//Функция проверки дружбы между клиентами
-    public static function Select_Check_Friendship($user_id, $user_id_friend)
+    public static function Update_Friendship($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT friend_request 
-        FROM friends 
+        $sth = $dbh->prepare("UPDATE friends SET friend_request = FALSE, friendship_date = NOW()
         WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
         OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
-        return $sth->fetchAll(PDO::FETCH_ASSOC)[0]['friend_request'];
     }
-
-    public static function Insert_Friendship($user_id, $user_id_friend, $flag)
+//Отправка заявки
+    public static function Insert_Friendship_Request($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("INSERT INTO friends (user_id_1, user_id_2, friend_request, friendship_date) 
-        VALUES (:user_id, :user_id_friend, :flag, NOW())");
-        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
-        return $flag;
+        VALUES (:user_id, :user_id_friend, FALSE, NOW())");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
     }
-//Функция для отмены дружбы или принятия заявки
-    public static function Update_Friendship($user_id, $user_id_friend, $flag)
-    {
-        $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("UPDATE friends SET friend_request = :flag, friendship_date = NOW()
-        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
-        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
-        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend, ':flag' => $flag));
-        return $flag;
-    }
-
-//Функция для отмены заявки
-    public static function Delete_Friendship($user_id, $user_id_friend)
+//Отмена заявки
+    public static function Delete_Friendship_Request_Cancel($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("DELETE FROM friends
@@ -222,18 +209,37 @@ class sqldb_connection
         OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
     }
-
-//Функция для выборки списка заявок
-    public static function Select_Multi_View_Requests($user_id)
+//Приём заявки
+    public static function Update_Friendship_Request_Agree($user_id, $user_id_friend)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("UPDATE friends SET friend_request = TRUE, friendship_date = NOW()
+        WHERE (user_id_1 = :user_id AND user_id_2 = :user_id_friend) 
+        OR (user_id_2 = :user_id AND user_id_1 = :user_id_friend)");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
+    }
+//Функция для выборки списка заявок входящие
+    public static function Select_Multi_View_Requests_Input($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
         FROM user INNER JOIN friends 
-        ON friends.user_id_2 = :user_id  AND friends.friend_request = false LIMIT 50");
+        ON friends.user_id_2 = :user_id 
+        AND friends.friend_request = false LIMIT 50");
         $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll();
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
+//Функция для выборки списка заявок исходящие
+    public static function Select_Multi_View_Requests_Output($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, small_photo, balance, online_status, rate
+        FROM user INNER JOIN friends 
+        ON friends.user_id_1 = :user_id 
+        AND friends.friend_request = false LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 
     /*
@@ -244,7 +250,10 @@ class sqldb_connection
     /*
      * Добавить продукт
      */
-    public static function Add_product( $product_name, $category, $price, $user_id, $buyer_id, $status, $made_in, $description, $add_date, $product_country, $product_city )
+    public static function Add_product( $product_name, $category, $price,
+                                        $user_id, $buyer_id, $status, $made_in,
+                                        $description, $add_date, $product_country,
+                                        $product_city )
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,owner_id,buyer_id,status,made_in,
@@ -255,7 +264,7 @@ class sqldb_connection
             ':user_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
             ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
             ':product_city' => $product_city));
-        $sth = $dbh->prepare("SELECT * FROM product WHERE product_name = :product_name AND category = :category AND
+        $sth = $dbh->prepare("SELECT product_id FROM product WHERE product_name = :product_name AND category = :category AND
                         price = :price AND owner_id = :user_id AND buyer_id = :buyer_id AND status = :status AND
                         made_in = :made_in AND description = :description AND add_date = :add_date AND
                         product_country = :product_country AND product_city = :product_city");
@@ -267,6 +276,18 @@ class sqldb_connection
 
     }
 
+
+    public static function Product_photo($product_id){
+        $dbh = sqldb_connection::DB_connect();
+        $photo_path = "37.57.92.40/trustme/picture/product_photo/";
+        $sth = $dbh->prepare("INSERT INTO productgallery 
+                            (product_id, pt_large_photo, pt_medium_photo , pt_small_photo )
+                             VALUES ( :product_id, :large, :medium, :small)");
+        $sth->execute(array(':product_id' => $product_id, ':large' => $photo_path.$product_id."_large.jpeg",
+            ':medium' => $photo_path.$product_id."_medium.jpeg",
+            ':small' => $photo_path.$product_id."_small.jpeg"));
+    }
+
     /*
      * Функция для обновления СТАТУСА ТОВАРА на active, sold, disable
      */
@@ -274,8 +295,8 @@ class sqldb_connection
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE product
-                                    SET status =:status
-                                    WHERE product_id =:product_id");
+                                    SET status = :status
+                                    WHERE product_id = :product_id");
         $sth->execute(array(':status' => $status, ':product_id' => $product_id));;
     }
 
@@ -312,11 +333,12 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT p.product_name, p.category, p.price, p.owner_id, p.buyer_id, p.status, 
                                     p.made_in, p.description, p.add_date, p.max_bid, p.min_bid,
-                                    p.auction_end, p.product_country, p.product_city
+                                    p.auction_end, p.product_country, p.product_city,  pg.pt_large_photo
                                     FROM product p
-                                    WHERE p.product_id = :product_id  ");// INNER JOIN productgallery pg pg.pt_large_photo         ON pg.product_id = p.product_id
+                                    INNER JOIN productgallery pg ON pg.product_id = p.product_id
+                                    WHERE p.product_id = :product_id  ");
         //Влад, смотри, указывай и имя первой таблицы, и второй.
-        //FROM product p INNER JOIN productgallery pg
+        //FROM product_photo p INNER JOIN productgallery pg
         // у тебя в запросе WHERE product_id - конфликт имен // окей, понял - принял
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
@@ -328,11 +350,12 @@ class sqldb_connection
     public static function Show_product_multiview($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT p.product_name, p.owner_id, p.price, p.status, a.bid_date, p.auction_end, pg.pt_small_photo
+        $sth = $dbh->prepare("SELECT p.product_name, p.owner_id, p.price,
+            p.status, a.bid_date, p.auction_end, pg.pt_small_photo
                                     FROM product p
                                     INNER JOIN auction a
                                     INNER JOIN productgallery pg
-                                    WHERE p.product_id =: product_id LIMIT 50  "); // показать первые 50 товаров
+                                    WHERE p.product_id = :product_id"); // показать первые 50 товаров
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -395,20 +418,25 @@ class sqldb_connection
 
     }
     /*
-     * List product by category выборка
+     * List product_photo by category выборка
      * */
     public static function Get_list_product($category)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT product_name, price, owner_id, buyer_id, status, made_in, description, add_date, max_bid, min_bid, auction_end, product_country, product_city
-                                    FROM product
+        $sth = $dbh->prepare("SELECT p.product_name, p.price, p.owner_id, p.buyer_id,
+                                    p.status, p.made_in, p.description, p.add_date, p.max_bid,
+                                     p.min_bid, p.auction_end, p.product_country, p.product_city,
+                                     pg.pt_small_photo
+                                    FROM product p 
+                                    INNER JOIN productgallery pg 
+                                    ON pg.product_id = p.product_id
                                     WHERE category = :category");
         $sth->execute(array(':category' => $category));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
-       * Get MY list product by category
+       * Get MY list product_photo by category
        * */
     public static function Get_list_my_product($user_id)
     {
@@ -421,14 +449,44 @@ class sqldb_connection
     }
 
     /*
-        * Get MY list product by category
+        * Get MY list product_photo by category
         * */
     public static function Get_list_orders($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT product_name, price, owner_id, buyer_id, status, made_in, description, add_date, max_bid, min_bid, auction_end, product_country, product_city
-                                    FROM product
+        $sth = $dbh->prepare("SELECT p.product_name, p.price, p.owner_id, p.buyer_id,
+                                    p.status, p.made_in, p.description, p.add_date, p.max_bid,
+                                     p.min_bid, p.auction_end, p.product_country, p.product_city,
+                                     pg.pt_small_photo
+                                    FROM product p 
+                                    INNER JOIN productgallery pg 
+                                    ON pg.product_id = p.product_id
                                     WHERE buyer_id = :user_id OR owner_id = :user_id");
+        $sth->execute(array(':user_id' => $user_id));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public static function Add_favourite_product($user_id, $product_id, $add_date)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("INSERT INTO favourite_product (user_id, product_id, favourite_date) VALUE 
+                                           (:user_id,:product_id,:add_date)");
+        $sth->execute(array(':user_id' => $user_id, ':product_id' => $product_id, ':add_date' => $add_date));
+        return $sth->fetchAll(PDO::FETCH_ASSOC); // возврат для проверки статуса
+    }
+
+    public static  function Get_list_favourite($user_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT p.product_name, p.price, p.owner_id, p.buyer_id,
+                                    p.status, p.made_in, p.description, p.add_date, p.max_bid,
+                                    p.min_bid, p.auction_end, p.product_country, p.product_city,
+                                    pg.pt_small_photo
+                                    FROM product p 
+                                    INNER JOIN productgallery pg ON pg.product_id = p.product_id
+                                    INNER JOIN favourite_product fp ON fp.product_id = p.product_id
+                                    AND fp.user_id = p.product_id
+                                    WHERE fp.user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -501,7 +559,6 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
     /*
      * Выбрать все ставки по id лота Multi view
      */
@@ -518,7 +575,6 @@ class sqldb_connection
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
 
     /*
      * Выбрать все ставки по id лота Single view

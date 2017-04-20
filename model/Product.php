@@ -1,5 +1,6 @@
 <?php
 require "../class/sqldb_connection.php";
+
 include_once ("../class/Samfuu.php");
 /*
  * Product модель( верность написанного ниже нахожу под БОЛЬШИМ СОМНЕНИЕМ, ЖЕНЯ ПОСМОТРИ И ПРОКОНСУЛЬТИРУЙ ПЛЕЗ)
@@ -15,31 +16,37 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
     $errorArr = array();//создание массива ошибок.
 
     if ($product_name == "" && strlen($product_name) < 2 && strlen($product_name) > 30) {
-        array_push($errorArr, "Incorrect product name");
+        array_push($errorArr, "Incorrect product_photo name");
     }
     if ($category == "" && strlen($category) < 5 && strlen($category) > 15) {
-        array_push($errorArr, "Incorrect product category");
+        array_push($errorArr, "Incorrect product_photo category");
     }
     if ($made_in == "" && strlen($made_in) < 2 && strlen($made_in) > 15) {
-        array_push($errorArr, "Incorrect product manufacturer");
+        array_push($errorArr, "Incorrect product_photo manufacturer");
     }
     if ($description == "" && strlen($description) < 20 && strlen($description) > 200) {
-        array_push($errorArr, "Incorrect product description");
+        array_push($errorArr, "Incorrect product_photo description");
     }
     if ($product_country == "" && strlen($product_country) < 3 && strlen($product_country) > 60) {
-        array_push($errorArr, "Incorrect product country");
+        array_push($errorArr, "Incorrect product_photo country");
     }
     if ($product_city == "" && strlen($product_city) < 2 && strlen($product_city) > 20) {
-        array_push($errorArr, "Incorrect product city");
+        array_push($errorArr, "Incorrect product_photo city");
     }
     if ($price == "" && strlen($price) < 1 ) {
-        array_push($errorArr, "Incorrect product price");
+        array_push($errorArr, "Incorrect product_photo price");
     }
 
     if (count($errorArr) == 0) {
-        return sqldb_connection::Add_product( $product_name, $category, $price, $user_id,
+
+        $product_id = sqldb_connection::Add_product( $product_name, $category, $price, $user_id,
             0,"disable", $made_in, $description, date('Y-m-d H:i:s'),
             $product_country, $product_city);
+
+        photo_parser::Getpicture_from_product($product_photo,$product_id);
+        sqldb_connection::Product_photo($product_id);
+
+        return 0;
     } else {
         return $errorArr;
     }
@@ -61,7 +68,7 @@ function Product_to_lot($product_id)
         return sqldb_connection::Show_product_singleview($product_id);
     }
     else{
-        array_push($errorArr, "Failed to up product in auction");
+        array_push($errorArr, "Failed to up product_photo in auction");
         return $errorArr;
     }
 }
@@ -77,7 +84,7 @@ function Product_delete($product_id)
         return "Product successfully deleted";
     }
     else{
-        array_push($errorArr, "Failed product delete");
+        array_push($errorArr, "Failed product_photo delete");
         return $errorArr;
     }
 }
@@ -90,25 +97,25 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
     $errorArr = array();//создание массива ошибок.
 
     if ($product_name == "" && strlen($product_name) < 2 && strlen($product_name) > 30) {
-        array_push($errorArr, "Incorrect product name");
+        array_push($errorArr, "Incorrect product_photo name");
     }
     if ($category == "" && strlen($category) < 5 && strlen($category) > 15) {
-        array_push($errorArr, "Incorrect product category");
+        array_push($errorArr, "Incorrect product_photo category");
     }
     if ($made_in == "" && strlen($made_in) < 2 && strlen($made_in) > 15) {
-        array_push($errorArr, "Incorrect product manufacturer");
+        array_push($errorArr, "Incorrect product_photo manufacturer");
     }
     if ($description == "" && strlen($description) < 20 && strlen($description) > 200) {
-        array_push($errorArr, "Incorrect product description");
+        array_push($errorArr, "Incorrect product_photo description");
     }
     if ($product_country == "" && strlen($product_country) < 3 && strlen($product_country) > 60) {
-        array_push($errorArr, "Incorrect product country");
+        array_push($errorArr, "Incorrect product_photo country");
     }
     if ($product_city == "" && strlen($product_city) < 2 && strlen($product_city) > 20) {
-        array_push($errorArr, "Incorrect product city");
+        array_push($errorArr, "Incorrect product_photo city");
     }
     if ($price == "" && strlen($price) < 1 ) {
-        array_push($errorArr, "Incorrect product price");
+        array_push($errorArr, "Incorrect product_photo price");
     }
 
 
@@ -182,7 +189,7 @@ function Product_singleview($user_id, $product_id)
         return $tmp_db_row;
     }
     else{
-        array_push($errorArr, "Failed to singleview product");
+        array_push($errorArr, "Failed to singleview product_photo");
         return $errorArr;
     }
 }
@@ -201,7 +208,7 @@ function Product_multiview($user_id, $product_id)
         return json_decode($tmp_db_row);
     }
     else{
-        array_push($errorArr,"Failed to multiview product");
+        array_push($errorArr,"Failed to multiview product_photo");
         return $errorArr;
     }
 }
@@ -218,7 +225,7 @@ function List_product($category)
         return $tmp_db_row;
     }
     else{
-        array_push($errorArr,"Failed to show list product");
+        array_push($errorArr,"Failed to show list product_photo");
         return $errorArr;
     }
 
@@ -233,7 +240,7 @@ function List_my_product($user_id)
         return $tmp_db_row;
     }
     else{
-        array_push($errorArr,"Failed to show list product");
+        array_push($errorArr,"Failed to show list product_photo");
         return $errorArr;
     }
 }
@@ -247,7 +254,35 @@ function List_orders($user_id)
         return $tmp_db_row;
     }
     else{
-        array_push($errorArr,"Failed to show list product");
+        array_push($errorArr,"Failed to show list product_photo");
+        return $errorArr;
+    }
+}
+
+function Add_to_favourite_product($user_id, $product_id)
+{
+    $errorArr = array();
+    $add_date = date('Y-m-d H:i:s');
+
+    if($user_id != null && $product_id != null){
+        $tmp_db_row = sqldb_connection::Add_favourite_product($user_id, $product_id, $add_date);
+        return $tmp_db_row;
+    }
+    else{
+        array_push($errorArr,"Failed to add favourite product_photo");
+        return $errorArr;
+    }
+}
+
+function List_favourite_product($user_id){
+    $errorArr = array();
+
+    if($user_id != null){
+        $tmp_db_row = sqldb_connection::Get_list_favourite($user_id);
+        return $tmp_db_row;
+    }
+    else{
+        array_push($errorArr,"Failed to show list product_photo");
         return $errorArr;
     }
 }
