@@ -1,5 +1,6 @@
 <?php
 require "../class/sqldb_connection.php";
+require "../class/photo_parser.php";
 
 include_once ("../class/Samfuu.php");
 /*
@@ -46,7 +47,7 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
         photo_parser::Getpicture_from_product($product_photo,$product_id);
         sqldb_connection::Product_photo($product_id);
 
-        return 0;
+        return sqldb_connection::Show_product_singleview($product_id);
     } else {
         return $errorArr;
     }
@@ -265,8 +266,8 @@ function Add_to_favourite_product($user_id, $product_id)
     $add_date = date('Y-m-d H:i:s');
 
     if($user_id != null && $product_id != null){
-        $tmp_db_row = sqldb_connection::Add_favourite_product($user_id, $product_id, $add_date);
-        return $tmp_db_row;
+        sqldb_connection::Add_favourite_product($user_id, $product_id, $add_date);
+        return sqldb_connection::Show_product_singleview($product_id);
     }
     else{
         array_push($errorArr,"Failed to add favourite product_photo");

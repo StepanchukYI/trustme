@@ -147,6 +147,15 @@ switch ($command) {
             $response = "null field";
         }
         break;
+    case "list_favourite":
+        $user_id = $_REQUEST['user_id'];
+        //$category = $_REQUEST['category'];
+        if ($user_id != ""){
+            $response = List_orders($user_id);
+        } else{
+            $response = "null field";
+        }
+        break;
     default:
         $response = "failed command";
         break;

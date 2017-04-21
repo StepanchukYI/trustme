@@ -5,76 +5,59 @@
  * также создать папки product_photo
  */
 
+//http://www.cyberforum.ru/php-beginners/thread419777.html
 class photo_parser
 {
     /*
      * принимаем закодированную строку и юзер ID, под которым записываем фото на сервер
      */
-    public static function Getpicture_from_User($decoded_string, $user_id)
-    {
+    public static function Getpicture_from_User($decoded_string, $user_id)    {
 
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
-        $image_name = $user_id . '_large.jpeg';
-        $path = 'user_photo/' . $image_name;   //указание директории куда сохраняем файл
+        $path = 'picture/user_photo/'; //указание директории куда сохраняем файл
 
-
-        $file = fopen($path, 'wb');
+        $file = fopen($path.$user_id . '_large.jpeg', 'wb');
         fwrite($file, $decoded_string);//записываю в файл
         fclose($file);
 
-
-        $path_medium = 'user_photo/';
-        $image_name_medium = $user_id . '_medium.jpeg';
-        $image_name_small = $user_id . '_small.jpeg';
-        photo_parser::Resize_foto_small($path, $image_name_medium, $path_medium);
-        photo_parser::Resize_foto_medium($path, $image_name_small, $path_medium);
+        photo_parser::Resize_foto_small($path,$user_id);
+        photo_parser::Resize_foto_medium($path,$user_id);
 
     }
 
     public static function Getpicture_from_product($decoded_string, $product_id)
     {
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
-        $image_name = $product_id . '_large.jpeg';
-        $path = 'product_photo/' . $image_name;   //указание директории куда сохраняем файл
+        $image_name = '42_large.jpeg';
+        $path = 'picture/product_photo/';   //указание директории куда сохраняем файл
 
+        //$file = fopen($path.$image_name, 'wb');
+        //fwrite($file, $decoded_string);//записываю в файл
+        //fclose($file);
 
-        $file = fopen($path, 'wb');
-        fwrite($file, $decoded_string);//записываю в файл
-        fclose($file);
-
-
-        $path_medium = 'product_photo/';
-
-
-        $image_name_medium = $product_id . '_medium.jpeg';
-        $image_name_small = $product_id . '_small.jpeg';
-
-
-        photo_parser::Resize_foto_small($path, $image_name_medium, $path_medium);
-        photo_parser::Resize_foto_medium($path, $image_name_small, $path_medium);
+        photo_parser::Resize_foto_small($path, "42");
+        photo_parser::Resize_foto_medium($path, "42");
     }
     //path принимает путь к файлу который нужно изменить
     //$image_name имя картинки
 
-    function Resize_foto_small($path, $image_name, $new_path)
+    function Resize_foto_small($path, $id)
     {
-        $img_id = imagecreatefromjpeg($path);
+        $img_id = imagecreatefromjpeg($path.$id.'_large.jpeg');
 
         $img_width = imageSX($img_id);
         $img_height = imageSY($img_id);
 
-
         $k = round($img_width / 75, 2);
-
 
         $new_width = $img_width / $k;
         $new_height = $img_height / $k;
         $new_img = imagecreatetruecolor($new_width, $new_height);
 
-        imagecopyresampled($new_img, $img_id, 0, 0, 0, 0,
+        imagecopyresampled($new_img, $path.$id.'_large.jpeg', 0, 0, 0, 0,
             $new_width, $new_height, $img_width, $img_height);
 
-        imagejpeg($new_img, $new_path . $image_name, 100);
+        imagejpeg($new_img, $path . $id .'_small.jpeg', 100);
 
 
         imagedestroy($img_id);//чистка памяти
@@ -82,7 +65,7 @@ class photo_parser
     }
 
 
-    function Resize_foto_medium($path, $image_name, $new_path)
+    function Resize_foto_medium($path, $id)
     {
         $img_id = imagecreatefromjpeg($path);
 
@@ -99,7 +82,7 @@ class photo_parser
         imagecopyresampled($new_img, $img_id, 0, 0, 0, 0,
             $new_width, $new_height, $img_width, $img_height);
 
-        imagejpeg($new_img, $new_path . $image_name, 100);
+        imagejpeg($new_img, $path . $id .'_medium.jpeg', 100);
 
         imagedestroy($img_id);//чистка памяти
         imagedestroy($new_img);//чистка памяти

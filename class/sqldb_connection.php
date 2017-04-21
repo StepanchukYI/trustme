@@ -272,7 +272,7 @@ class sqldb_connection
             ':user_id' => $user_id, ':buyer_id' => $buyer_id, ':status' => $status,':made_in' => $made_in,
             ':description' => $description, ':add_date' => $add_date, ':product_country' => $product_country,
             ':product_city' => $product_city));
-        return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $sth->fetchAll(PDO::FETCH_ASSOC)[0]['product_id'];
 
     }
 

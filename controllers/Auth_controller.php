@@ -41,7 +41,7 @@ switch ($command) {
         }
         break;
     case "registration_full": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_full&id=1&email_2=fsdfsd@mads.ru&name=dasdasd&surname=fsdfsdfsdf&birth_day=14&birth_month=3&birth_year=1996&sex=1&country=Ucraine&city=Dnepro
-        $id = $_REQUEST['id'];
+        $id = $_REQUEST['user_id'];
         $email_2 = $_REQUEST['email_2'];
         $name = $_REQUEST['name'];
         $surname = $_REQUEST['surname'];
