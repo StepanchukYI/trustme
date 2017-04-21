@@ -134,13 +134,17 @@ class sqldb_connection
     public static function Select_Single_View_user($user_id_select)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, large_photo, balance, 
-        online_status, rate, last_visit, country, city, reg_date
-        FROM user 
-        WHERE user_id = :user_id_select");
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname, u.sex, u.large_photo, u.balance, 
+        u.online_status, u.rate, u.last_visit, u.country, u.city, u.reg_date, p.product_id, p.product_name,
+        p.price, p.add_date, p.description
+        FROM user u
+        INNER JOIN product p ON p.owner_id = u.user_id
+        WHERE u.user_id = :user_id_select"); //INNER JOIN productgallery pg ON pg.product_id = p.product_id
         $sth->execute(array(':user_id_select' => $user_id_select));
-        return $sth->fetch(PDO::FETCH_ASSOC);
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
+
 //Функция для выборки списка друзей
     public static function Select_Multi_View_friends($user_id)
     {
@@ -184,6 +188,7 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':query' => "%$query%"));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
+
     public static function Update_Friendship($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -242,6 +247,8 @@ class sqldb_connection
     }
 
 
+
+
     /*
      *
      * Vlad
@@ -283,9 +290,9 @@ class sqldb_connection
         $sth = $dbh->prepare("INSERT INTO productgallery 
                             (product_id, pt_large_photo, pt_medium_photo , pt_small_photo )
                              VALUES ( :product_id, :large, :medium, :small)");
-        $sth->execute(array(':product_id' => $product_id, ':large' => $photo_path.$product_id."_large.jpeg",
-            ':medium' => $photo_path.$product_id."_medium.jpeg",
-            ':small' => $photo_path.$product_id."_small.jpeg"));
+        $sth->execute(array(':product_id' => $product_id, ':large' => $photo_path.'id'.$product_id."_large.jpeg",
+            ':medium' => $photo_path.'id'.$product_id."_medium.jpeg",
+            ':small' => $photo_path.'id'.$product_id."_small.jpeg"));
     }
 
     /*

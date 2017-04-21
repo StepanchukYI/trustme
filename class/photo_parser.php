@@ -14,7 +14,7 @@ class photo_parser
     public static function Getpicture_from_User($decoded_string, $user_id)    {
 
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
-        $path = 'picture/user_photo/'; //указание директории куда сохраняем файл
+        $path =  __DIR__.'\picture\user_photo\id'; //указание директории куда сохраняем файл
 
         $file = fopen($path.$user_id . '_large.jpeg', 'wb');
         fwrite($file, $decoded_string);//записываю в файл
@@ -28,15 +28,14 @@ class photo_parser
     public static function Getpicture_from_product($decoded_string, $product_id)
     {
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
-        $image_name = '42_large.jpeg';
-        $path = 'picture/product_photo/';   //указание директории куда сохраняем файл
+        $path = __DIR__.'\picture\product_photo\id'.$product_id.'_large.jpeg';   //указание директории куда сохраняем файл
 
-        //$file = fopen($path.$image_name, 'wb');
-        //fwrite($file, $decoded_string);//записываю в файл
-        //fclose($file);
+        $file = fopen($path.$product_id.'_large.jpeg', 'wb');
+        fwrite($file, $decoded_string);//записываю в файл
+        fclose($file);
 
-        photo_parser::Resize_foto_small($path, "42");
-        photo_parser::Resize_foto_medium($path, "42");
+        photo_parser::Resize_foto_small($path, 42);
+        photo_parser::Resize_foto_medium($path, 42);
     }
     //path принимает путь к файлу который нужно изменить
     //$image_name имя картинки
@@ -54,10 +53,10 @@ class photo_parser
         $new_height = $img_height / $k;
         $new_img = imagecreatetruecolor($new_width, $new_height);
 
-        imagecopyresampled($new_img, $path.$id.'_large.jpeg', 0, 0, 0, 0,
+        imagecopyresampled($new_img, $img_id, 0, 0, 0, 0,
             $new_width, $new_height, $img_width, $img_height);
 
-        imagejpeg($new_img, $path . $id .'_small.jpeg', 100);
+        imagejpeg($new_img, $path.$id.'_small.jpeg', 100);
 
 
         imagedestroy($img_id);//чистка памяти
@@ -67,7 +66,7 @@ class photo_parser
 
     function Resize_foto_medium($path, $id)
     {
-        $img_id = imagecreatefromjpeg($path);
+        $img_id = imagecreatefromjpeg($path.$id.'_large.jpeg');
 
         $img_width = imageSX($img_id);
         $img_height = imageSY($img_id);
@@ -82,10 +81,10 @@ class photo_parser
         imagecopyresampled($new_img, $img_id, 0, 0, 0, 0,
             $new_width, $new_height, $img_width, $img_height);
 
-        imagejpeg($new_img, $path . $id .'_medium.jpeg', 100);
+        imagejpeg($new_img, $path.$id.'_medium.jpeg', 100);
 
-        imagedestroy($img_id);//чистка памяти
-        imagedestroy($new_img);//чистка памяти
+        imagedestroy($img_id);
+        imagedestroy($new_img);
     }
 
 }
