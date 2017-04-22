@@ -88,4 +88,7 @@ class photo_parser
         imagedestroy($new_img);
     }
 
+    public static function Url_encoder($string_url){
+        return str_replace('\/','/',$string_url);
+    }
 }

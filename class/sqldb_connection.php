@@ -105,7 +105,7 @@ class sqldb_connection
 
     public static function User_photo_update($user_id){
         $dbh = sqldb_connection::DB_connect();
-        $photo_path = "37.57.92.40/trustme/class/picture/user_photo/id";
+        $photo_path = "http://37.57.92.40/trustme/class/picture/user_photo/id";
         $sth = $dbh->prepare("UPDATE user SET single_photo= :large, 
                               mid_photo = :medium_photo, multi_photo = :small_photo
                               WHERE user_ID = :id");
@@ -285,7 +285,7 @@ class sqldb_connection
 
     public static function Product_photo($product_id){
         $dbh = sqldb_connection::DB_connect();
-        $photo_path = "37.57.92.40/trustme/class/picture/product_photo/";
+        $photo_path = "http://37.57.92.40/trustme/class/picture/product_photo/";
         $sth = $dbh->prepare("INSERT INTO productgallery 
                             (product_id, pt_large_photo, pt_medium_photo , pt_small_photo )
                              VALUES ( :product_id, :large, :medium, :small)");
