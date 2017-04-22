@@ -331,16 +331,16 @@
       <Position>13</Position>
       <DataType>text|0</DataType>
     </column>
-    <column id="92" parent="20" name="small_photo">
-      <Position>14</Position>
+    <column id="92" parent="20" name="single_photo">
+      <Position>16</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="93" parent="20" name="medium_photo">
+    <column id="93" parent="20" name="mid_photo">
       <Position>15</Position>
       <DataType>mediumtext|0</DataType>
     </column>
-    <column id="94" parent="20" name="large_photo">
-      <Position>16</Position>
+    <column id="94" parent="20" name="multi_photo">
+      <Position>14</Position>
       <DataType>mediumtext|0</DataType>
     </column>
     <key id="95" parent="20" name="PRIMARY">

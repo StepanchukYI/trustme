@@ -47,7 +47,9 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
         photo_parser::Getpicture_from_product($product_photo,$product_id);
         sqldb_connection::Product_photo($product_id);
 
-        return sqldb_connection::Show_product_singleview($product_id);
+        $tmp_array = sqldb_connection::Show_product_singleview($product_id);
+        array_push($tmp_array, sqldb_connection::Show_product_multiview($product_id));
+        return $tmp_array;
     } else {
         return $errorArr;
     }

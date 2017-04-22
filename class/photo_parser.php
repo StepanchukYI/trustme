@@ -16,26 +16,27 @@ class photo_parser
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
         $path =  __DIR__.'\picture\user_photo\id'; //указание директории куда сохраняем файл
 
-        $file = fopen($path.$user_id . '_large.jpeg', 'wb');
+        $file = fopen($path.$user_id.'_large.jpeg', 'wb');
         fwrite($file, $decoded_string);//записываю в файл
         fclose($file);
 
-        photo_parser::Resize_foto_small($path,$user_id);
-        photo_parser::Resize_foto_medium($path,$user_id);
+        photo_parser::Resize_foto_small($path, $user_id);
+        photo_parser::Resize_foto_medium($path, $user_id);
 
+        sqldb_connection::User_photo_update($user_id);
     }
 
     public static function Getpicture_from_product($decoded_string, $product_id)
     {
         $decoded_string = base64_decode($decoded_string);//декодируем строку в картинку
-        $path = __DIR__.'\picture\product_photo\id'.$product_id.'_large.jpeg';   //указание директории куда сохраняем файл
+        $path = __DIR__.'\picture\product_photo\id';   //указание директории куда сохраняем файл
 
         $file = fopen($path.$product_id.'_large.jpeg', 'wb');
         fwrite($file, $decoded_string);//записываю в файл
         fclose($file);
 
-        photo_parser::Resize_foto_small($path, 42);
-        photo_parser::Resize_foto_medium($path, 42);
+        photo_parser::Resize_foto_small($path, $product_id);
+        photo_parser::Resize_foto_medium($path, $product_id);
     }
     //path принимает путь к файлу который нужно изменить
     //$image_name имя картинки

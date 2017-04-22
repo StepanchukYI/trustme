@@ -117,8 +117,9 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
         sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day,
             $birth_month, $birth_year, $sex, date("Y-m-d h:m:s"),
             1, $country, $city);
+
         photo_parser::Getpicture_from_User($photo,$id);
-        sqldb_connection::User_photo_update($id);
+
 
         return sqldb_connection::Auth_Select_All_id($id);
     } else {

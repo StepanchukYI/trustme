@@ -33,14 +33,18 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_select == null) array_push($errorArr, "Failed id select");
         else {
+            $tmp_array = array();
             $tmp_db_row = sqldb_connection::Select_Single_View_user($user_id_select);   // достаем строки из БД
+            array_push($tmp_array,$tmp_db_row);
+            array_push($tmp_array,sqldb_connection::Get_list_my_product($tmp_db_row['user_id']));
+
         }
 
         if (count($tmp_db_row) == 0) {
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return $tmp_db_row;
+            return $tmp_array;
         } else {
             return $errorArr;
         }
