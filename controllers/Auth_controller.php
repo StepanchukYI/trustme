@@ -74,7 +74,6 @@ switch ($command) {
         $response = "failed command";
         break;
 }
-if(isset($photo)){$pht = "photo";}
 logging($login." ".$password." ".$id." ".$email_2." ".$name." ".$surname." ".$birth_day
-    ." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city." ".$pht, json_encode($response), $command);
+    ." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city, json_encode($response), $command);
 echo json_encode($response);

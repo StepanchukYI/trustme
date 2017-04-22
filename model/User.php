@@ -35,8 +35,8 @@ class User
         else {
             $tmp_array = array();
             $tmp_db_row = sqldb_connection::Select_Single_View_user($user_id_select);   // достаем строки из БД
-            array_push($tmp_array,$tmp_db_row);
-            array_push($tmp_array,sqldb_connection::Get_list_my_product($tmp_db_row['user_id']));
+            //array_push($tmp_array,$tmp_db_row);
+            //array_push($tmp_array,sqldb_connection::Get_list_my_product($tmp_db_row['user_id']));
 
         }
 
@@ -44,7 +44,7 @@ class User
             return "NOTHING";
         }
         if (count($tmp_db_row) > 0) {
-            return $tmp_array;
+            return $tmp_db_row;
         } else {
             return $errorArr;
         }
