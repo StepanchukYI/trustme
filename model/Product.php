@@ -1,8 +1,10 @@
 <?php
+
 require "../class/sqldb_connection.php";
 require "../class/photo_parser.php";
 
 include_once ("../class/Samfuu.php");
+
 /*
  * Product модель( верность написанного ниже нахожу под БОЛЬШИМ СОМНЕНИЕМ, ЖЕНЯ ПОСМОТРИ И ПРОКОНСУЛЬТИРУЙ ПЛЕЗ)
  * Содержит все нужные для пользователя методы( для подачи запросов в БД и приема и групировки данных)
@@ -44,12 +46,15 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
             0,"disable", $made_in, $description, date('Y-m-d H:i:s'),
             $product_country, $product_city);
 
-        photo_parser::Getpicture_from_product($product_photo,$product_id);
+        if($product_photo != ""){
+            photo_parser::Getpicture_from_product($product_photo,$product_id);
+
+        }
 
         sqldb_connection::Product_photo($product_id);
 
         $tmp_array = sqldb_connection::Show_product_singleview($product_id);
-        array_push($tmp_array, sqldb_connection::Show_product_multiview($product_id));
+        //array_push($tmp_array, sqldb_connection::Show_product_multiview($product_id));
         return $tmp_array;
     } else {
         return $errorArr;

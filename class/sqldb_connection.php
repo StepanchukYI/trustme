@@ -375,11 +375,10 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT p.product_id, p.product_name, p.category, p.price, p.owner_id, p.buyer_id, p.status, 
                                     p.made_in, p.description, p.add_date, p.max_bid, p.min_bid,
-                                    p.auction_end, p.product_country, p.product_city,  pg.pt_large_photo
-                                    FROM product p
-                                    INNER JOIN productgallery pg ON pg.product_id = p.product_id
+                                    p.auction_end, p.product_country, p.product_city
+                                    FROM product p                                    
                                     WHERE p.product_id = :product_id  ");
-        //Влад, смотри, указывай и имя первой таблицы, и второй.
+        //Влад, смотри, указывай и имя первой таблицы, и второй. INNER JOIN productgallery pg ON pg.product_id = p.product_id
         //FROM product_photo p INNER JOIN productgallery pg
         // у тебя в запросе WHERE product_id - конфликт имен // окей, понял - принял
         $sth->execute(array(':product_id' => $product_id));

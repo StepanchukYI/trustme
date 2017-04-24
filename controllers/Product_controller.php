@@ -23,10 +23,10 @@ switch ($command) {
         $description = $_REQUEST['description'];
         $product_country = $_REQUEST['product_country'];
         $product_city = $_REQUEST['product_city'];
-        $product_photo = $_REQUEST['product_photo'];
+        $product_photo = "";
 
-        if ($user_id != "" && $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
-            && $product_city != "" && $product_photo != "") {
+        if ($user_id != "" /*&& $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
+            && $product_city != ""*/ ) {
             $response = Add_product($user_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city, $product_photo);
         } else {
             $response = "null field";
@@ -60,7 +60,7 @@ switch ($command) {
         $description = $_REQUEST['description'];
         $product_country = $_REQUEST['product_country'];
         $product_city = $_REQUEST['product_city'];
-        $product_photo = $_REQUEST['product_photo'];
+        $product_photo = "";
 
         if ($product_id != "" /*&& $product_name != "" && $category != ""
             && $price != "" && $description != ""
