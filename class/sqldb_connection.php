@@ -152,11 +152,13 @@ class sqldb_connection
     public static function Select_Multi_View_friends($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname, u.sex, u.multi_photo, u.balance, u.online_status, u.rate
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, 
+        u.surname, u.sex, u.multi_photo, 
+        u.balance, u.online_status, u.rate
         FROM user u 
         INNER JOIN friends f 
         ON (f.user_id_1 = u.user_id OR f.user_id_2 = u.user_id) 
-        AND u.user_id != :user_id AND f.friend_request = TRUE 
+        AND u.user_id != :user_id AND f.friend_request = TRUE
         AND (f.user_id_1 = :user_id OR f.user_id_2 = :user_id)
         ORDER BY u.name 
         LIMIT 50");
@@ -423,14 +425,16 @@ class sqldb_connection
     /*
      * Редактирование товара
      * */
-    public static function Product_Edit($product_id, $product_name, $category, $price, $made_in, $description, $add_date, $product_country, $product_city, $product_photo)
+    public static function Product_Edit($product_id, $product_name, $category, $price,
+                                        $made_in, $description, $add_date, $product_country,
+                                        $product_city, $product_photo)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE product
-                                    SET status =:status, product_name =: product_name, category =: category, price =: price,
-                                    made_in =: made_in, description =: description, add_date =: add_date, product_country =: product_country,
+                                    SET status = :status, product_name = :product_name, category = :category, price = :price,
+                                    made_in = :made_in, description = :description, add_date = :add_date, product_country = :product_country,
                                     product_city = :product_city
-                                    WHERE product_id =:product_id");
+                                    WHERE product_id = :product_id");
         $sth->execute(array(':product_id' => $product_id, ':product_name' => $product_name, ':category' => $category, ':price' => $price, ':made_in' => $made_in, ':description' => $description,
             ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;
 

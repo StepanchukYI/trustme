@@ -9,6 +9,7 @@ require "../class/sqldb_connection.php";
 
 class User
 {
+
 //Принимаем id user-a, для которого нужно вывести список всех user-ов
     function Multi_View_users($user_id)
     {
@@ -57,8 +58,6 @@ class User
         else {
             $tmp_db_row = sqldb_connection::Select_Multi_View_friends($user_id);   // достаем строки из БД
         }
-
-
         if (count($tmp_db_row) == 0) {
             return "NOTHING";
         }
@@ -195,4 +194,6 @@ class User
             return $tmp_db_row;
         }
     }
+
+
 }

@@ -4,5 +4,33 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../php" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../php" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/phpunit-6.1.1.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/phpunit.phar/" />
+          <root url="phar://$MODULE_DIR$/test/phpunit.phar/" />
+          <root url="phar://$MODULE_DIR$/test/phpunit-5.7.19.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/../../php/pharcommand.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/phpunit-6.1.1.phar/" />
+          <root url="phar://$MODULE_DIR$/../../php/phpunit.phar/" />
+          <root url="phar://$MODULE_DIR$/test/phpunit.phar/" />
+          <root url="phar://$MODULE_DIR$/test/phpunit-5.7.19.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

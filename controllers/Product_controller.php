@@ -62,10 +62,11 @@ switch ($command) {
         $product_city = $_REQUEST['product_city'];
         $product_photo = $_REQUEST['product_photo'];
 
-        if ($user_id != "" && $product_id != "" && $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
-            && $product_city != "" && $product_photo != ""
-        ) {
-            $response = Product_edit($user_id, $product_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city, $product_photo);
+        if ($product_id != "" && $product_name != "" && $category != ""
+            && $price != "" && $description != ""
+            && $product_country != "" && $product_city != "" ) {
+            $response = Product_edit($user_id, $product_id, $product_name, $category, $price, $made_in,
+                $description, $product_country, $product_city, $product_photo);
         } else {
             $response = "null field";
         }

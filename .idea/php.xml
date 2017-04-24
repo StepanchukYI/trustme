@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="PhpDebugIgnoredPathsSettings">
+    <skipped_paths>
+      <skipped_path path="$PROJECT_DIR$/../../php/ext" />
+    </skipped_paths>
+  </component>
+  <component name="PhpProjectServersManager">
+    <servers>
+      <server host="localhost" id="5eec308e-9327-4cd1-928f-c94d63ba4913" name="Localhost" use_path_mappings="true" />
+    </servers>
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings load_method="CUSTOM_LOADER" />
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" custom_loader_path="$PROJECT_DIR$/../../php/pear/PHPUnit/TestCase.php" phpunit_phar_path="$PROJECT_DIR$/test/phpunit.phar" />
     </phpunit_settings>
   </component>
 </project>

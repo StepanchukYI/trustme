@@ -1,7 +1,7 @@
 <?php
 require "../class/sqldb_connection.php";
 require "../class/photo_parser.php";
-include_once("../class/Samfuu.php");
+require("../class/Samfuu.php");
 
 /*
  * Файл для модуля авторизации на сервере
@@ -108,7 +108,7 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
         if ($birth_month == "" && strlen($birth_month) < 1 && strlen($birth_month) > 12) {
             array_push($errorArr, "Incorrect birthday month");
         }
-        if ($birth_year == "" && strlen($birth_year) < 1930 && strlen($birth_year) > date('Y')) {
+        if ($birth_year == "" && strlen($birth_year) < (date('Y')-100) && strlen($birth_year) > date('Y')) {
             array_push($errorArr, "Incorrect birthday year");
         }
 
