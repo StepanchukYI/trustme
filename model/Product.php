@@ -45,6 +45,7 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
             $product_country, $product_city);
 
         photo_parser::Getpicture_from_product($product_photo,$product_id);
+
         sqldb_connection::Product_photo($product_id);
 
         $tmp_array = sqldb_connection::Show_product_singleview($product_id);
@@ -123,8 +124,15 @@ function Product_edit($user_id,$product_id, $product_name, $category, $price, $m
 
 
     if (count($errorArr) == 0) {
-        sqldb_connection::Product_Edit($product_id, $product_name, $category, $price, $made_in, $description, date("Y-m-d h:m:s"), $product_country, $product_city, $product_photo);
-        return "Product update";
+        sqldb_connection::Product_Edit($product_id, $product_name, $category, $price,
+            $made_in, $description, date("Y-m-d h:m:s"), $product_country,
+            $product_city);
+
+        if($product_photo != ""){
+            photo_parser::Getpicture_from_product($product_photo,$product_id);
+            sqldb_connection::Product_photo_update($product_id);
+        }
+        return "Product_update";//sqldb_connection::Show_product_singleview($product_id);
     } else {
         return $errorArr;
     }

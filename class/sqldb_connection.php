@@ -145,8 +145,8 @@ class sqldb_connection
         $sth->execute(array(':user_id_select' => $user_id_select));//
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
-/*user_id, name, surname, sex, single_photo, balance,
-        online_status, rate, last_visit, country, city, reg_date*/
+    /*user_id, name, surname, sex, single_photo, balance,
+            online_status, rate, last_visit, country, city, reg_date*/
 
 //Функция для выборки списка друзей
     public static function Select_Multi_View_friends($user_id)
@@ -238,10 +238,15 @@ class sqldb_connection
     public static function Select_Multi_View_Requests_Input($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, multi_photo, balance, online_status, rate
-        FROM user INNER JOIN friends 
-        ON friends.user_id_2 = :user_id 
-        AND friends.friend_request = FALSE LIMIT 50");
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname,
+ u.sex, u.multi_photo, u.balance, u.online_status, u.rate 
+                                    FROM user u 
+                                    INNER JOIN friends f 
+                                    ON f.user_id_1 = u.user_id 
+                                    AND f.user_id_2 = :user_id 
+                                    AND u.user_id != :user_id 
+                                    AND f.friend_request = FALSE 
+                                    ORDER BY u.name");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -250,10 +255,14 @@ class sqldb_connection
     public static function Select_Multi_View_Requests_Output($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_id, name, surname, sex, multi_photo, balance, online_status, rate
-        FROM user INNER JOIN friends 
-        ON friends.user_id_1 = :user_id 
-        AND friends.friend_request = FALSE LIMIT 50");
+        $sth = $dbh->prepare("SELECT u.user_id, u.name, u.surname, u.sex, u.multi_photo, u.balance, u.online_status, u.rate 
+                                    FROM user u 
+                                    INNER JOIN friends f 
+                                    ON f.user_id_2 = u.user_id 
+                                    AND f.user_id_1 = :user_id 
+                                    AND u.user_id != :user_id 
+                                    AND f.friend_request = FALSE 
+                                    ORDER BY u.name ");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -308,6 +317,19 @@ class sqldb_connection
             ':small' => $photo_path . 'id' . $product_id . "_small.jpeg"));
     }
 
+    public static function Product_photo_update($product_id)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $photo_path = "http://37.57.92.40/trustme/class/picture/product_photo/";
+        $sth = $dbh->prepare("UPDATE productgallery SET pt_large_photo = :large,
+                                pt_medium_photo = :medium,
+                                pt_small_photo = :small
+                                WHERE product_id = :product_id");
+        $sth->execute(array(':product_id' => $product_id, ':large' => $photo_path . 'id' . $product_id . "_large.jpeg",
+            ':medium' => $photo_path . 'id' . $product_id . "_medium.jpeg",
+            ':small' => $photo_path . 'id' . $product_id . "_small.jpeg"));
+    }
+
     /*
      * Функция для обновления СТАТУСА ТОВАРА на active, sold, disable
      */
@@ -341,7 +363,7 @@ class sqldb_connection
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("DELETE FROM product
-                                    WHERE product_id =: product_id  ");
+                                    WHERE product_id = :product_id  ");
         $sth->execute(array(':product_id' => $product_id));
     }
 
@@ -427,16 +449,23 @@ class sqldb_connection
      * */
     public static function Product_Edit($product_id, $product_name, $category, $price,
                                         $made_in, $description, $add_date, $product_country,
-                                        $product_city, $product_photo)
+                                        $product_city)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE product
-                                    SET status = :status, product_name = :product_name, category = :category, price = :price,
-                                    made_in = :made_in, description = :description, add_date = :add_date, product_country = :product_country,
+                                    SET product_name = :product_name,
+                                     price = :price, made_in = :made_in, description = :description,
+                                    add_date = :add_date, product_country = :product_country,
                                     product_city = :product_city
                                     WHERE product_id = :product_id");
-        $sth->execute(array(':product_id' => $product_id, ':product_name' => $product_name, ':category' => $category, ':price' => $price, ':made_in' => $made_in, ':description' => $description,
-            ':add_date' => $add_date, ':product_country' => $product_country, ':product_city' => $product_city, ':product_photo' => $product_photo));;
+        $sth->execute(array(':product_id' => $product_id,
+            ':product_name' => $product_name,
+            ':price' => $price,
+            ':made_in' => $made_in,
+            ':description' => $description,
+            ':add_date' => $add_date,
+            ':product_country' => $product_country,
+            ':product_city' => $product_city,));
 
     }
 

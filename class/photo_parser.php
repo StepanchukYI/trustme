@@ -37,6 +37,7 @@ class photo_parser
 
         photo_parser::Resize_foto_small($path, $product_id);
         photo_parser::Resize_foto_medium($path, $product_id);
+
     }
     //path принимает путь к файлу который нужно изменить
     //$image_name имя картинки
