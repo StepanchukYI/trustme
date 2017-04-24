@@ -35,7 +35,6 @@ function Auth($login, $password)
         return $errorArr;
     }
 }
-
 /*
  * Функция для первичной регистрации пользователя.
  */
@@ -75,7 +74,6 @@ function Registration_min($email, $phone, $password1)
         return $errorArr;
     }
 }
-
 /*
  * Функция для получения временного пароля для продолжения регистрации
  */
@@ -87,7 +85,6 @@ function Temp_code()
     }
     return $tempcode;
 }
-
 /*
  * Функция для полной регистрации пользователя
  */
@@ -128,7 +125,6 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 
 
 }
-
 /*
  * Функция для изменения статуса пользователя на офлайн
  */

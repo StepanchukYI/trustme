@@ -82,7 +82,6 @@ class User
             return $tmp_db_row;
         }
     }
-
 //Принимаем id user-a и его поисковый запрос, возвращаем все возможные варианты совпадений
     function Search($user_id, $query)
     {

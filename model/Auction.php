@@ -10,7 +10,6 @@ require ("../class/Samfuu.php");
 /*
  * Функция для добавлнеии ставки по лоту либо выставления товара на аукцион
  */
-
 function makeBid($product_id, $user_id, $user_bid)
 {
     $errorArr = array();//создание массива ошибок.

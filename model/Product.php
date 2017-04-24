@@ -60,7 +60,6 @@ function Add_product( $user_id, $product_name, $category, $price, $made_in, $des
         return $errorArr;
     }
 }
-
 /*
  * Выставляем товар на лот
  * */

@@ -384,7 +384,6 @@ class sqldb_connection
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
     }
-
     /*
    * Функция для выборки данных О ТОВАРЕ для пользователя
    * */
@@ -400,7 +399,6 @@ class sqldb_connection
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
     /*
      * Закидываем товар на аукцион
      * */

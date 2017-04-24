@@ -65,7 +65,6 @@ class photo_parser
         imagedestroy($new_img);//чистка памяти
     }
 
-
     function Resize_foto_medium($path, $id)
     {
         $img_id = imagecreatefromjpeg($path.$id.'_large.jpeg');
