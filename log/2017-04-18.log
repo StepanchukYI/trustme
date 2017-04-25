@@ -1,0 +1,730 @@
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-17 11:04:40","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 00:02:18 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:20:14 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:20:15 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 12:04:18","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 00:21:08 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:22:45 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:22:47 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:22:48 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 12:04:08","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 00:23:02 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:27:54 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:27:55 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:28:05 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: registration_min
+Response text: null field
+Date: Tue, 18 Apr 2017 00:28:09 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: registration_min
+Response text: null field
+Date: Tue, 18 Apr 2017 00:28:11 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:29:43 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:29:45 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 00:29:46 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 01:18:06 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 01:20:26 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 01:23:36 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 01:32:22 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 01:34:03 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: auth
+Response text: null field
+Date: Tue, 18 Apr 2017 19:10:22 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 19:10:59 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: quit
+Response text: null field
+Date: Tue, 18 Apr 2017 19:11:26 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 19:13:22 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 19:17:36 +0200
+----------------------------------------------------------
+Parameters:  
+Function name: quit
+Response text: null field
+Date: Tue, 18 Apr 2017 19:20:35 +0200
+----------------------------------------------------------
+Parameters: fqwerty@mail.ru 59159258 rootroot
+Function name: Registration_min
+Response text: [{"user_id":"10","email":"fqwerty@mail.ru","email_2":"","phone":"59159258","password":"rootroot","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-18 07:04:17","last_visit":"0000-00-00 00:00:00","balance":"0","rate":"0","country":"","city":"","temp_code":"899033"}]
+Date: Tue, 18 Apr 2017 19:21:17 +0200
+----------------------------------------------------------
+Parameters: fqwerty@mail.ru 59159258 rootroot
+Function name: Registration_min
+Response text: ["phone already using","email already using"]
+Date: Tue, 18 Apr 2017 19:21:19 +0200
+----------------------------------------------------------
+Parameters: fqwerty@mail.ru 59159258 rootroot
+Function name: Registration_min
+Response text: ["phone already using","email already using"]
+Date: Tue, 18 Apr 2017 19:21:22 +0200
+----------------------------------------------------------
+Parameters: fqwerty@mail.ru 59159258 rootroot
+Function name: Registration_min
+Response text: ["phone already using","email already using"]
+Date: Tue, 18 Apr 2017 19:34:26 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 21:18:43 +0200
+----------------------------------------------------------
+Parameters:            
+Function name: Quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 21:18:51 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 09:04:13","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 21:21:13 +0200
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 21:21:27 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 09:04:47","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 21:24:47 +0200
+----------------------------------------------------------
+Parameters:
+Function name: quit
+Response text: null field
+Date: Tue, 18 Apr 2017 21:24:52 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 09:04:02","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 21:31:02 +0200
+----------------------------------------------------------
+Parameters:            
+Function name: quit
+Response text: null field
+Date: Tue, 18 Apr 2017 21:31:07 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 09:04:19","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 21:41:19 +0200
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: User ofline
+Date: Tue, 18 Apr 2017 21:42:33 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 09:04:59","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 21:45:59 +0200
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: User_ofline
+Date: Tue, 18 Apr 2017 21:46:10 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 10:04:24","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 22:33:24 +0200
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 10:04:49","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 22:33:50 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 10:04:01","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 22:39:01 +0200
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 10:04:32","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 22:39:32 +0200
+----------------------------------------------------------
+Parameters:  rootttt          
+Function name: auth
+Response text: "null field"
+Date: Tue, 18 Apr 2017 22:43:53 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:58","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:43:58 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:12","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:12 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","0":"1","email":"bodunjo855@gmail.com","1":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","2":"fsdfsd@mads.ru","phone":"80953866616","3":"80953866616","password":"rootttt","4":"rootttt","name":"dasdasd","5":"dasdasd","surname":"fsdfsdfsdf","6":"fsdfsdfsdf","birth_day":"14","7":"14","birth_month":"3","8":"3","birth_year":"1996","9":"1996","sex":"1","10":"1","facebook_id":"","11":"","google_id":"","12":"","small_photo":"","13":"","medium_photo":"","14":"","large_photo":"","15":"","loc_coords":"","16":"","time_zone":"","17":"","online_status":"1","18":"1","reg_date":"0000-00-00 00:00:00","19":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:13","20":"2017-04-18 10:04:13","balance":"0","21":"0","rate":"0","22":"0","country":"Ucraine","23":"Ucraine","city":"Dnepro","24":"Dnepro","temp_code":"964490","25":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:13 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","0":"1","email":"bodunjo855@gmail.com","1":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","2":"fsdfsd@mads.ru","phone":"80953866616","3":"80953866616","password":"rootttt","4":"rootttt","name":"dasdasd","5":"dasdasd","surname":"fsdfsdfsdf","6":"fsdfsdfsdf","birth_day":"14","7":"14","birth_month":"3","8":"3","birth_year":"1996","9":"1996","sex":"1","10":"1","facebook_id":"","11":"","google_id":"","12":"","small_photo":"","13":"","medium_photo":"","14":"","large_photo":"","15":"","loc_coords":"","16":"","time_zone":"","17":"","online_status":"1","18":"1","reg_date":"0000-00-00 00:00:00","19":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:14","20":"2017-04-18 10:04:14","balance":"0","21":"0","rate":"0","22":"0","country":"Ucraine","23":"Ucraine","city":"Dnepro","24":"Dnepro","temp_code":"964490","25":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:14 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","0":"1","email":"bodunjo855@gmail.com","1":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","2":"fsdfsd@mads.ru","phone":"80953866616","3":"80953866616","password":"rootttt","4":"rootttt","name":"dasdasd","5":"dasdasd","surname":"fsdfsdfsdf","6":"fsdfsdfsdf","birth_day":"14","7":"14","birth_month":"3","8":"3","birth_year":"1996","9":"1996","sex":"1","10":"1","facebook_id":"","11":"","google_id":"","12":"","small_photo":"","13":"","medium_photo":"","14":"","large_photo":"","15":"","loc_coords":"","16":"","time_zone":"","17":"","online_status":"1","18":"1","reg_date":"0000-00-00 00:00:00","19":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:15","20":"2017-04-18 10:04:15","balance":"0","21":"0","rate":"0","22":"0","country":"Ucraine","23":"Ucraine","city":"Dnepro","24":"Dnepro","temp_code":"964490","25":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:15 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","0":"1","email":"bodunjo855@gmail.com","1":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","2":"fsdfsd@mads.ru","phone":"80953866616","3":"80953866616","password":"rootttt","4":"rootttt","name":"dasdasd","5":"dasdasd","surname":"fsdfsdfsdf","6":"fsdfsdfsdf","birth_day":"14","7":"14","birth_month":"3","8":"3","birth_year":"1996","9":"1996","sex":"1","10":"1","facebook_id":"","11":"","google_id":"","12":"","small_photo":"","13":"","medium_photo":"","14":"","large_photo":"","15":"","loc_coords":"","16":"","time_zone":"","17":"","online_status":"1","18":"1","reg_date":"0000-00-00 00:00:00","19":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:16","20":"2017-04-18 10:04:16","balance":"0","21":"0","rate":"0","22":"0","country":"Ucraine","23":"Ucraine","city":"Dnepro","24":"Dnepro","temp_code":"964490","25":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:16 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:21","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:21 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:22","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:45:22 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:23","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:45:23 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:30","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:30 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:32","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:32 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:41","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:41 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:42","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:45:42 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:42","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:45:42 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:50","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:45:50 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:00","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:46:00 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:00","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:46:01 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:08","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:46:08 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:12","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:46:13 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:30","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:46:30 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: {"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:32","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}
+Date: Tue, 18 Apr 2017 22:46:32 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 10:04:37","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 22:46:37 +0200
+----------------------------------------------------------
+Parameters: 2 2 50 
+Function name: makeBid
+Response text: "Lot created"
+Date: Tue, 18 Apr 2017 22:51:53 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 22:52:45 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 22:53:36 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 22:55:28 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 22:56:50 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 22:58:12 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[]"
+Date: Tue, 18 Apr 2017 22:59:32 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[]"
+Date: Tue, 18 Apr 2017 22:59:34 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[]"
+Date: Tue, 18 Apr 2017 22:59:43 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[]"
+Date: Tue, 18 Apr 2017 22:59:56 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[{\"product_name\":\"Kettle\",\"price\":\"500\",\"owner_id\":\"1\",\"buyer_id\":\"0\",\"status\":\"disable\",\"made_in\":\"china\",\"description\":\"here_must_be_description\",\"add_date\":\"2017-04-18 22:58:12\",\"max_bid\":\"0\",\"min_bid\":\"0\",\"auction_end\":\"0000-00-00\",\"product_country\":\"ukraine\",\"product_city\":\"dnipro\"}]"
+Date: Tue, 18 Apr 2017 23:00:13 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[{\"product_name\":\"Kettle\",\"price\":\"500\",\"owner_id\":\"1\",\"buyer_id\":\"0\",\"status\":\"disable\",\"made_in\":\"china\",\"description\":\"here_must_be_description\",\"add_date\":\"2017-04-18 22:58:12\",\"max_bid\":\"0\",\"min_bid\":\"0\",\"auction_end\":\"0000-00-00\",\"product_country\":\"ukraine\",\"product_city\":\"dnipro\"}]"
+Date: Tue, 18 Apr 2017 23:00:18 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[{\"product_name\":\"Kettle\",\"price\":\"500\",\"owner_id\":\"1\",\"buyer_id\":\"0\",\"status\":\"disable\",\"made_in\":\"china\",\"description\":\"here_must_be_description\",\"add_date\":\"2017-04-18 22:58:12\",\"max_bid\":\"0\",\"min_bid\":\"0\",\"auction_end\":\"0000-00-00\",\"product_country\":\"ukraine\",\"product_city\":\"dnipro\"}]"
+Date: Tue, 18 Apr 2017 23:00:32 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: "[{\"product_name\":\"Kettle\",\"price\":\"500\",\"owner_id\":\"1\",\"buyer_id\":\"0\",\"status\":\"disable\",\"made_in\":\"china\",\"description\":\"here_must_be_description\",\"add_date\":\"2017-04-18 22:58:12\",\"max_bid\":\"0\",\"min_bid\":\"0\",\"auction_end\":\"0000-00-00\",\"product_country\":\"ukraine\",\"product_city\":\"dnipro\"}]"
+Date: Tue, 18 Apr 2017 23:00:33 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:01:05 +0200
+----------------------------------------------------------
+Parameters:    dasd     
+Function name: list_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:01:17 +0200
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:01:20 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 11:04:55","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 23:21:55 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 11:04:55","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 23:21:55 +0200
+----------------------------------------------------------
+Parameters:    
+Function name: 
+Response text: "Incorrect command"
+Date: Tue, 18 Apr 2017 23:21:57 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 11:04:22","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 23:26:22 +0200
+----------------------------------------------------------
+Parameters:    
+Function name: 
+Response text: "Incorrect command"
+Date: Tue, 18 Apr 2017 23:26:23 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-18 11:04:45","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Tue, 18 Apr 2017 23:30:45 +0200
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Tue, 18 Apr 2017 23:30:46 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle televisors 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "null field"
+Date: Tue, 18 Apr 2017 23:41:28 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle televisors 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:41:51 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle toys 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:42:14 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle games 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:42:20 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle cars 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:42:26 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle instrumenty 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:42:45 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle phptawit 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:43:04 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle hello 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:43:09 +0200
+----------------------------------------------------------
+Parameters: 1  Kettle world 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: "Product created"
+Date: Tue, 18 Apr 2017 23:43:22 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-18 11:04:23","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 18 Apr 2017 23:52:23 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:53:44 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:53:47 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:02 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:03 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:03 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:04 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:06 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:12 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:13 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:14 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:15 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:15 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:16 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:17 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:37 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:38 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:39 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:39 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:43 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:43 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:44 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:54:44 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:00 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:47 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:48 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:49 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:58 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:55:59 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:00 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:00 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:11 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:56:12 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:56:13 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:28 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:29 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:33 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:33 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:34 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:34 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: []
+Date: Tue, 18 Apr 2017 23:56:35 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:57:22 +0200
+----------------------------------------------------------
+Parameters: 0   home     
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"}]
+Date: Tue, 18 Apr 2017 23:57:22 +0200
+----------------------------------------------------------

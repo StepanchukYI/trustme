@@ -1,0 +1,30 @@
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","mid_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user#_photo\/id6#_medium.jpeg","single_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user#_photo\/id6#_small.jpeg","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-25 02:04:24","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Tue, 25 Apr 2017 14:50:24 +0300
+----------------------------------------------------------
+Parameters: 1   
+Function name: multi_view_users
+Response text: [{"user_id":"5","name":"someone","surname":"","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"kalashnyk","surname":"second@gmail.com","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_small.jpeg","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"Denis","surname":"Loh","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id11_small.jpeg","balance":null,"online_status":"1","rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":null,"online_status":"1","rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":null,"online_status":"0","rate":null},{"user_id":"14","name":"someone","surname":null,"sex":null,"multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":null,"online_status":"1","rate":null},{"user_id":"15","name":"shajtanovich","surname":"dn97@ua.fm","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":null,"online_status":"0","rate":null},{"user_id":"16","name":"someone","surname":null,"sex":null,"multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id6_large.jpeg","balance":null,"online_status":"0","rate":null},{"user_id":"17","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id17_small.jpeg","balance":null,"online_status":"1","rate":null},{"user_id":"18","name":"someone","surname":null,"sex":null,"multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id17_small.jpeg","balance":null,"online_status":null,"rate":null},{"user_id":"19","name":"someone","surname":null,"sex":null,"multi_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"20","name":"grishin","surname":"adskaya@ua.fm","sex":"0","multi_photo":"http:\/\/37.57.92.40\/trustme\/class\/picture\/user_photo\/id20_small.jpeg","balance":null,"online_status":"1","rate":null}]
+Date: Tue, 25 Apr 2017 14:50:25 +0300
+----------------------------------------------------------
+Parameters:  777          
+Function name: registration_min
+Response text: ["Incorrect email"]
+Date: Tue, 25 Apr 2017 14:50:54 +0300
+----------------------------------------------------------
+Parameters:  777          
+Function name: registration_min
+Response text: ["Incorrect email"]
+Date: Tue, 25 Apr 2017 14:50:59 +0300
+----------------------------------------------------------
+Parameters:  777          
+Function name: registration_min
+Response text: ["Incorrect email"]
+Date: Tue, 25 Apr 2017 14:51:01 +0300
+----------------------------------------------------------
+Parameters:  777          
+Function name: registration_min
+Response text: ["Incorrect email"]
+Date: Tue, 25 Apr 2017 14:51:02 +0300
+----------------------------------------------------------

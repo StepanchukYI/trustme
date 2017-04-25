@@ -1,0 +1,775 @@
+Parameters: 0   home     
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 00:10:18 +0200
+----------------------------------------------------------
+Parameters: 1   home     
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"3","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:14","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 00:10:21 +0200
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 12:04:01","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 00:33:01 +0200
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 00:33:02 +0200
+----------------------------------------------------------
+Parameters: 5  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: [{"product_id":"12","product_name":"Kettle","category":"home","price":"500","owner_id":"5","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:19","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 00:42:19 +0200
+----------------------------------------------------------
+Parameters: 1  olololo home 5000 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: [{"product_id":"13","product_name":"olololo","category":"home","price":"5000","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 00:42:45 +0200
+----------------------------------------------------------
+Parameters: 7  Kettle home 500 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: {"product_id":"14","product_name":"Kettle","category":"home","price":"500","owner_id":"7","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}
+Date: Wed, 19 Apr 2017 00:43:33 +0200
+----------------------------------------------------------
+Parameters: 789  ololoololo home 5000 china here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: {"product_id":"15","product_name":"ololoololo","category":"home","price":"5000","owner_id":"789","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:55","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}
+Date: Wed, 19 Apr 2017 00:43:55 +0200
+----------------------------------------------------------
+Parameters: 789  Zhenya_asshole home 77777777 Zhenyas_home here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: {"product_id":"16","product_name":"Zhenya_asshole","category":"home","price":"77777777","owner_id":"789","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}
+Date: Wed, 19 Apr 2017 01:23:39 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 02:04:01","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 02:10:01 +0200
+----------------------------------------------------------
+Parameters:  rootttt          
+Function name: auth
+Response text: "null field"
+Date: Wed, 19 Apr 2017 02:29:53 +0200
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 02:04:58","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 02:29:58 +0200
+----------------------------------------------------------
+Parameters:  rootttt          
+Function name: auth
+Response text: "null field"
+Date: Wed, 19 Apr 2017 03:47:01 +0300
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 03:04:07","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 03:47:07 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 04:04:45","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 04:09:45 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 04:09:46 +0300
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 04:04:50","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 04:09:50 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 04:10:00 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: multi_view_users
+Response text: "failed command"
+Date: Wed, 19 Apr 2017 04:10:51 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: multi_view_users
+Response text: "failed command"
+Date: Wed, 19 Apr 2017 04:12:10 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 04:04:47","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 04:16:47 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 04:16:50 +0300
+----------------------------------------------------------
+Parameters:    televisors     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 04:16:59 +0300
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"1","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"ololoololo","price":"5000","owner_id":"789","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:55","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"789","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 04:17:11 +0300
+----------------------------------------------------------
+Parameters:    toys     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"3","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:14","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 04:17:26 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 04:42:33 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 12:04:02","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 12:05:02 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 12:05:04 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:05:42 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 12:04:05","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 12:12:05 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 12:12:07 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:12:11 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 12:15:10 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:15:10 +0300
+----------------------------------------------------------
+Parameters: 789  Zhenya_asshole home 77777777 Zhenyas_home here_must_be_description ukraine dnipro
+Function name: add_product
+Response text: {"product_id":"17","product_name":"Zhenya_asshole","category":"home","price":"77777777","owner_id":"789","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 12:17:45","auction_qouta":null,"max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}
+Date: Wed, 19 Apr 2017 12:17:45 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 12:04:31","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 12:31:31 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 12:31:32 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:31:40 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:31:43 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 12:04:52","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 12:35:52 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 12:35:57 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:36:02 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 12:36:31 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:56","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:08:56 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:08:58 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:09:02 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:09:11 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:12:13 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:12:13 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:29","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:20:29 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:20:31 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:20:34 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:23:50 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:23:50 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:25:59 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:25:59 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:36","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:30:36 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:30:37 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:30:40 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:39","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:37:39 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:37:40 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:37:44 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:38:04 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:38:14 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:20","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:39:20 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:39:22 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:39:26 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:39:36 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:39:41 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:19","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:44:19 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:44:20 +0300
+----------------------------------------------------------
+Parameters:    televisors     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:44:28 +0300
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"ololoololo","price":"5000","owner_id":"789","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:55","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"789","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 12:17:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:44:33 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:44:37 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:44:48 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:19","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:48:19 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:48:20 +0300
+----------------------------------------------------------
+Parameters:         
+Function name: list_my_product
+Response text: "null field"
+Date: Wed, 19 Apr 2017 13:48:28 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:48:47 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:51:15 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 01:04:56","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 13:53:56 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:53:57 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:54:01 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:54:08 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 13:54:13 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 13:57:37 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 02:04:27","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 14:01:27 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 14:01:28 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 02:04:57","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 14:05:57 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 14:05:59 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:06:04 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:06:08 +0300
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 02:04:14","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 14:06:14 +0300
+----------------------------------------------------------
+Parameters:  password          
+Function name: registration_min
+Response text: [{"user_id":"11","email":"xz@gmail.com","email_2":null,"phone":"380993410021","password":"password","name":"someone","surname":null,"birth_day":null,"birth_month":null,"birth_year":null,"sex":null,"facebook_id":null,"google_id":null,"small_photo":null,"medium_photo":null,"large_photo":null,"loc_coords":null,"time_zone":null,"online_status":null,"reg_date":"2017-04-19 02:04:52","last_visit":null,"balance":null,"rate":null,"country":null,"city":null,"temp_code":"939517"}]
+Date: Wed, 19 Apr 2017 14:25:52 +0300
+----------------------------------------------------------
+Parameters: 11   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 14:25:52 +0300
+----------------------------------------------------------
+Parameters: 11        
+Function name: list_my_product
+Response text: []
+Date: Wed, 19 Apr 2017 14:25:59 +0300
+----------------------------------------------------------
+Parameters: 11        
+Function name: list_orders
+Response text: []
+Date: Wed, 19 Apr 2017 14:26:06 +0300
+----------------------------------------------------------
+Parameters: 11        
+Function name: list_my_product
+Response text: []
+Date: Wed, 19 Apr 2017 14:26:16 +0300
+----------------------------------------------------------
+Parameters:    televisors     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:26:17 +0300
+----------------------------------------------------------
+Parameters:    home     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"ololoololo","price":"5000","owner_id":"789","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:55","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"789","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 12:17:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:26:29 +0300
+----------------------------------------------------------
+Parameters: 11        
+Function name: list_orders
+Response text: []
+Date: Wed, 19 Apr 2017 14:26:39 +0300
+----------------------------------------------------------
+Parameters: 11        
+Function name: list_my_product
+Response text: []
+Date: Wed, 19 Apr 2017 14:26:47 +0300
+----------------------------------------------------------
+Parameters: 11   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"}]
+Date: Wed, 19 Apr 2017 14:26:50 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com password          
+Function name: auth
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 02:04:19","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 14:27:19 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null}]
+Date: Wed, 19 Apr 2017 14:27:20 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:27:24 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:27:27 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 14:27:35 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null}]
+Date: Wed, 19 Apr 2017 14:27:40 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null}]
+Date: Wed, 19 Apr 2017 14:30:50 +0300
+----------------------------------------------------------
+Parameters:   6         
+Function name: quit
+Response text: [{"user_id":"6","email":"kalashnyk.denys@gmail.com","email_2":"","phone":"380993414821","password":"password","name":"someone","surname":"","birth_day":"","birth_month":"","birth_year":"","sex":"0","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"0","reg_date":"2017-04-15 11:04:30","last_visit":"2017-04-19 02:04:52","balance":"0","rate":"0","country":"","city":"","temp_code":"785451"}]
+Date: Wed, 19 Apr 2017 14:30:52 +0300
+----------------------------------------------------------
+Parameters: hz@gmail.com password          
+Function name: auth
+Response text: ["Failed email or phone number"]
+Date: Wed, 19 Apr 2017 14:31:19 +0300
+----------------------------------------------------------
+Parameters: hz @gmail.com password          
+Function name: auth
+Response text: ["Failed email or phone number"]
+Date: Wed, 19 Apr 2017 14:31:26 +0300
+----------------------------------------------------------
+Parameters: hz @gmail.com password          
+Function name: auth
+Response text: ["Failed email or phone number"]
+Date: Wed, 19 Apr 2017 14:31:28 +0300
+----------------------------------------------------------
+Parameters: hz@gmail.com password          
+Function name: auth
+Response text: ["Failed email or phone number"]
+Date: Wed, 19 Apr 2017 14:31:34 +0300
+----------------------------------------------------------
+Parameters:  123123          
+Function name: registration_min
+Response text: [{"user_id":"12","email":"qwer@qwe.com","email_2":null,"phone":"+380994595515","password":"123123","name":"someone","surname":null,"birth_day":null,"birth_month":null,"birth_year":null,"sex":null,"facebook_id":null,"google_id":null,"small_photo":null,"medium_photo":null,"large_photo":null,"loc_coords":null,"time_zone":null,"online_status":null,"reg_date":"2017-04-19 05:04:35","last_visit":null,"balance":null,"rate":null,"country":null,"city":null,"temp_code":"766634"}]
+Date: Wed, 19 Apr 2017 17:03:35 +0300
+----------------------------------------------------------
+Parameters: 12   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null}]
+Date: Wed, 19 Apr 2017 17:03:35 +0300
+----------------------------------------------------------
+Parameters: 12        
+Function name: list_my_product
+Response text: []
+Date: Wed, 19 Apr 2017 17:03:48 +0300
+----------------------------------------------------------
+Parameters: 12        
+Function name: list_orders
+Response text: []
+Date: Wed, 19 Apr 2017 17:03:53 +0300
+----------------------------------------------------------
+Parameters: 12        
+Function name: list_orders
+Response text: []
+Date: Wed, 19 Apr 2017 17:04:55 +0300
+----------------------------------------------------------
+Parameters:  CnTgFyXeR123          
+Function name: registration_min
+Response text: [{"user_id":"13","email":"b0dunj0@mail.ru","email_2":null,"phone":"380953866616","password":"CnTgFyXeR123","name":"someone","surname":null,"birth_day":null,"birth_month":null,"birth_year":null,"sex":null,"facebook_id":null,"google_id":null,"small_photo":null,"medium_photo":null,"large_photo":null,"loc_coords":null,"time_zone":null,"online_status":null,"reg_date":"2017-04-19 05:04:30","last_visit":null,"balance":null,"rate":null,"country":null,"city":null,"temp_code":"476172"}]
+Date: Wed, 19 Apr 2017 17:06:30 +0300
+----------------------------------------------------------
+Parameters: 13   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null}]
+Date: Wed, 19 Apr 2017 17:06:31 +0300
+----------------------------------------------------------
+Parameters: 13        
+Function name: list_orders
+Response text: []
+Date: Wed, 19 Apr 2017 17:06:42 +0300
+----------------------------------------------------------
+Parameters: 13        
+Function name: list_my_product
+Response text: []
+Date: Wed, 19 Apr 2017 17:06:45 +0300
+----------------------------------------------------------
+Parameters:   13         
+Function name: quit
+Response text: [{"user_id":"13","email":"b0dunj0@mail.ru","email_2":null,"phone":"380953866616","password":"CnTgFyXeR123","name":"someone","surname":null,"birth_day":null,"birth_month":null,"birth_year":null,"sex":null,"facebook_id":null,"google_id":null,"small_photo":null,"medium_photo":null,"large_photo":null,"loc_coords":null,"time_zone":null,"online_status":"0","reg_date":"2017-04-19 05:04:30","last_visit":"2017-04-19 05:04:49","balance":null,"rate":null,"country":null,"city":null,"temp_code":"476172"}]
+Date: Wed, 19 Apr 2017 17:06:49 +0300
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 05:04:04","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 17:07:04 +0300
+----------------------------------------------------------
+Parameters: 1   
+Function name: multi_view_users
+Response text: [{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 17:07:05 +0300
+----------------------------------------------------------
+Parameters: 1        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"3","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:14","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:22","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 17:07:10 +0300
+----------------------------------------------------------
+Parameters: 1        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:22","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 17:07:11 +0300
+----------------------------------------------------------
+Parameters: 1        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"3","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:14","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"1","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:22","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 17:07:19 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:34 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:37 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:39 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:56 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:56 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:57 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:57 +0300
+----------------------------------------------------------
+Parameters: kalashnyk.denys@gmail.com paswword          
+Function name: auth
+Response text: ["Failed password"]
+Date: Wed, 19 Apr 2017 21:05:57 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 21:06:06 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 21:06:13 +0300
+----------------------------------------------------------
+Parameters:    televisors     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 21:06:23 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 21:06:26 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 21:06:32 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 21:06:39 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 21:06:42 +0300
+----------------------------------------------------------
+Parameters:    televisors     
+Function name: list_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 21:06:44 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 22:42:57 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_my_product
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 22:43:01 +0300
+----------------------------------------------------------
+Parameters: bodunjo855@gmail.com rootttt          
+Function name: auth
+Response text: [{"user_id":"1","email":"bodunjo855@gmail.com","email_2":"fsdfsd@mads.ru","phone":"80953866616","password":"rootttt","name":"dasdasd","surname":"fsdfsdfsdf","birth_day":"14","birth_month":"3","birth_year":"1996","sex":"1","facebook_id":"","google_id":"","small_photo":"","medium_photo":"","large_photo":"","loc_coords":"","time_zone":"","online_status":"1","reg_date":"0000-00-00 00:00:00","last_visit":"2017-04-19 10:04:35","balance":"0","rate":"0","country":"Ucraine","city":"Dnepro","temp_code":"964490"}]
+Date: Wed, 19 Apr 2017 22:43:35 +0300
+----------------------------------------------------------
+Parameters: 1   
+Function name: multi_view_users
+Response text: [{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 22:43:35 +0300
+----------------------------------------------------------
+Parameters: 1   
+Function name: multi_view_users
+Response text: [{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 22:47:42 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 23:04:14 +0300
+----------------------------------------------------------
+Parameters: 6   
+Function name: multi_view_users
+Response text: [{"user_id":"1","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 23:04:21 +0300
+----------------------------------------------------------
+Parameters: 6        
+Function name: list_orders
+Response text: [{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"2","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 22:58:12","max_bid":"0","min_bid":"0","auction_end":"0000-00-00 00:00:00","product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"2","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:41:51","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:20","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"3","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:42:26","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"1","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:04","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"6","buyer_id":"4","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-18 23:43:09","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"5","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:41:56","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"olololo","price":"5000","owner_id":"6","buyer_id":"0","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:42:45","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Kettle","price":"500","owner_id":"7","buyer_id":"6","status":"disable","made_in":"china","description":"here_must_be_description","add_date":"2017-04-19 00:43:33","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"},{"product_name":"Zhenya_asshole","price":"77777777","owner_id":"6","buyer_id":"0","status":"disable","made_in":"Zhenyas_home","description":"here_must_be_description","add_date":"2017-04-19 01:23:39","max_bid":null,"min_bid":null,"auction_end":null,"product_country":"ukraine","product_city":"dnipro"}]
+Date: Wed, 19 Apr 2017 23:04:34 +0300
+----------------------------------------------------------
+Parameters: 1   
+Function name: multi_view_users
+Response text: [{"user_id":"7","name":"dasdasd","surname":"fsdfsdfsdf","sex":"1","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"5","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"6","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"9","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"1","rate":"0"},{"user_id":"10","name":"someone","surname":"","sex":"0","small_photo":"","balance":"0","online_status":"0","rate":"0"},{"user_id":"11","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"12","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":null,"rate":null},{"user_id":"13","name":"someone","surname":null,"sex":null,"small_photo":null,"balance":null,"online_status":"0","rate":null}]
+Date: Wed, 19 Apr 2017 23:47:13 +0300
+----------------------------------------------------------
