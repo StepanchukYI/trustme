@@ -1,7 +1,7 @@
 <?php
-require "../class/sqldb_connection.php";
-require "../class/photo_parser.php";
-require("../class/Samfuu.php");
+require __DIR__."/../class/sqldb_connection.php";
+require __DIR__."/../class/photo_parser.php";
+require __DIR__."/../class/Samfuu.php";
 
 /*
  * Файл для модуля авторизации на сервере
@@ -32,7 +32,7 @@ function Auth($login, $password)
         return sqldb_connection::Auth_Select_All($login, $password);
 
     } else {
-        return $errorArr;
+        return $errorArr[0];
     }
 }
 /*
@@ -49,8 +49,12 @@ function Registration_min($email, $phone, $password1)
         array_push($errorArr, "Incorrect email");
     }
     //валидация пароля
-    if ($password1 == "" && strlen($password1) <= 6 && strlen($password1) >= 32) {
+    if ($password1 == "" || strlen($password1) <= 6 || strlen($password1) >= 32) {
         array_push($errorArr, "Incorrect password");
+    }
+
+    if($phone == "" || strlen($phone) <= 9 || strlen($phone) >= 15){
+        array_push($errorArr, "Incorrect phone");
     }
     //сравнение паролей пароля
     /*if ($password1 != $password2) {
@@ -61,8 +65,8 @@ function Registration_min($email, $phone, $password1)
     $tmp_db_row = sqldb_connection::Registration($phone, $email);
 
     if (count($tmp_db_row) != 0) {
-        if ($tmp_db_row[0]['phone'] == $phone) array_push($errorArr, "phone already using");
-        if ($tmp_db_row[0]['email'] == $email) array_push($errorArr, "email already using");
+        if ($tmp_db_row[0]['phone'] == $phone) array_push($errorArr, "Phone already using");
+        if ($tmp_db_row[0]['email'] == $email) array_push($errorArr, "Email already using");
     }
 
 
@@ -71,7 +75,7 @@ function Registration_min($email, $phone, $password1)
             Temp_code());
         return sqldb_connection::Auth_Select_All($email, $password1);
     } else {
-        return $errorArr;
+        return $errorArr[0];
     }
 }
 /*
@@ -99,13 +103,13 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
             array_push($errorArr, "Incorrect email");
         }
             * */
-        if ($birth_day == "" && strlen($birth_day) < 1 && strlen($birth_day) > 31) {
+        if ($birth_day == "" || strlen($birth_day) < 1 || strlen($birth_day) > 31) {
             array_push($errorArr, "Incorrect birthday");
         }
-        if ($birth_month == "" && strlen($birth_month) < 1 && strlen($birth_month) > 12) {
+        if ($birth_month == "" || strlen($birth_month) < 1 || strlen($birth_month) > 12) {
             array_push($errorArr, "Incorrect birthday month");
         }
-        if ($birth_year == "" && strlen($birth_year) < (date('Y')-100) && strlen($birth_year) > date('Y')) {
+        if ($birth_year == "" || strlen($birth_year) < (date('Y')-100) || strlen($birth_year) > date('Y')) {
             array_push($errorArr, "Incorrect birthday year");
         }
 
@@ -120,7 +124,7 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 
         return sqldb_connection::Auth_Select_All_id($id);
     } else {
-        return $errorArr;
+        return $errorArr[0];
     }
 
 

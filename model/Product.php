@@ -1,9 +1,8 @@
 <?php
 
-require "../class/sqldb_connection.php";
-require "../class/photo_parser.php";
-
-include_once("../class/Samfuu.php");
+require __DIR__."/../class/sqldb_connection.php";
+require __DIR__."/../class/photo_parser.php";
+require __DIR__."/../class/Samfuu.php";
 
 /*
  * Product модель( верность написанного ниже нахожу под БОЛЬШИМ СОМНЕНИЕМ, ЖЕНЯ ПОСМОТРИ И ПРОКОНСУЛЬТИРУЙ ПЛЕЗ)
@@ -19,26 +18,26 @@ class Product {
     {
         $errorArr = array();//создание массива ошибок.
 
-        if ($product_name == "" && strlen($product_name) < 2 && strlen($product_name) > 30) {
-            array_push($errorArr, "Incorrect product_photo name");
+        if ($product_name == "" ||strlen($product_name) < 2 || strlen($product_name) > 30) {
+            array_push($errorArr, "Incorrect product name");
         }
-        if ($category == "" && strlen($category) < 5 && strlen($category) > 15) {
-            array_push($errorArr, "Incorrect product_photo category");
+        if ($category == "" || strlen($category) < 5 || strlen($category) > 15) {
+            array_push($errorArr, "Incorrect product category");
         }
-        if ($made_in == "" && strlen($made_in) < 2 && strlen($made_in) > 15) {
-            array_push($errorArr, "Incorrect product_photo manufacturer");
+        if ($made_in == "" || strlen($made_in) < 2 || strlen($made_in) > 15) {
+            array_push($errorArr, "Incorrect product manufacturer");
         }
-        if ($description == "" && strlen($description) < 20 && strlen($description) > 200) {
-            array_push($errorArr, "Incorrect product_photo description");
+        if ($description == "" || strlen($description) < 20 || strlen($description) > 200) {
+            array_push($errorArr, "Incorrect product description");
         }
-        if ($product_country == "" && strlen($product_country) < 3 && strlen($product_country) > 60) {
-            array_push($errorArr, "Incorrect product_photo country");
+        if ($product_country == "" || strlen($product_country) < 3 || strlen($product_country) > 60) {
+            array_push($errorArr, "Incorrect product country");
         }
-        if ($product_city == "" && strlen($product_city) < 2 && strlen($product_city) > 20) {
-            array_push($errorArr, "Incorrect product_photo city");
+        if ($product_city == "" || strlen($product_city) < 2 || strlen($product_city) > 20) {
+            array_push($errorArr, "Incorrect product city");
         }
-        if ($price == "" && strlen($price) < 1 ) {
-            array_push($errorArr, "Incorrect product_photo price");
+        if ($price == "" || strlen($price) < 1 ) {
+            array_push($errorArr, "Incorrect product price");
         }
 
         if (count($errorArr) == 0) {
@@ -201,7 +200,7 @@ class Product {
 
         if($product_id != null){
             $tmp_db_row = sqldb_connection::Show_product_singleview($product_id);
-            array_push($tmp_db_row,Owner_buyer_status($user_id));
+            array_push($tmp_db_row,sqldb_connection::Get_owner_buyer($user_id));
             return $tmp_db_row;
         }
         else{
@@ -220,7 +219,7 @@ class Product {
 
         if($product_id != null){
             $tmp_db_row = sqldb_connection::Show_product_multiview($product_id);
-            array_push($tmp_db_row,Owner_buyer_status($user_id));
+            array_push($tmp_db_row,sqldb_connection::Get_owner_buyer($user_id));
             return json_decode($tmp_db_row);
         }
         else{

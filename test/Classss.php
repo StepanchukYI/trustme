@@ -9,6 +9,6 @@
 class Classss
 {
     function  Test(){
-        return 'test';
+        return 'Testcase';
     }
 }

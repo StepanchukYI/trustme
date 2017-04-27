@@ -11,6 +11,7 @@ require("../class/Samfuu.php");
  * Функция для добавлнеии ставки по лоту либо выставления товара на аукцион
  */
 class Auction{
+
     function Make_bid($product_id, $user_id, $user_bid)
     {
         $errorArr = array();//создание массива ошибок.
@@ -26,11 +27,9 @@ class Auction{
             return $errorArr;
         }
     }
-
     /*
      * Функция для удаления лота с аукциона
      */
-
     function Remove_bid($product_id)
     {
         if($product_id != null){
@@ -41,11 +40,9 @@ class Auction{
             return "Wrong lot id";
         }
     }
-
     /*
      * Принимаем user_id и возвращаем список ставок этого пользователя
      */
-
     function Show_bids_by_user($user_id)
     {
 
@@ -58,13 +55,9 @@ class Auction{
             }
         }
     }
-
-
     /*
     * Принимаем product_id и возвращаем список ставок по этому товару
     */
-
-
     function Show_bids_by_product($product_id)
     {
         if ($product_id != null) {
@@ -76,8 +69,6 @@ class Auction{
             }
         }
     }
-
-
     /*
      * Принимаем bid_id и проверяем ставку на актуальность и актиность товара
      */

@@ -7,12 +7,16 @@
   </component>
   <component name="PhpProjectServersManager">
     <servers>
-      <server host="localhost" id="5eec308e-9327-4cd1-928f-c94d63ba4913" name="Localhost" use_path_mappings="true" />
+      <server host="localhost" id="5eec308e-9327-4cd1-928f-c94d63ba4913" name="Localhost" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="C:/xampp/htdocs/trustme" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
   <component name="PhpUnit">
     <phpunit_settings>
-      <PhpUnitSettings load_method="PHPUNIT_PHAR" custom_loader_path="$PROJECT_DIR$/../../php/pear/PHPUnit/TestCase.php" phpunit_phar_path="$PROJECT_DIR$/test/phpunit.phar" />
+      <PhpUnitSettings load_method="PHPUNIT_PHAR" custom_loader_path="$PROJECT_DIR$/../../php/pear/PHPUnit/TestCase.php" phpunit_phar_path="$PROJECT_DIR$/phpunit-5.7.19.phar" />
     </phpunit_settings>
   </component>
 </project>
