@@ -278,10 +278,10 @@ class sqldb_connection
     /*
      * Добавить продукт
      */
-    public static function Add_product($product_name, $category, $price,
-                                       $user_id, $buyer_id, $status, $made_in,
-                                       $description, $add_date, $product_country,
-                                       $product_city)
+    public static function IS_add_product($product_name, $category, $price,
+                                          $user_id, $buyer_id, $status, $made_in,
+                                          $description, $add_date, $product_country,
+                                          $product_city)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("INSERT INTO product(product_name,category,price,owner_id,buyer_id,status,made_in,
@@ -444,30 +444,23 @@ class sqldb_connection
     /*
      * Редактирование товара
      * */
-    public static function Product_Edit($product_id, $product_name, $category, $price,
-                                        $made_in, $description, $add_date, $product_country,
-                                        $product_city)
+    public static function Product_Edit($product_id, $product_name, $category, $price, $made_in, $description, $product_country, $product_city)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE product
-                                    SET product_name = :product_name,
-                                    price = :price,
-                                    made_in = :made_in,
-                                    description = :description,
-                                    add_date = :add_date,
-                                    product_country = :product_country,
+                                    SET product_name = :product_name, category = :category,
+                                     price = :price, made_in = :made_in, description = :description,
+                                    add_date = NOW(), product_country = :product_country,
                                     product_city = :product_city
                                     WHERE product_id = :product_id");
-        $sth->execute(array(
-            ':product_id' => $product_id,
+        $sth->execute(array(':product_id' => $product_id,
             ':product_name' => $product_name,
+            ':category' => $category,
             ':price' => $price,
             ':made_in' => $made_in,
             ':description' => $description,
-            ':add_date' => $add_date,
             ':product_country' => $product_country,
-            ':product_city' => $product_city,));
-
+            ':product_city' => $product_city));
     }
 
     /*
@@ -549,10 +542,9 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-
     /*
-     * Dima
-     */
+  * Dima
+  */
     /*
      * Функция для создания лота на аукционе и в базе
      */
@@ -575,6 +567,10 @@ class sqldb_connection
     }
 
     /*
+     * Запрос статуса продукта (active)
+     * */
+
+    /*
     * Функция добавления Buyer'a в случае успешной продажи + время окончания торгов
     * Уже сделал Влад
     */
@@ -593,9 +589,8 @@ class sqldb_connection
         $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, pg.pt_small_photo, p.product_name, p.price,
                                       p.max_bid, p.auction_end
                                 FROM auction a 
-                                INNER JOIN product p 
-                                INNER JOIN productgallery pg
-                                ON a.product_id = p.product_id
+                                INNER JOIN product p ON a.product_id = p.product_id 
+                                INNER JOIN productgallery pg ON a.product_id = pg.product_id
                                 WHERE a.user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -611,43 +606,42 @@ class sqldb_connection
                                       p.price, p.made_in, p.description, p.add_date, p.auction_qouta,
                                       p.max_bid, p.min_bid, p.auction_end, p.product_country, p.product_city
                                 FROM auction a 
-                                INNER JOIN product p 
-                                INNER JOIN productgallery pg
-                                ON a.product_id = p.product_id
+                                INNER JOIN product p ON a.product_id = p.product_id 
+                                INNER JOIN productgallery pg ON a.product_id = pg.product_id
                                 WHERE a.user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
-* Выбрать все ставки по id лота Multi view
-*/
+     * Выбрать все ставки по id лота Multi view
+     */
     public static function select_multi_view_bids_by_lot($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, pg.pt_small_photo, p.product_name, p.price, 
-p.max_bid, p.auction_end 
-FROM auction a 
-INNER JOIN product p ON a.product_id = p.product_id 
-INNER JOIN productgallery pg ON a.product_id = pg.product_id 
-WHERE p.product_id = :product_id");
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, pg.pt_small_photo, p.product_name, p.price,  
+                                      p.max_bid, p.auction_end
+                                FROM auction a 
+                                INNER JOIN product p ON a.product_id = p.product_id 
+                                INNER JOIN productgallery pg ON a.product_id = pg.product_id
+                                WHERE p.product_id = :product_id");
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
     /*
-    * Выбрать все ставки по id лота Single view
-    */
+     * Выбрать все ставки по id лота Single view
+     */
     public static function select_single_view_bids_by_lot($product_id)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, pg.pt_large_photo, p.product_name, p.category, 
-p.price, p.made_in, p.description, p.add_date, p.auction_qouta, 
-p.max_bid, p.min_bid, p.auction_end, p.product_country, p.product_city 
-FROM auction a 
-INNER JOIN product p ON a.product_id = p.product_id 
-INNER JOIN productgallery pg ON a.product_id = pg.product_id 
-WHERE p.product_id = :product_id");
+        $sth = $dbh->prepare("SELECT a.product_id, a.user_bid, a.bid_date, pg.pt_large_photo, p.product_name, p.category,
+                                      p.price, p.made_in, p.description, p.add_date, p.auction_qouta,
+                                      p.max_bid, p.min_bid, p.auction_end, p.product_country, p.product_city
+                                FROM auction a 
+                                INNER JOIN product p ON a.product_id = p.product_id 
+                                INNER JOIN productgallery pg ON a.product_id = pg.product_id
+                                WHERE p.product_id = :product_id");
         $sth->execute(array(':product_id' => $product_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }

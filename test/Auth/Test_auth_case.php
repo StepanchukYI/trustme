@@ -1,7 +1,7 @@
 <?php
 require_once '../../auth_class/RAQ.php';
 //require_once '../../model/Product.php';
-//require_once '../phpunit.phar';
+require_once '../phpunit.phar';
 /**
  * Created by PhpStorm.
  * User: b0dun
@@ -119,6 +119,5 @@ class Test_auth_case extends PHPUnit_Framework_TestCase
         $array = array('user_id' => '17');
         $this->assertEquals($array['user_id'] , Quit(17)[0]['user_id']);
     }
-
 
 }
