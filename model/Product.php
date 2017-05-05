@@ -2,8 +2,7 @@
 
 require __DIR__."/../class/sqldb_connection.php";
 require __DIR__."/../class/photo_parser.php";
-
-include_once("../class/Samfuu.php");
+require __DIR__."/../class/Samfuu.php";
 
 /*
  * Product модель

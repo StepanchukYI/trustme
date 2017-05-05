@@ -18,15 +18,15 @@ class Auction{
         $errorArr = array();//создание массива ошибок.
         $tmp_array = sqldb_connection::Show_product_singleview($product_id); //запрос для того, что бы узнать статус проекта
 
-        if ($product_id == null) array_push($errorArr, "Failed product id");  // проверка на пустой product_id
+        if ($product_id == null || $tmp_array['status'] != "active") array_push($errorArr, "Failed product id"); // проверка на пустой product_id
 
-        if ($user_id == null) array_push($errorArr, "Failed user id");  // проверка на пустой user_id
+        if ($user_id == null) array_push($errorArr, "Failed user id"); // проверка на пустой user_id
 
         if ($user_bid == "" && strlen($user_bid) < 1 ) {
             array_push($errorArr, "Incorrect bid amount");
         }
 
-        if (count($errorArr) == 0 && $tmp_array['status'] == "active") {
+        if (count($errorArr) == 0) {
             sqldb_connection::bid_create($product_id, $user_id, $user_bid, date("Y-m-d h:m:s"));
             return "Lot created";
         } else {

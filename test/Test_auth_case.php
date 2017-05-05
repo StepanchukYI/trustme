@@ -1,7 +1,7 @@
 <?php
-require_once '../../auth_class/RAQ.php';
+require_once '../auth_class/RAQ.php';
 //require_once '../../model/Product.php';
-require_once '../phpunit.phar';
+require_once 'phpunit.phar';
 /**
  * Created by PhpStorm.
  * User: b0dun
@@ -12,16 +12,20 @@ class Test_auth_case extends PHPUnit_Framework_TestCase
 {
     /**@test */
     public function test_Auth_null_login(){
-    $this->assertEquals("Failed email or phone number", Auth("", "samepass"));
+        $array = array('error' => "Failed email or phone number");
+    $this->assertEquals($array, Auth("", "samepass"));
 }
     public function test_Auth_null_pass(){
-        $this->assertEquals("Failed password", Auth("Somelogin", ""));
+        $array = array('error' => "Failed password");
+        $this->assertEquals($array, Auth("Somelogin", ""));
     }
     public function test_Auth_error_login(){
-        $this->assertEquals("Failed email or phone number", Auth("Somelogin", "somepass"));
+        $array = array('error' => 'Failed password');
+        $this->assertEquals($array, Auth("Somelogin", "somepass"));
     }
     public function test_Auth_error_pass(){
-        $this->assertEquals("Failed password", Auth("bodunjo855@gmail.com", "somepass"));
+        $array = array('error' => "Failed password");
+        $this->assertEquals($array , Auth("bodunjo855@gmail.com", "somepass"));
     }
     public function test_Auth_ok(){
         $array = array(
@@ -51,7 +55,7 @@ class Test_auth_case extends PHPUnit_Framework_TestCase
     'country' => 'Ucraine',
     'city' => 'Dnepro',
     'temp_code' => '964490');
-        $this->assertEquals($array['user_id'] , Auth("bodunjo855@gmail.com", "rootttt")[0]['user_id']);
+        $this->assertEquals($array['user_id'] , Auth("bodunjo855@gmail.com", "rootttt")['user_id']);
     }
     public function test_Registration_min_Inc_email(){
         $this->assertEquals("Incorrect email", Registration_min("email", "+38400", "somepass"));

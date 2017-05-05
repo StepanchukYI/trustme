@@ -24,15 +24,17 @@ function Auth($login, $password)
     if (count($tmp_db_row) == 0) {
         array_push($errorArr, "Failed email or phone number");
     } else {
-        if ($password != $tmp_db_row[0]['password']) array_push($errorArr, "Failed password");
+        if ($password != $tmp_db_row['password']) array_push($errorArr, "Failed password");
     }
     if (count($errorArr) == 0) {
-        sqldb_connection::Update_online_status($tmp_db_row[0]['user_ID'], 1,
+        sqldb_connection::Update_online_status($tmp_db_row['user_ID'], 1,
             date("Y-m-d h:m:s"));// обновляем статус на онлайн
         return sqldb_connection::Auth_Select_All($login, $password);
 
     } else {
-        return $errorArr[0];
+        $request = array(
+            'error' => $errorArr[0]);
+        return $request;
     }
 }
 /*
@@ -45,7 +47,7 @@ function Registration_min($email, $phone, $password1)
 
     //Валидация мыла
     if ((strlen($email) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@
-    ([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email) != true)) {
+    ([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email) != true)){
         array_push($errorArr, "Incorrect email");
     }
     //валидация пароля
@@ -65,8 +67,8 @@ function Registration_min($email, $phone, $password1)
     $tmp_db_row = sqldb_connection::Registration($phone, $email);
 
     if (count($tmp_db_row) != 0) {
-        if ($tmp_db_row[0]['phone'] == $phone) array_push($errorArr, "Phone already using");
-        if ($tmp_db_row[0]['email'] == $email) array_push($errorArr, "Email already using");
+        if ($tmp_db_row['phone'] == $phone) array_push($errorArr, "Phone already using");
+        if ($tmp_db_row['email'] == $email) array_push($errorArr, "Email already using");
     }
 
 
@@ -75,7 +77,9 @@ function Registration_min($email, $phone, $password1)
             Temp_code());
         return sqldb_connection::Auth_Select_All($email, $password1);
     } else {
-        return $errorArr[0];
+        $request = array(
+            'error' => $errorArr[0]);
+        return $request;
     }
 }
 /*
@@ -124,7 +128,9 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 
         return sqldb_connection::Auth_Select_All_id($id);
     } else {
-        return $errorArr[0];
+        $request = array(
+            'error' => $errorArr[0]);
+        return $request;
     }
 
 

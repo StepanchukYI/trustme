@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__.'/../../model/Auction.php';
-require_once __DIR__.'/../phpunit.phar';
+require_once __DIR__.'/../model/Auction.php';
+require_once __DIR__.'/phpunit.phar';
 
 class AuctionTest extends PHPUnit_Framework_TestCase
 {
@@ -23,10 +23,10 @@ class AuctionTest extends PHPUnit_Framework_TestCase
             array('', '', '30', $array[0]),
             array('', '1', '', $array[0]),
             array('', '1', '50', $array[0]),
-            array(1, '', '', $array[1]),
-            array(1, '', '40', $array[1]),
-            array(1, '1', '', $array[2]),
-            array(2, '1', '20', $array[3])
+            array('24', '', '', $array[1]),
+            array('24', '', '40', $array[1]),
+            array('24', '1', '', $array[2]),
+            array('24', '1', '20', $array[3])
         );
     }
 
@@ -43,7 +43,7 @@ class AuctionTest extends PHPUnit_Framework_TestCase
     public function providerRemoveBid()
     {
         return array(
-            array(1, "Wrong lot id"),
+            array(3, "Wrong lot id"),
             array('', "Wrong lot id"),
             array('asdf', "Wrong lot id")
         );
@@ -62,14 +62,14 @@ class AuctionTest extends PHPUnit_Framework_TestCase
     public function providerPerfectShowBidsByUser()
     {
         $responseText = array(
-            array("product_id"=>"3","user_bid"=>"140","bid_date"=>"2017-04-27 18:35:19","pt_small_photo"=>"ln","product_name"=>"Kettle","price"=>"500","max_bid"=>"20","auction_end"=>"2017-04-26 16:44:25"),
-            array("product_id"=>"3","user_bid"=>"150","bid_date"=>"2017-04-27 18:35:30","pt_small_photo"=>"ln","product_name"=>"Kettle","price"=>"500","max_bid"=>"20","auction_end"=>"2017-04-26 16:44:25"),
-            array("product_id"=>"3","user_bid"=>"160","bid_date"=>"2017-04-27 18:35:41","pt_small_photo"=>"ln","product_name"=>"Kettle","price"=>"500","max_bid"=>"20","auction_end"=>"2017-04-26 16:44:25")
+            array("product_id"=>"24","user_bid"=>"20","bid_date"=>"2017-05-04 01:05:56","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"Test","price"=>"2000","max_bid"=>null,"auction_end"=>null),
+            array("product_id"=>"2","user_bid"=>"50","bid_date"=>"2017-04-16 06:04:32","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"Flower","price"=>"500","max_bid"=>null,"auction_end"=>null),
+            array("product_id"=>"24","user_bid"=>"2000","bid_date"=>"2017-04-20 11:34:08","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"Test","price"=>"2000","max_bid"=>null,"auction_end"=>null)
         );
         return array(
             array(1, $responseText[0]),
             array(2, $responseText[1]),
-            array(3, $responseText[2])
+            array(6, $responseText[2])
         );
     }
 
@@ -103,14 +103,14 @@ class AuctionTest extends PHPUnit_Framework_TestCase
     public function providerPerfectShowBidsByProduct()
     {
         $responseText = array(
-            array("product_id"=>"1","user_bid"=>"50","bid_date"=>"2017-04-28 11:04:27","pt_small_photo"=>"kjh","product_name"=>"one","price"=>"100","max_bid"=>"10","auction_end"=>"2017-04-15 00:00:00"),
-            array("product_id"=>"2","user_bid"=>"30","bid_date"=>"2017-04-28 12:38:16","pt_small_photo"=>"khj","product_name"=>"Kettle","price"=>"500","max_bid"=>"20","auction_end"=>"2017-04-26 16:44:25"),
-            array("product_id"=>"3","user_bid"=>"140","bid_date"=>"2017-04-27 18:35:19","pt_small_photo"=>"ln","product_name"=>"Kettle","price"=>"500","max_bid"=>"20","auction_end"=>"2017-04-26 16:44:25"),
+            array("product_id"=>"24","user_bid"=>"2000","bid_date"=>"2017-04-20 11:34:08","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"Test","price"=>"2000","max_bid"=>null,"auction_end"=>null),
+            array("product_id"=>"2","user_bid"=>"50","bid_date"=>"2017-04-16 06:04:32","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"Flower","price"=>"500","max_bid"=>null,"auction_end"=>null),
+            array("product_id"=>"42","user_bid"=>"500","bid_date"=>"2017-05-03 21:41:19","pt_small_photo"=>"http://37.57.92.40/trustme/picture/product_photo/id42_small.jpeg","product_name"=>"machine","price"=>"10000","max_bid"=>null,"auction_end"=>null),
         );
         return array(
-            array(1, $responseText[0]),
+            array(24, $responseText[0]),
             array(2, $responseText[1]),
-            array(3, $responseText[2]),
+            array(42, $responseText[2]),
         );
     }
 

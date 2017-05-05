@@ -32,7 +32,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT user_ID,email,phone,password FROM user WHERE email= :login OR phone= :login");
         $sth->execute(array(':login' => $login));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -43,7 +43,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT * FROM user WHERE email= :login OR phone= :login  AND password = :password");
         $sth->execute(array(':login' => $login, ':password' => $password));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -54,7 +54,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT * FROM user WHERE user_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -75,7 +75,7 @@ class sqldb_connection
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("SELECT email,phone,password FROM user WHERE phone=:phone OR email =:email ");
         $sth->execute(array(':phone' => $phone, ':email' => $email));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -353,7 +353,7 @@ class sqldb_connection
                                     WHERE owner_id = :user_id
                                     OR buyer_id = :user_id");
         $sth->execute(array(':user_id' => $user_id));;
-        return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
 
     /*
@@ -382,7 +382,7 @@ class sqldb_connection
         //FROM product_photo p INNER JOIN productgallery pg
         // у тебя в запросе WHERE product_id - конфликт имен // окей, понял - принял
         $sth->execute(array(':product_id' => $product_id));
-        return $sth->fetchAll(PDO::FETCH_ASSOC)[0];
+        return $sth->fetch(PDO::FETCH_ASSOC);
     }
     /*
    * Функция для выборки данных О ТОВАРЕ для пользователя
