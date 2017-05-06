@@ -9,27 +9,26 @@ $user_id_select = "";
 $user_id_friend = "";
 $User = new User();
 
-switch ($command)
-{
+switch ($command) {
     case "multi_view_users"://Полный список пользователей
         $response = $User->Multi_view_users($user_id);
         break;
     case "multi_view_friends"://Полный список друзей
         $response = $User->Multi_view_friends($user_id);
         break;
-    case "multi_view_friends_online"://Полный список друзей онлайн
+    /*case "multi_view_friends_online"://Полный список друзей онлайн
         $response = $User->Multi_view_friends_online($user_id);
-        break;
+        break;*/
     case "multi_view_requests_input"://Полный список заявок в друзья входящих
         $response = $User->Multi_view_requests_input($user_id);
         break;
     case "multi_view_requests_output"://Полный список заявок в друзья исходящих
         $response = $User->Multi_view_requests_output($user_id);
         break;
-    case "search"://Поиск
+    /*case "search"://Поиск
         $query = $_REQUEST['query'];
         $response = $User->Search($user_id, $query);
-        break;
+        break;*/
     case "single_view_user"://Посмотреть полную информацию о пользователе
         $user_id_select = $_REQUEST['user_id_select'];
         $response = $User->Single_view_user($user_id, $user_id_select);
@@ -54,8 +53,13 @@ switch ($command)
         $response = "Incorrect command";
         break;
 }
-logging($user_id." ".$query . " ". $user_id_select. " " .$user_id_friend, json_encode($response), $command);
-echo json_encode($response);
+logging($user_id . " " . $query . " " . $user_id_select . " " . $user_id_friend, json_encode($response), $command);
+if (gettype($response) == "string") {
+    $request = array('error' => $response);
+    echo json_encode($request);
+} else {
+    echo json_encode($response);
+}
 
 /*
  * http://localhost/trustme/controllers/User_controller.php?command=Multi_View_Users&user_id=1
