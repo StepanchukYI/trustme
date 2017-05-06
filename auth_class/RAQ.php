@@ -43,9 +43,7 @@ function Auth($login, $password)
  */
 function Registration_min($email, $phone, $password)
 {
-
     $errorArr = array();//создание массива ошибок.
-
     //Валидация мыла
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($errorArr, "Incorrect email");
