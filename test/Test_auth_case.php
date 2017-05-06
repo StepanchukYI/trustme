@@ -11,106 +11,100 @@ require_once  __DIR__.'/../phpunit-5.7.19.phar';
 class Test_auth_case extends PHPUnit_Framework_TestCase
 {
     /**@test */
-    public function test_Auth_null_login(){
-        $array = array('error' => "Failed email or phone number");
-    $this->assertEquals($array, Auth("", "samepass"));
-}
-    public function test_Auth_null_pass(){
-        $array = array('error' => "Failed password");
-        $this->assertEquals($array, Auth("Somelogin", ""));
+    /**
+     * @test
+     * @dataProvider providerAuth
+     */
+    public function test_Auth($login,$password,$message){
+        $this->assertEquals($message, Auth($login, $password));
     }
-    public function test_Auth_error_login(){
-        $array = array('error' => 'Failed password');
-        $this->assertEquals($array, Auth("Somelogin", "somepass"));
+
+    public function providerAuth()
+    {
+        $array = array("Failed email or phone number", "Failed password");
+        return array(
+            array('', 'samepass', $arr = array('error' =>$array[0])),
+            array('Somelogin', '', $arr = array('error' =>$array[1])),
+            array("bodunjo855@gmail.com", "somepass",$arr = array('error' =>$array[1])),
+            array("Somelogin", "somepass",$arr = array('error' =>$array[1])),
+            array("bodunjo855@gmail.com", "rootttt1", $arr = array(   'user_id' => '1',
+    'email' => 'bodunjo855@gmail.com',
+    'email_2' => 'fsdfsd@mads.ru',
+    'phone' => '80953866616',
+    'password' => 'rootttt1',
+    'name' => 'Evgeniy',
+    'surname' => 'Stepanchuk',
+    'birth_day' => '30',
+    'birth_month' => '09',
+    'birth_year' => '1996',
+    'sex' => '1',
+    'facebook_id' => '',
+    'google_id' => '',
+    'multi_photo' => 'http://37.57.92.40/trustme/class/picture/user_photo/id6_large.jpeg',
+    'mid_photo' => 'http://37.57.92.40/trustme/class/picture/user#_photo/id6#_medium.jpeg',
+    'single_photo' => 'http://37.57.92.40/trustme/class/picture/user#_photo/id6#_small.jpeg',
+    'loc_coords' => '',
+    'time_zone' => '',
+    'online_status' => '1',
+    'reg_date' => '0000-00-00 00:00:00',
+    'last_visit' => '2017-05-06 04:05:58',
+    'balance' => '0',
+    'rate' => '0',
+    'country' => 'Ucraine',
+    'city' => 'Dnepro',
+    'temp_code' => '964490')),
+
+        );
     }
-    public function test_Auth_error_pass(){
-        $array = array('error' => "Failed password");
-        $this->assertEquals($array , Auth("bodunjo855@gmail.com", "somepass"));
+
+    /**
+     * @test
+     * @dataProvider providerRegistration_min
+     */
+    public function test_Registration_min_($login, $phone,$password,$message){
+        $this->assertEquals($message, Registration_min($login, $phone,$password));
     }
-    public function test_Auth_ok(){
-        $array = array('user_id' => '1');
-        $this->assertEquals($array['user_id'] , Auth("bodunjo855@gmail.com", "rootttt")['user_id']);
+
+    public function providerRegistration_min()
+    {
+        $array = array("Incorrect email", "Incorrect password","Incorrect phone","Email already using",
+            "Phone already using");
+        return array(
+            array("email", "+38400", "somepass", $arr = array('error' =>$array[0])),
+            array("email@", "+38400", "somepass", $arr = array('error' =>$array[0])),
+            array("1@mail.ru", "+123456789", "",$arr = array('error' =>$array[1])),
+            array("1@mail.ru", "+123456789", "some",$arr = array('error' =>$array[1])),
+            array("1@mail.ru", "+123456789", "123456789012345678901234567890123", $arr = array('error' =>$array[1])),
+            array("1@mail.ru", "+38400", "somepass",$arr = array('error' =>$array[2])),
+            array("1@mail.ru", "+123456789", "some",$arr = array('error' =>$array[1])),
+            array("1@mail.ru", "+1234567890123456", "somepass",$arr = array('error' =>$array[2])),
+            array("bodunjo855@gmail.com",
+                "01234567890", "somepass",$arr = array('error' =>$array[3])),
+            array("one@gmail.com",
+                "123456789012", "somepass",$arr = array('error' =>$array[3])),
+            array("two@qwe.com",
+                "0123456789012", "somepass",$arr = array('error' =>$array[3])),
+            array("1@qwe.com", "380993414821", "somepass",$arr = array('error' =>$array[4])),
+            array("2@qwe.com", "+380222222222", "somepass",$arr = array('error' =>$array[4])),
+            array("3@qwe.com", "+380333333333", "somepass",$arr = array('error' =>$array[4]))
+        );
     }
-    public function test_Registration_min_Inc_email(){
-        $array = array('error' => "Incorrect email");
-        $this->assertEquals($array, Registration_min("email", "+38400", "somepass"));
+
+    /**
+     * @test
+     * @dataProvider providerQuit
+     */
+    public function test_Quit($id,$message){
+        $this->assertEquals($message['user_id'], Quit($id)['user_id']);
     }
-    public function test_Registration_min_Inc_email2(){
-        $array = array('error' => "Incorrect email");
-        $this->assertEquals($array, Registration_min("email@", "+38400", "somepass"));
-    }
-    public function test_Registration_min_Inc_email3(){
-        $array = array('error' => "Incorrect email");
-        $this->assertEquals($array, Registration_min("", "+38400", "somepass"));
-    }
-    public function test_Registration_min_Inc_pass(){
-        $array = array('error' => "Incorrect password");
-        $this->assertEquals($array, Registration_min("1@mail.ru", "+123456789", ""));
-    }
-    public function test_Registration_min_Inc_pass2(){
-        $array = array('error' => "Incorrect password");
-        $this->assertEquals($array, Registration_min("1@mail.ru", "+123456789", "some"));
-    }
-    public function test_Registration_min_Inc_pass3(){
-        $array = array('error' => "Incorrect password");
-        $this->assertEquals($array, Registration_min("1@mail.ru", "+123456789",
-            "123456789012345678901234567890123"));
-    }
-    public function test_Registration_min_Inc_phone(){
-        $array = array('error' => "Incorrect phone");
-        $this->assertEquals($array, Registration_min("1@mail.ru", "+38400", "somepass"));
-    }
-    public function test_Registration_min_Inc_phone2(){
-        $array = array('error' => "Incorrect phone");
-        $this->assertEquals($array, Registration_min("1@mail.ru",
-            "+1234567890123456", "somepass"));
-    }
-    public function test_Registration_min_Inc_phone3(){
-        $array = array('error' => "Incorrect phone");
-        $this->assertEquals($array, Registration_min("1@mail.ru",
-            "", "somepass"));
-    }
-    public function test_Registration_min_use_email(){
-        $array = array('error' => "Email already using");
-        $this->assertEquals($array, Registration_min("bodunjo855@gmail.com",
-            "01234567890", "somepass"));
-    }
-    public function test_Registration_min_use_email2(){
-        $array = array('error' => "Email already using");
-        $this->assertEquals($array, Registration_min("one@gmail.com",
-            "123456789012", "somepass"));
-    }
-    public function test_Registration_min_use_email3(){
-        $array = array('error' => "Email already using");
-        $this->assertEquals($array, Registration_min("two@qwe.com",
-            "0123456789012", "somepass"));
-    }
-    public function test_Registration_min_use_phone1(){
-        $array = array('error' => "Phone already using");
-        $this->assertEquals($array, Registration_min("1@qwe.com",
-            "380993414821", "somepass"));
-    }
-    public function test_Registration_min_use_phone2(){
-        $array = array('error' => "Phone already using");
-        $this->assertEquals($array, Registration_min("2@qwe.com",
-            "+380222222222", "somepass"));
-    }
-    public function test_Registration_min_use_phone3(){
-        $array = array('error' => "Phone already using");
-        $this->assertEquals($array, Registration_min("3@qwe.com",
-            "+380333333333", "somepass"));
-    }
-    public function test_Quit_ok(){
-        $array = array('user_id' => '1');
-        $this->assertEquals($array['user_id'] , Quit(1)['user_id']);
-    }
-    public function test_Quit_ok2(){
-        $array = array('user_id' => '6');
-        $this->assertEquals($array['user_id'] , Quit(6)['user_id']);
-    }
-    public function test_Quit_ok3(){
-        $array = array('user_id' => '17');
-        $this->assertEquals($array['user_id'] , Quit(17)['user_id']);
+
+    public function providerQuit()
+    {
+        return array(
+            array('1', array('user_id' => '1')),
+            array('6', array('user_id' => '6')),
+            array('17',array('user_id' => '17')),
+         );
     }
 
 }
