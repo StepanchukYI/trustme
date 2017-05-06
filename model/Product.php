@@ -30,11 +30,11 @@ class Product {
         if ($description == "" || strlen($description) < 20 || strlen($description) > 200) {
             array_push($errorArr, "Incorrect product description");
         }
-        if ($product_country == "" || strlen($product_country) < 3 || strlen($product_country) > 60) {
-            array_push($errorArr, "Incorrect product country");
+        if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $product_country) != true) {
+            array_push($errorArr, "Incorrect country");
         }
-        if ($product_city == "" || strlen($product_city) < 2 || strlen($product_city) > 20) {
-            array_push($errorArr, "Incorrect product city");
+        if (preg_match("^[a-zA-Zа-яА-ЯёЁ]+{1,50}$", $product_city) != true) {
+            array_push($errorArr, "Incorrect city");
         }
         if ($price == "" || strlen($price) < 1 ) {
             array_push($errorArr, "Incorrect product price");

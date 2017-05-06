@@ -1,7 +1,7 @@
 <?php
-require __DIR__."/../class/sqldb_connection.php";
-require __DIR__."/../class/photo_parser.php";
-require __DIR__."/../class/Samfuu.php";
+require __DIR__ . "/../class/sqldb_connection.php";
+require __DIR__ . "/../class/photo_parser.php";
+require __DIR__ . "/../class/Samfuu.php";
 
 /*
  * Файл для модуля авторизации на сервере
@@ -23,65 +23,58 @@ function Auth($login, $password)
 
     if (count($tmp_db_row) == 0) {
         array_push($errorArr, "Failed email or phone number");
-    } else {
-        if ($password != $tmp_db_row['password']) array_push($errorArr, "Failed password");
+    } elseif ($password != $tmp_db_row['password']) {
+        array_push($errorArr, "Failed password");
     }
+
     if (count($errorArr) == 0) {
         sqldb_connection::Update_online_status($tmp_db_row['user_ID'], 1,
             date("Y-m-d h:m:s"));// обновляем статус на онлайн
         return sqldb_connection::Auth_Select_All($login, $password);
 
     } else {
-        $request = array(
-            'error' => $errorArr[0]);
-        return $request;
+
+        return $errorArr[0];
     }
 }
+
 /*
  * Функция для первичной регистрации пользователя.
  */
-function Registration_min($email, $phone, $password1)
+function Registration_min($email, $phone, $password)
 {
 
     $errorArr = array();//создание массива ошибок.
 
     //Валидация мыла
-    if ((strlen($email) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@
-    ([a-z0-9_\-\.])+\.([a-z0-9])+$~i", $email) != true)){
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($errorArr, "Incorrect email");
-    }
-    //валидация пароля
-    if ($password1 == "" || strlen($password1) <= 6 || strlen($password1) >= 32) {
+    }    //валидация пароля
+    if (preg_match("/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,256}$/", $password) != true) {
         array_push($errorArr, "Incorrect password");
     }
-
-    if($phone == "" || strlen($phone) <= 9 || strlen($phone) >= 15){
+    if (preg_match("/^\+[0-9]{9,18}$/", $phone) != true) {
         array_push($errorArr, "Incorrect phone");
     }
-    //сравнение паролей пароля
-    /*if ($password1 != $password2) {
-        array_push($errorArr, "Passwords are different");
-    }*/
-
-
     $tmp_db_row = sqldb_connection::Registration($phone, $email);
-
     if (count($tmp_db_row) != 0) {
         if ($tmp_db_row['phone'] == $phone) array_push($errorArr, "Phone already using");
         if ($tmp_db_row['email'] == $email) array_push($errorArr, "Email already using");
     }
-
-
     if (count($errorArr) == 0) {
-        sqldb_connection::Registration_min($phone, $password1, $email, date("Y-m-d h:m:s"),
+        sqldb_connection::Registration_min($phone, $password, $email, date("Y-m-d h:m:s"),
             Temp_code());
-        return sqldb_connection::Auth_Select_All($email, $password1);
+        return sqldb_connection::Auth_Select_All($email, $password);
     } else {
+        /*
         $request = array(
             'error' => $errorArr[0]);
         return $request;
+        */
+        return $errorArr[0];
     }
 }
+
 /*
  * Функция для получения временного пароля для продолжения регистрации
  */
@@ -93,6 +86,7 @@ function Temp_code()
     }
     return $tempcode;
 }
+
 /*
  * Функция для полной регистрации пользователя
  */
@@ -101,40 +95,50 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
 {
     $errorArr = array();//создание массива ошибок.
 
-    /*
-        if ((strlen($email_2) <= 6) && (preg_match("~^([a-z0-9_\-\.])+@([a-z0-9_\-\.])
-    +\.([a-z0-9])+$~i", $email_2) != true)) {
-            array_push($errorArr, "Incorrect email");
-        }
-            * */
-        if ($birth_day == "" || strlen($birth_day) < 1 || strlen($birth_day) > 31) {
-            array_push($errorArr, "Incorrect birthday");
-        }
-        if ($birth_month == "" || strlen($birth_month) < 1 || strlen($birth_month) > 12) {
-            array_push($errorArr, "Incorrect birthday month");
-        }
-        if ($birth_year == "" || strlen($birth_year) < (date('Y')-100) || strlen($birth_year) > date('Y')) {
-            array_push($errorArr, "Incorrect birthday year");
-        }
-
+    if (preg_match("/^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+{6,256}$/", $email_2) != true) {
+        array_push($errorArr, "Incorrect email");
+    }
+    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $name) != true) {
+        array_push($errorArr, "Incorrect name");
+    }
+    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $surname) != true) {
+        array_push($errorArr, "Incorrect surname");
+    }
+    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $country) != true) {
+        array_push($errorArr, "Incorrect country");
+    }
+    if (preg_match("^[a-zA-Zа-яА-ЯёЁ]+{1,50}$", $city) != true) {
+        array_push($errorArr, "Incorrect city");
+    }
+    if (preg_match("([1-9]|[12]\d|3[01])", $birth_day) != true) {
+        array_push($errorArr, "Incorrect birthday");
+    }
+    if (preg_match("([1-9]|1[012])", $birth_month) != true) {
+        array_push($errorArr, "Incorrect birthday month");
+    }
+    if ($birth_year == "" || strlen($birth_year) < (date('Y') - 100) || strlen($birth_year) > date('Y')) {
+        array_push($errorArr, "Incorrect birthday year");
+    }
 
     if (count($errorArr) == 0) {
         sqldb_connection::Registration_full($id, $email_2, $name, $surname, $birth_day,
             $birth_month, $birth_year, $sex, date("Y-m-d h:m:s"),
             1, $country, $city);
 
-        photo_parser::Getpicture_from_User($photo,$id);
+        photo_parser::Getpicture_from_User($photo, $id);
 
 
         return sqldb_connection::Auth_Select_All_id($id);
     } else {
-        $request = array(
-            'error' => $errorArr[0]);
-        return $request;
+        /*
+$request = array(
+    'error' => $errorArr[0]);
+return $request;
+*/
+        return $errorArr[0];
     }
-
-
 }
+
 /*
  * Функция для изменения статуса пользователя на офлайн
  */

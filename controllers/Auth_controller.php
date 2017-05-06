@@ -76,4 +76,10 @@ switch ($command) {
 }
 logging($login." ".$password." ".$id." ".$email_2." ".$name." ".$surname." ".$birth_day
     ." ".$birth_month." ".$birth_year." ".$sex." ".$country." ".$city, json_encode($response), $command);
-echo json_encode($response);
+
+if(gettype($response) == "string"){
+    $request = array('error' => $response);
+    echo json_encode($request);
+}else{
+    echo json_encode($response);
+}
