@@ -7,11 +7,9 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/test/phpunit.phar/" />
           <root url="phar://$MODULE_DIR$/phpunit-5.7.19.phar/" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/test/phpunit.phar/" />
           <root url="phar://$MODULE_DIR$/phpunit-5.7.19.phar/" />
         </SOURCES>
       </library>

@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__.'/../model/Auction.php';
-require_once __DIR__.'/phpunit.phar';
+require_once  __DIR__.'/../phpunit-5.7.19.phar';
 
 class AuctionTest extends PHPUnit_Framework_TestCase
 {
