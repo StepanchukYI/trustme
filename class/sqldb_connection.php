@@ -120,7 +120,7 @@ class sqldb_connection
        * Илья
        *
        */
-    //Функция для выбора первых 50-ти пользователей
+//Функция для выбора первых 50-ти пользователей
     public static function Select_Multi_View_users($user_id)
     {
         $dbh = sqldb_connection::DB_connect();
@@ -145,9 +145,9 @@ class sqldb_connection
         $sth->execute(array(':user_id_select' => $user_id_select));//
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
-    /*user_id, name, surname, sex, single_photo, balance,
-            online_status, rate, last_visit, country, city, reg_date*/
 
+    /*user_id, name, surname, sex, single_photo, balance,
+                online_status, rate, last_visit, country, city, reg_date*/
 //Функция для выборки списка друзей
     public static function Select_Multi_View_friends($user_id)
     {
@@ -160,7 +160,6 @@ class sqldb_connection
         ON (f.user_id_1 = u.user_id OR f.user_id_2 = u.user_id) 
         AND u.user_id != :user_id AND f.friend_request = TRUE
         AND (f.user_id_1 = :user_id OR f.user_id_2 = :user_id)
-        ORDER BY u.name 
         LIMIT 50");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -176,8 +175,7 @@ class sqldb_connection
         ON (f.user_id_1 = u.user_id OR f.user_id_2 = u.user_id) 
         AND u.user_id != :user_id AND f.friend_request = TRUE 
         AND (f.user_id_1 = :user_id OR f.user_id_2 = :user_id)
-        AND u.online_status = TRUE 
-        ORDER BY u.name 
+        AND u.online_status = TRUE
         LIMIT 50");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
@@ -196,7 +194,8 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public static function Update_Friendship($user_id, $user_id_friend)
+//Удаление из списка друзей
+    public static function Update_Friendship_Cancel($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
         $sth = $dbh->prepare("UPDATE friends SET friend_request = FALSE, friendship_date = NOW()
@@ -205,11 +204,22 @@ class sqldb_connection
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
     }
 
+//Проверка на успешность запроса
+    public static function Select_Friendship($user_id, $user_id_friend)
+    {
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT user_id_1, user_id_2, friend_request
+        FROM friends WHERE user_id_1 = :user_id AND user_id_2 = :user_id_friend 
+        LIMIT 50");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
+        return $sth->fetch(PDO::FETCH_ASSOC);
+    }
+
 //Отправка заявки
     public static function Insert_Friendship_Request($user_id, $user_id_friend)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("INSERT INTO friends (user_id_1, user_id_2, friend_request, friendship_date) 
+        $sth = $dbh->prepare("INSERT IGNORE INTO friends (user_id_1, user_id_2, friend_request, friendship_date) 
         VALUES (:user_id, :user_id_friend, FALSE, NOW())");
         $sth->execute(array(':user_id' => $user_id, ':user_id_friend' => $user_id_friend));
     }
@@ -245,8 +255,7 @@ class sqldb_connection
                                     ON f.user_id_1 = u.user_id 
                                     AND f.user_id_2 = :user_id 
                                     AND u.user_id != :user_id 
-                                    AND f.friend_request = FALSE 
-                                    ORDER BY u.name");
+                                    AND f.friend_request = FALSE");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -261,14 +270,10 @@ class sqldb_connection
                                     ON f.user_id_2 = u.user_id 
                                     AND f.user_id_1 = :user_id 
                                     AND u.user_id != :user_id 
-                                    AND f.friend_request = FALSE 
-                                    ORDER BY u.name ");
+                                    AND f.friend_request = FALSE");
         $sth->execute(array(':user_id' => $user_id));
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
-
 
     /*
      *
