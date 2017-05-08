@@ -166,4 +166,9 @@ switch ($command) {
 if(isset($product_photo)){$pht = "photo";}
 logging($user_id." ".$product_id." ".$product_name." ".$category." ".$price." ".$made_in." ".$description." ".
     $product_country." ".$product_city,json_encode($response),$command);
-echo json_encode($response);
+if(gettype($response) == "string"){
+    $request = array('error' => $response);
+    echo json_encode($request);
+}else{
+    echo json_encode($response);
+}

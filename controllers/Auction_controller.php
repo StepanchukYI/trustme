@@ -52,4 +52,10 @@ switch ($command) {
         break;
 }
 logging($product_id." ".$user_id." ".$user_bid." ",json_encode($response),$command);
-echo json_encode($response);
+
+if(gettype($response) == "string"){
+    $request = array('error' => $response);
+    echo json_encode($request);
+}else{
+    echo json_encode($response);
+}
