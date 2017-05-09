@@ -70,6 +70,10 @@ switch ($command) {
             $response = "null field";
         }
         break;
+    case "forgot_pass":
+        $login = $_REQUEST['email'];
+        $response = Password_forgot($login);
+        break;
     default:
         $response = "failed command";
         break;

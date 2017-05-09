@@ -145,3 +145,32 @@ function Quit($id)
     sqldb_connection::Update_online_status($id, 0, date("Y-m-d h:m:s"));   // обновляем статус на офлайн
     return sqldb_connection::Auth_Select_All_id($id);
 }
+
+
+function Password_forgot($login){
+    $errorArr = array();
+    if($login == ""){
+        array_push($errorArr, "Incorrect email");
+    }
+    $tmp_db_row = sqldb_connection::Auth_Select($login);
+
+    if(count($tmp_db_row) == 0){
+        array_push($errorArr, "Nothing to show");
+    }
+
+    if(count($errorArr) == 0){
+        $sub = "Password recovery!";
+        $msg = "Dear " . $tmp_db_row['name'] . " Thank you for using the services of our development team! \r\n 
+This is the password of your account: " . $tmp_db_row['password'] . " \r\n
+Thank you for being with us! \r\n";
+        $headers = 'MIME-Version: 1.0' . "\r\n";
+        $headers .= 'From: TrustMe <info@address.com>' . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        mail($login, $sub, $msg, $headers);
+        return array('msg' => "Email is send");
+    }
+     else {
+        return $errorArr[0];
+    }
+
+}

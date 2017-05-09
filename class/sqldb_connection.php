@@ -30,7 +30,7 @@ class sqldb_connection
     public static function Auth_Select($login)
     {
         $dbh = sqldb_connection::DB_connect();
-        $sth = $dbh->prepare("SELECT user_ID,email,phone,password FROM user WHERE email= :login OR phone= :login");
+        $sth = $dbh->prepare("SELECT user_ID,name,email,phone,password FROM user WHERE email= :login OR phone= :login");
         $sth->execute(array(':login' => $login));
         return $sth->fetch(PDO::FETCH_ASSOC);
     }
