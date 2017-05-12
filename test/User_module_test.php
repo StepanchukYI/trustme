@@ -1,12 +1,7 @@
 <?php
 require_once '../model/User.php';
 require_once '../phpunit-5.7.19.phar';
-/**
- * Created by PhpStorm.
- * User: Илья
- * Date: 25.04.2017
- * Time: 19:00
- */
+
 class User_module_test extends PHPUnit_Framework_TestCase
 {
     /**@test */
