@@ -2,28 +2,24 @@
 require "../model/User.php";
 include_once("../class/Samfuu.php");
 
-$command = $_REQUEST['command'];
-$user_id = $_REQUEST['user_id'];
-$query = "";
-$user_id_select = "";
-$user_id_friend = "";
+extract($_REQUEST);
 $User = new User();
 
-switch ($command) {
+switch (@$command) {
     case "multi_view_users"://Полный список пользователей
-        $response = $User->Multi_view_users($user_id);
+        $response = $User->Multi_view_users(@$user_id);
         break;
     case "multi_view_friends"://Полный список друзей
-        $response = $User->Multi_view_friends($user_id);
+        $response = $User->Multi_view_friends(@$user_id);
         break;
     /*case "multi_view_friends_online"://Полный список друзей онлайн
         $response = $User->Multi_view_friends_online($user_id);
         break;*/
     case "multi_view_requests_input"://Полный список заявок в друзья входящих
-        $response = $User->Multi_view_requests_input($user_id);
+        $response = $User->Multi_view_requests_input(@$user_id);
         break;
     case "multi_view_requests_output"://Полный список заявок в друзья исходящих
-        $response = $User->Multi_view_requests_output($user_id);
+        $response = $User->Multi_view_requests_output(@$user_id);
         break;
     /*case "search"://Поиск
         $query = $_REQUEST['query'];
@@ -31,29 +27,29 @@ switch ($command) {
         break;*/
     case "single_view_user"://Посмотреть полную информацию о пользователе
         $user_id_select = $_REQUEST['user_id_select'];
-        $response = $User->Single_view_user($user_id, $user_id_select);
+        $response = $User->Single_view_user(@$user_id, @$user_id_select);
         break;
     case "friendship_request"://Отправка заявки
         $user_id_friend = $_REQUEST['user_id_friend'];
-        $response = $User->Friendship_request($user_id, $user_id_friend);
+        $response = $User->Friendship_request(@$user_id, @$user_id_friend);
         break;
     case "friendship_cancel"://Удаление из друзей
         $user_id_friend = $_REQUEST['user_id_friend'];
-        $response = $User->Friendship_cancel($user_id, $user_id_friend);
+        $response = $User->Friendship_cancel(@$user_id, @$user_id_friend);
         break;
     case "friendship_request_agree"://Подтверждение заявки
         $user_id_friend = $_REQUEST['user_id_friend'];
-        $response = $User->Friendship_request_agree($user_id, $user_id_friend);
+        $response = $User->Friendship_request_agree(@$user_id, @$user_id_friend);
         break;
     case "friendship_request_cancel"://Удаление из списка заявок
         $user_id_friend = $_REQUEST['user_id_friend'];
-        $response = $User->Friendship_request_cancel($user_id, $user_id_friend);
+        $response = $User->Friendship_request_cancel(@$user_id, @$user_id_friend);
         break;
     default:
         $response = "Incorrect command";
         break;
 }
-logging($user_id . " " . $query . " " . $user_id_select . " " . $user_id_friend, json_encode($response), $command);
+logging(@$user_id . " " . @$query . " " . @$user_id_select . " " . @$user_id_friend, json_encode($response), @$command);
 if (gettype($response) == "string") {
     $request = array('error' => $response);
     echo json_encode($request);
