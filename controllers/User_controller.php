@@ -27,23 +27,18 @@ switch (@$command) {
         $response = $User->Search($user_id, $query);
         break;*/
     case "single_view_user"://Посмотреть полную информацию о пользователе
-        $user_id_select = $_REQUEST['user_id_select'];
         $response = $User->Single_view_user(@$user_id, @$user_id_select);
         break;
     case "friendship_request"://Отправка заявки
-        $user_id_friend = $_REQUEST['user_id_friend'];
         $response = $User->Friendship_request(@$user_id, @$user_id_friend);
         break;
     case "friendship_cancel"://Удаление из друзей
-        $user_id_friend = $_REQUEST['user_id_friend'];
         $response = $User->Friendship_cancel(@$user_id, @$user_id_friend);
         break;
     case "friendship_request_agree"://Подтверждение заявки
-        $user_id_friend = $_REQUEST['user_id_friend'];
         $response = $User->Friendship_request_agree(@$user_id, @$user_id_friend);
         break;
     case "friendship_request_cancel"://Удаление из списка заявок
-        $user_id_friend = $_REQUEST['user_id_friend'];
         $response = $User->Friendship_request_cancel(@$user_id, @$user_id_friend);
         break;
     default:
