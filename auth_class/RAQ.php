@@ -30,10 +30,9 @@ function Auth($login, $password)
     if (count($errorArr) == 0) {
         sqldb_connection::Update_online_status($tmp_db_row['user_ID'], 1,
             date("Y-m-d h:m:s"));// обновляем статус на онлайн
-        return sqldb_connection::Auth_Select_All($login, $password);
-
+        $id = sqldb_connection::Auth_Select_All($login, $password);
+        return $id;
     } else {
-
         return $errorArr[0];
     }
 }

@@ -8,9 +8,11 @@
       <library name="PHARS">
         <CLASSES>
           <root url="phar://$MODULE_DIR$/phpunit-5.7.19.phar/" />
+          <root url="phar://$MODULE_DIR$/phing-latest.phar/" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/phpunit-5.7.19.phar/" />
+          <root url="phar://$MODULE_DIR$/phing-latest.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
