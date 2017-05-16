@@ -3,6 +3,7 @@ require "../model/User.php";
 include_once("../class/Samfuu.php");
 
 extract($_REQUEST);
+
 $User = new User();
 
 switch (@$command) {

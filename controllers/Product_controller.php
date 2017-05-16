@@ -9,7 +9,6 @@ $product = new Product();
 switch (@$command) {
     case "add_product": //http://localhost/trustme/controllers/product_controller.php?command=add_product&user_id=1&product_name=Kettle&category=home&price=500&made_in=china&description=here_must_be_description&product_country=ukraine&product_city=dnipro&product_photo=photo_link
 
-
         if (@$user_id != "" /*&& $product_name != "" && $category != "" && $price != "" && $made_in != "" && $description != "" && $product_country != ""
             && $product_city != ""*/ ) {
             $response = $product->Add_product(@$user_id, @$product_name, @$category, @$price, @$made_in, @$description,
@@ -127,12 +126,15 @@ switch (@$command) {
         break;
 }
 
-if(isset($product_photo)){$pht = "photo";}
+if(@$product_photo){$pht = "photo";}
+
 logging(@$user_id." ".@$product_id." ".@$product_name." ".@$category." ".@$price." ".@$made_in." ".@$description." ".
-    @$product_country." ".@$product_city,json_encode($response),@$command);
+    @$product_country." ".@$product_city." ".$pht,json_encode($response),@$command);
+
 if(gettype($response) == "string"){
     $request = array('error' => $response);
     echo json_encode($request);
-}else{
+}
+else{
     echo json_encode($response);
 }

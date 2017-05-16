@@ -8,7 +8,6 @@ $auction = new Auction();
 switch (@$command) {
     case "makeBid": //http://37.57.92.40/trustme/controllers/auction_controller.php?command=makeBid&product_id=2&user_id=2&user_bid=50
 
-
         if (@$product_id != "" && @$user_id != "" && @$user_bid != "") {
 
             $response = $auction->Make_bid(@$product_id, @$user_id, @$user_bid);
@@ -44,11 +43,13 @@ switch (@$command) {
         $response = "failed command";
         break;
 }
+
 logging(@$product_id." ".@$user_id." ".@$user_bid." ",json_encode($response),@$command);
 
 if(gettype($response) == "string"){
     $request = array('error' => $response);
     echo json_encode($request);
-}else{
+}
+else{
     echo json_encode($response);
 }

@@ -15,7 +15,6 @@ switch (@$command) {
         break;
     case "registration_min": //http://37.57.92.40/trustme/controllers/auth_controller.php?command=reg_min&email=&phone=809503856636616&password1=rootttt&password2=rootttt
 
-
         if (@$email != "" && @$phone != "" && @$password != "") {
             $response = Registration_min(@$email, @$phone, @$password);
 
@@ -38,13 +37,12 @@ switch (@$command) {
     case "quit":  //http://37.57.92.40/trustme/controllers/auth_controller.php?command=quit&id=1
 
         if (@$id != "") {
-            $response = Quit($id);
+            $response = Quit(@$id);
         } else {
             $response = "null field";
         }
         break;
     case "forgot_pass":
-
         $response = Password_forgot(@$email);
         break;
     default:
@@ -57,6 +55,7 @@ logging(@$email." ".@$password." ".@$id." ".@$email_2." ".@$name." ".@$surname."
 if(gettype($response) == "string"){
     $request = array('error' => $response);
     echo json_encode($request);
-}else{
+}
+else{
     echo json_encode($response);
 }
