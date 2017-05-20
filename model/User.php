@@ -30,19 +30,31 @@ class User
     function Single_view_user($user_id, $user_id_select)
     {
         $errorArr = array();    //создание массива ошибок.
-        $tmp_db_row = 0;
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_select == null) array_push($errorArr, "Failed id select");
-        else {
-            $tmp_db_row = sqldb_connection::Select_Single_View_user($user_id_select);   // достаем строки из БД
-        }
-        if (count($errorArr) > 0) {
-            return $errorArr[0];
-        }
-        if ($tmp_db_row == false) {
-            return "NOTHING";
-        } else {
+
+        $tmp_db_row = sqldb_connection::Select_Single_View_user($user_id_select);   // достаем строки из БД
+
+        if ($tmp_db_row == false) array_push($errorArr, "Nothing to show");
+
+        if (count($errorArr) == 0) {
+            $friend = sqldb_connection::Frends_test($user_id, $user_id_select);
+
+            if (@$friend['friend_request'] == 1) $friend_ans = 'true';
+            if (@$friend['friend_request'] == 0) {
+                if ($friend['user_id_1'] == $user_id) {
+                    $friend_ans = 'send_request';
+                } elseif ($friend['user_id_2'] == $user_id) {
+                    $friend_ans = 'request';
+                }
+            }
+            if ($friend == false) $friend_ans = 'false';
+            if ($user_id != $user_id_select) {
+                $tmp_db_row['friend'] = $friend_ans;
+            }
             return $tmp_db_row;
+        } else {
+            return $errorArr[0];
         }
     }
 

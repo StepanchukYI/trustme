@@ -275,6 +275,15 @@ class sqldb_connection
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //Evgeniy v Illye
+    public static function Frends_test($user_id, $user_id_select){
+        $dbh = sqldb_connection::DB_connect();
+        $sth = $dbh->prepare("SELECT * from friends WHERE user_id_1 = :user_id AND user_id_2 = :user_id_select
+                             OR user_id_2 = :user_id AND user_id_1 = :user_id_select");
+        $sth->execute(array(':user_id' => $user_id, ':user_id_select' =>  $user_id_select));
+        return $sth->fetch(PDO::FETCH_ASSOC);
+    }
+
     /*
      *
      * Vlad
