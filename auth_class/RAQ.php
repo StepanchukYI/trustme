@@ -95,16 +95,16 @@ function Registration_full($id, $email_2, $name, $surname, $birth_day, $birth_mo
     if (preg_match("/^[a-zA-Z0-9_\-.]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-.]+{6,256}$/", $email_2) != true) {
         array_push($errorArr, "Incorrect email");
     }
-    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $name) != true) {
+    if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $name) != true) {
         array_push($errorArr, "Incorrect name");
     }
-    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $surname) != true) {
+    if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $surname) != true) {
         array_push($errorArr, "Incorrect surname");
     }
-    if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $country) != true) {
+    if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $country) != true) {
         array_push($errorArr, "Incorrect country");
     }
-    if (preg_match("^[a-zA-Zа-яА-ЯёЁ]+{1,50}$", $city) != true) {
+    if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $city) != true) {
         array_push($errorArr, "Incorrect city");
     }
     if (preg_match("([1-9]|[12]\d|3[01])", $birth_day) != true) {

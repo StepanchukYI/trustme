@@ -30,10 +30,10 @@ class Product {
         if ($description == "" || strlen($description) < 20 || strlen($description) > 200) {
             array_push($errorArr, "Incorrect product description");
         }
-        if (preg_match("^[a-zA-Zа-яА-Я]+{1,50}$", $product_country) != true) {
+        if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $product_country) != true) {
             array_push($errorArr, "Incorrect country");
         }
-        if (preg_match("^[a-zA-Zа-яА-ЯёЁ]+{1,50}$", $product_city) != true) {
+        if (preg_match("/^([a-zA-Zа-яА-ЯёЁ]+){1,50}$/", $product_city) != true) {
             array_push($errorArr, "Incorrect city");
         }
         if ($price == "" || strlen($price) < 1 ) {
