@@ -14,16 +14,12 @@ class User
     function Multi_view_users($user_id)
     {
         if ($user_id == null) return "Failed id";  // проверка на пустой id
-        else {
-            $tmp_db_row = sqldb_connection::Select_Multi_View_users($user_id);   // достаем строки из БД
-        }
 
-        if ($tmp_db_row == false) {
-            return "NOTHING";
-        }
-        if (count($tmp_db_row) > 0) {
-            return $tmp_db_row;
-        }
+        $tmp_db_row = sqldb_connection::Select_Multi_View_users($user_id);   // достаем строки из БД
+
+        if ($tmp_db_row == false) return "NOTHING";
+
+        if (count($tmp_db_row) > 0) return $tmp_db_row;
     }
 
 //Принимаем id user-a, для которого нужно вывести описание выбранного им user-a
@@ -118,6 +114,7 @@ class User
 
         if (count($errorArr) == 0) {
             sqldb_connection::Insert_Friendship_Request($user_id, $user_id_friend);
+
             $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
             $tmp['info'] = "You send friend request to " . $tmp['name'];
             return $tmp;
@@ -138,13 +135,15 @@ class User
         if ($tmp_flag == false) array_push($errorArr, "We have`t request");
 
         if (count($errorArr) == 0) {
-            sqldb_connection::Update_Friendship_Cancel($user_id, $user_id_friend);
+            $flag = sqldb_connection::Update_Friendship_Cancel($user_id, $user_id_friend);
+            if ($flag) {
+                $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
 
-            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
-
-            $tmp['info'] = "You cancel Friendship with " . $tmp['name'];
-            return $tmp;
-
+                $tmp['info'] = "You cancel Friendship with " . $tmp['name'];
+                return $tmp;
+            } else {
+                return "Update failed";
+            }
         } else {
             return $errorArr[0];
         }
@@ -162,12 +161,14 @@ class User
         if ($tmp_flag == false) array_push($errorArr, "We have`t request");
 
         if (count($errorArr) == 0) {
-            sqldb_connection::Update_Friendship_Request_Agree($user_id, $user_id_friend);
-
-            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
-            $tmp['info'] = "You confirm friendship with " . $tmp['name'];
-            return $tmp;
-
+            $flag = sqldb_connection::Update_Friendship_Request_Agree($user_id, $user_id_friend);
+            if ($flag) {
+                $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+                $tmp['info'] = "You confirm friendship with " . $tmp['name'];
+                return $tmp;
+            } else {
+                return "Update failed";
+            }
         } else {
             return $errorArr[0];
         }
@@ -185,12 +186,14 @@ class User
         if ($tmp_flag == false) array_push($errorArr, "We have`t request");
 
         if (count($errorArr) == 0) {
-
-            sqldb_connection::Delete_Friendship_Request_Cancel($user_id, $user_id_friend);
-            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
-            $tmp['info'] = "You canceled friendship with " . $tmp['name'];
-
-            return $tmp;
+            $flag = sqldb_connection::Delete_Friendship_Request_Cancel($user_id, $user_id_friend);
+            if ($flag) {
+                $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+                $tmp['info'] = "You canceled friendship with " . $tmp['name'];
+                return $tmp;
+            } else {
+                return "Delete failed";
+            }
         } else {
             return $errorArr[0];
         }
