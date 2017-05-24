@@ -53,14 +53,6 @@ switch (@$command) {
             $response = "null field";
         }
         break;
-    case "owner_buyer_status": //http://localhost/trustme/controllers/product_controller.php?command=owner_buyer_status&user_id=1
-
-        if (@$user_id != "") {
-            $response = $product->Owner_buyer_status(@$user_id);
-        } else {
-            $response = "null field";
-        }
-        break;
     case "product_singleview": //http://localhost/trustme/controllers/product_controller.php?command=product_singleview&user_id=1&product_id=1
 
 
@@ -73,9 +65,8 @@ switch (@$command) {
         break;
     case "product_multiview": //http://localhost/trustme/controllers/product_controller.php?command=product_multiview&user_id=1&product_id=1
 
-
-        if (@$user_id != "" && @$product_id != "") {
-            $response = $product->Product_multiview(@$user_id, @$product_id);
+        if (@$product_id != "") {
+            $response = $product->Product_multiview(@$product_id);
         } else {
             $response = "null field";
         }

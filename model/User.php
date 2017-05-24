@@ -112,14 +112,15 @@ class User
 
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
+
+        $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
+        if ($tmp_flag != false) array_push($errorArr, "Reguest already exist");
+
         if (count($errorArr) == 0) {
             sqldb_connection::Insert_Friendship_Request($user_id, $user_id_friend);
-            $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
-            if ($tmp_flag['user_id_1'] == $user_id && $tmp_flag['user_id_2'] == $user_id_friend) {
-                return sqldb_connection::Auth_Select_All_id($user_id_friend);
-            } else {
-                array_push($errorArr, "Not created");//<------------------------------------------------------------------------------------------
-            }
+            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+            $tmp['info'] = "You send friend request to " . $tmp['name'];
+            return $tmp;
         } else {
             return $errorArr[0];
         }
@@ -133,16 +134,17 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
+        $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
+        if ($tmp_flag == false) array_push($errorArr, "We have`t request");
+
         if (count($errorArr) == 0) {
             sqldb_connection::Update_Friendship_Cancel($user_id, $user_id_friend);
-            $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
-            if (($tmp_flag['user_id_1'] == $user_id && $tmp_flag['user_id_2'] == $user_id_friend) ||
-                ($tmp_flag['user_id_2'] == $user_id && $tmp_flag['user_id_1'] == $user_id_friend) && $tmp_flag['friend_request'] == false
-            ) {
-                return sqldb_connection::Auth_Select_All_id($user_id_friend);
-            } else {
-                array_push($errorArr, "Not updated");//<------------------------------------------------------------------------------------------
-            }
+
+            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+
+            $tmp['info'] = "You cancel Friendship with " . $tmp['name'];
+            return $tmp;
+
         } else {
             return $errorArr[0];
         }
@@ -156,16 +158,16 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
+        $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
+        if ($tmp_flag == false) array_push($errorArr, "We have`t request");
+
         if (count($errorArr) == 0) {
             sqldb_connection::Update_Friendship_Request_Agree($user_id, $user_id_friend);
-            $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
-            if (($tmp_flag['user_id_1'] == $user_id && $tmp_flag['user_id_2'] == $user_id_friend) ||
-                ($tmp_flag['user_id_2'] == $user_id && $tmp_flag['user_id_1'] == $user_id_friend) && $tmp_flag['friend_request'] == true
-            ) {
-                return sqldb_connection::Auth_Select_All_id($user_id_friend);
-            } else {
-                array_push($errorArr, "Not updated");//<------------------------------------------------------------------------------------------
-            }
+
+            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+            $tmp['info'] = "You confirm friendship with " . $tmp['name'];
+            return $tmp;
+
         } else {
             return $errorArr[0];
         }
@@ -179,14 +181,16 @@ class User
         if ($user_id == null) array_push($errorArr, "Failed id");  // проверка на пустой id
         if ($user_id_friend == null) array_push($errorArr, "Failed id friend");
 
+        $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
+        if ($tmp_flag == false) array_push($errorArr, "We have`t request");
+
         if (count($errorArr) == 0) {
+
             sqldb_connection::Delete_Friendship_Request_Cancel($user_id, $user_id_friend);
-            $tmp_flag = sqldb_connection::Select_Friendship($user_id, $user_id_friend);
-            if ($tmp_flag == false) {
-                return sqldb_connection::Auth_Select_All_id($user_id_friend);
-            } else {
-                array_push($errorArr, "Not deleted");//<------------------------------------------------------------------------------------------
-            }
+            $tmp = sqldb_connection::Auth_Select_All_id($user_id_friend);
+            $tmp['info'] = "You canceled friendship with " . $tmp['name'];
+
+            return $tmp;
         } else {
             return $errorArr[0];
         }
